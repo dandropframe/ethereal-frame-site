@@ -1,14 +1,15 @@
+import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 
 type Props = {
-  href: string;
+  slug: string;
   image: string;
   title: string;
   meta?: string;
   aspect?: string;
 };
 
-export function ProjectTile({ href, image, title, meta, aspect = "aspect-[4/3]" }: Props) {
+export function ProjectTile({ slug, image, title, meta, aspect = "aspect-[4/3]" }: Props) {
   const ref = useRef<HTMLAnchorElement | null>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -22,12 +23,11 @@ export function ProjectTile({ href, image, title, meta, aspect = "aspect-[4/3]" 
   }, []);
 
   return (
-    <a
+    <Link
       ref={ref}
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      className={`group block hover-lift ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      to="/work/$slug"
+      params={{ slug }}
+      className={`group block hover-lift transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
     >
       <div className={`relative overflow-hidden bg-muted ${aspect}`}>
         <img
@@ -42,6 +42,6 @@ export function ProjectTile({ href, image, title, meta, aspect = "aspect-[4/3]" 
         <div className="text-sm">{title}</div>
         {meta ? <div className="text-eyebrow">{meta}</div> : null}
       </div>
-    </a>
+    </Link>
   );
 }

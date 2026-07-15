@@ -25,12 +25,12 @@ export function SiteNav() {
       }`}
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 md:px-10 md:py-6">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="relative h-6 w-6">
-            <span className="absolute inset-0 border border-foreground" />
-            <span className="absolute -right-1 -bottom-1 h-3 w-3 border-t border-l border-foreground" />
-          </div>
-          <span className="font-mono text-xs tracking-[0.2em] uppercase">Dropframe</span>
+        <Link to="/" className="flex items-center gap-3 group">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/5bbf3758-dece-4958-8bdb-21ce1c329390/Artboard+42%408x.png"
+            alt="Dropframe"
+            className="h-6 md:h-7 w-auto object-contain [filter:invert(1)_brightness(2)]"
+          />
         </Link>
 
         <nav className="flex items-center gap-1 md:gap-2">
