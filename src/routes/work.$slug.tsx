@@ -92,7 +92,7 @@ function WorkPage() {
           <div className="mt-2 mb-6">{project.discipline}</div>
           <div className="text-eyebrow border-t border-border pt-6">Role</div>
           <ul className="mt-2 mb-6 space-y-1">
-            {project.role.map((r) => (
+            {project.role.map((r: string) => (
               <li key={r}>{r}</li>
             ))}
           </ul>
