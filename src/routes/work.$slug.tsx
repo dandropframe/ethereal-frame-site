@@ -108,7 +108,7 @@ function WorkPage() {
       {/* Gallery */}
       {project.gallery.length > 1 && (
         <section className="mx-auto max-w-[1800px] px-6 md:px-10 pb-20 md:pb-32 space-y-6 md:space-y-10">
-          {project.gallery.slice(1).map((src, i) => (
+          {project.gallery.slice(1).map((src: string, i: number) => (
             <div key={i} className="relative aspect-[16/10] overflow-hidden bg-muted">
               <img src={src} alt="" className="absolute inset-0 h-full w-full object-cover" />
             </div>
@@ -126,7 +126,7 @@ function WorkPage() {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
-            {related.map((r) => (
+            {related.map((r: (typeof related)[number]) => (
               <Link
                 key={r.slug}
                 to="/work/$slug"

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProjectTile } from "@/components/ProjectTile";
+import { projects } from "@/data/projects";
 
 export const Route = createFileRoute("/ai")({
   head: () => ({
@@ -13,12 +14,6 @@ export const Route = createFileRoute("/ai")({
   component: AI,
 });
 
-const projects = [
-  { image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/11ce9119-5bc5-46de-bd01-86731820f45a/Levis_01.jpg", title: "Levi's", meta: "Campaign", href: "https://www.dropframe.site/levis" },
-  { image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/81bd57ad-fb1d-4a8b-aa1f-d00390cc2851/Annamarie_EyePas_02.png", title: "Annemarie Börlind", meta: "Beauty", href: "https://www.dropframe.site/annemarie" },
-  { image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/c097e017-495e-4dc9-ac3d-667cdf22205a/815+24+290+-+295+%2B+830+22+317+-+295_02.jpg", title: "Juvia", meta: "Fashion", href: "https://www.dropframe.site/juvia" },
-];
-
 const steps = [
   { n: "01", t: "Share product photos", d: "Send flats, hero shots, or existing e-commerce assets. We work from what you already have." },
   { n: "02", t: "Pick your models", d: "Choose from our curated synthetic roster — or brief a custom talent build." },
@@ -27,6 +22,7 @@ const steps = [
 ];
 
 function AI() {
+  const items = projects.filter((p) => p.discipline === "AI");
   return (
     <div className="pt-32">
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 pb-16 md:pb-24">
@@ -58,9 +54,15 @@ function AI() {
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 mt-16">
         <div className="text-eyebrow border-t border-border pt-6 mb-10">Selected campaigns</div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
-          {projects.map((p, i) => (
-            <div key={p.title} className={i === 1 ? "md:mt-16" : ""}>
-              <ProjectTile {...p} aspect="aspect-[3/4]" />
+          {items.map((p, i) => (
+            <div key={p.slug} className={i === 1 ? "md:mt-16" : ""}>
+              <ProjectTile
+                slug={p.slug}
+                image={p.hero}
+                title={`${p.client} — ${p.title}`}
+                meta={p.category}
+                aspect="aspect-[3/4]"
+              />
             </div>
           ))}
         </div>
