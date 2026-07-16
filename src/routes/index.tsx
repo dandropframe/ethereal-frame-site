@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
+import { ShowreelDropdown } from "@/components/ShowreelDropdown";
 
 export const Route = createFileRoute("/")({
   component: Info,
@@ -155,45 +156,26 @@ function DisciplineRow({ tag, to, title, body, image, index }: typeof discipline
   );
 }
 
-const featured = [
-  { image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/3ff8864f-c35d-4d03-930c-79f2e4c18574/sk2_001.png", title: "SK-II", meta: "3D · Campaign" },
-  { image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/32988c0b-b302-48c9-80f2-73c6f6030ba8/Boutique_April_03B.jpg", title: "Alemais", meta: "Film · Fashion" },
-  { image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/11ce9119-5bc5-46de-bd01-86731820f45a/Levis_01.jpg", title: "Levi's", meta: "AI · Synthography" },
-  { image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/6fe90b86-b59c-493f-8d00-8908994e67c9/Untitled+Project_1110_MtFloret_ProRes4444_01_2024-11-06_16.26.15.png", title: "Mt. Floret", meta: "3D · Narrative" },
-];
-
 function SelectedWork() {
   return (
     <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-24 md:py-40">
       <div className="grid grid-cols-12 gap-6 mb-16">
-        <div className="col-span-12 md:col-span-3 text-eyebrow">Selected Work</div>
+        <div className="col-span-12 md:col-span-3 text-eyebrow">Showreel</div>
         <h2 className="col-span-12 md:col-span-9 text-display text-4xl md:text-6xl">
-          A sample of<br />recent collaborations.
+          A minute of<br />
+          <span className="italic">recent work.</span>
         </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-        {featured.map((f, i) => (
-          <FeaturedTile key={f.title} {...f} offset={i % 2 === 1} />
-        ))}
+      <div className="grid grid-cols-12 gap-6 items-end">
+        <div className="col-span-12 md:col-span-6 text-muted-foreground max-w-xl">
+          A short cross-section of commercial, campaign, and narrative work from the last
+          twelve months — press play for the full reel.
+        </div>
+        <div className="col-span-12 md:col-span-6 md:flex md:justify-end">
+          <ShowreelDropdown label="Play Showreel" vimeoId="757436831" />
+        </div>
       </div>
     </section>
   );
 }
 
-function FeaturedTile({ image, title, meta, offset }: { image: string; title: string; meta: string; offset: boolean }) {
-  const { ref, v } = useReveal<HTMLDivElement>();
-  return (
-    <div
-      ref={ref}
-      className={`group ${offset ? "md:mt-24" : ""} transition-all duration-1000 ${v ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
-    >
-      <div className="relative overflow-hidden aspect-[4/5] bg-muted">
-        <img src={image} alt={title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105" />
-      </div>
-      <div className="mt-4 flex items-baseline justify-between">
-        <div className="text-lg">{title}</div>
-        <div className="text-eyebrow">{meta}</div>
-      </div>
-    </div>
-  );
-}

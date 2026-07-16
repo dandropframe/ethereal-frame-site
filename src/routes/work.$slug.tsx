@@ -116,6 +116,21 @@ function WorkPage() {
         </section>
       )}
 
+      {/* Credits */}
+      {project.credits && project.credits.length > 0 && (
+        <section className="mx-auto max-w-[1600px] px-6 md:px-10 pb-20 md:pb-32">
+          <div className="text-eyebrow border-t border-border pt-6 mb-10">Credits</div>
+          <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4">
+            {project.credits.map((c: { role: string; name: string }, i: number) => (
+              <div key={i} className="flex items-baseline gap-6 border-b border-border/60 py-3">
+                <dt className="text-eyebrow flex-shrink-0 min-w-[180px]">{c.role}</dt>
+                <dd className="text-sm text-foreground/90">{c.name}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
+
       {/* Related */}
       {related.length > 0 && (
         <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-16 md:py-24 border-t border-border">

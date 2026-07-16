@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProjectTile } from "@/components/ProjectTile";
 import { projects } from "@/data/projects";
+import { ShowreelDropdown } from "@/components/ShowreelDropdown";
 
 export const Route = createFileRoute("/3d")({
   head: () => ({
@@ -26,9 +27,12 @@ function ThreeD() {
         </h1>
         <p className="mt-8 max-w-2xl text-muted-foreground">
           We design and execute 3D and motion graphics across commercial campaigns,
-          projection mapping, concert visuals, and narrative film. Specific capacity or full
-          production — previz through final frame.
+          projection mapping, concert visuals, and narrative film. We work in specific
+          capacity or full production — previz through final frame.
         </p>
+        <div className="mt-10">
+          <ShowreelDropdown label="Showreel" vimeoId="757436831" />
+        </div>
       </section>
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
         {items.map((p, i) => (
