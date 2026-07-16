@@ -23,7 +23,7 @@ function ThreeD() {
         <div className="text-eyebrow mb-8">3D / Art Direction</div>
         <h1 className="text-display text-6xl md:text-[10vw] leading-[0.9]">
           Virtual.<br />
-          <span className="italic">Rendered.</span>
+          <span className="">Rendered.</span>
         </h1>
         <p className="mt-8 max-w-2xl text-muted-foreground">
           We design and execute 3D and motion graphics across commercial campaigns,
@@ -31,7 +31,7 @@ function ThreeD() {
           capacity or full production — previz through final frame.
         </p>
         <div className="mt-10">
-          <ShowreelDropdown label="Showreel" vimeoId="757436831" />
+          <ShowreelDropdown label="Showreel" vimeoId="580437144" />
         </div>
       </section>
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">

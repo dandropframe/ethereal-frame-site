@@ -85,6 +85,21 @@ function WorkPage() {
         </div>
       </div>
 
+      {/* Vimeo embed */}
+      {project.vimeoId && (
+        <section className="mx-auto max-w-[1800px] px-6 md:px-10 py-12 md:py-20">
+          <div className="relative aspect-video overflow-hidden bg-black">
+            <iframe
+              src={`https://player.vimeo.com/video/${project.vimeoId}?title=0&byline=0&portrait=0`}
+              title={`${project.client} — ${project.title}`}
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 h-full w-full border-0"
+            />
+          </div>
+        </section>
+      )}
+
       {/* Body + metadata */}
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-20 md:py-32 grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-4">

@@ -13,6 +13,7 @@ export type Project = {
   summary: string;
   body: string;
   credits?: Credit[];
+  vimeoId?: string;
 };
 
 export const projects: Project[] = [
@@ -31,6 +32,7 @@ export const projects: Project[] = [
     ],
     summary: "Festive without being decorative, premium without being cold.",
     body: "We were approached by Heckler to assist in bringing the SK-II Festive campaign to life. The brief called for imagery that carried the weight of the occasion — festive without being decorative, premium without being cold. Our role was to bring that balance into the 3D work.",
+    vimeoId: "1070010113",
     credits: [
       { role: "Directed by", name: "Paola Kudacki" },
       { role: "Production Company", name: "Great Guns Asia" },
@@ -62,6 +64,7 @@ export const projects: Project[] = [
     ],
     summary: "A conceptual and visual pitch pushing AI into the workflow.",
     body: "Late last year, Microsoft reached out for a visual R&D project related to an AI module. The task was to create a conceptual and visual pitch over the course of a month — various styleframe explorations, and ultimately a hero video with logo resolve. It was a chance to push creative boundaries and experiment with AI in our workflow.",
+    vimeoId: "962267772",
     credits: [
       { role: "Client", name: "Microsoft" },
       { role: "Creative Direction & Animation", name: "Dan Braga Ulvestad" },
@@ -87,6 +90,8 @@ export const projects: Project[] = [
       { role: "Agency", name: "Huge" },
       { role: "Production Company", name: "Heckler Singapore" },
       { role: "Producer", name: "Richard Mayo-Smith" },
+      { role: "Creative Director & 3D Lead", name: "Dan Braga Ulvestad" },
+      { role: "3D Artists", name: "Nick Johnstone, Chris Harkin, Alex Do" },
     ],
   },
   {
@@ -128,6 +133,7 @@ export const projects: Project[] = [
     ],
     summary: "A short narrative passion project, exploring natural wonders.",
     body: "A short narrative passion project, exploring natural wonders. Featured on Motionographer.",
+    vimeoId: "868671851",
     credits: [
       { role: "Art Director & 3D Artist", name: "Dan Braga Ulvestad" },
       { role: "Technical Director & FX Artist", name: "Chris Harkin" },
@@ -188,6 +194,7 @@ export const projects: Project[] = [
     ],
     summary: "Hard architecture meets organic prints in a Sydney concrete set.",
     body: "A social media capsule for Sydney-based label Alémais, shot against raw concrete to let the collection's signature prints and palette do the talking. Dynamic camera moves depicting the tension between hard architecture and organic patterns creates space for the clothing to feel alive.",
+    vimeoId: "1181227661",
     credits: [
       { role: "Director, Cinematographer, Editor", name: "Dan Braga Ulvestad" },
       { role: "Model & Styling", name: "Alice Pirmahboub" },
@@ -247,6 +254,7 @@ export const projects: Project[] = [
     ],
     summary: "A portrait of identity, judgement, and heritage.",
     body: "Raised in Germany by her German mother, Samira Prudentos opens up about being judged by her appearance while having no connection to her Caribbean roots — and what she hopes for the future.",
+    vimeoId: "438578127",
     credits: [
       { role: "Starring", name: "Samira Prudentos" },
       { role: "Director", name: "Dan Braga Ulvestad" },
@@ -282,6 +290,7 @@ export const projects: Project[] = [
     ],
     summary: "A journey through the creation of Rubin's second album.",
     body: "A journey through the creation of Rubin's second album, 'Ruhelos' (Restless).",
+    vimeoId: "471537780",
     credits: [
       { role: "Written and Directed by", name: "Dan Braga Ulvestad" },
       { role: "Executive Producer", name: "Juri Wiesner" },
@@ -316,6 +325,7 @@ export const projects: Project[] = [
     ],
     summary: "A portrait of emerging musical talent.",
     body: "Yamaha Music approached us to concept and direct a volume of their Way Up series — a portrait of emerging musical talent. Featuring Rubin Henkel.",
+    vimeoId: "515027244",
     credits: [
       { role: "Client", name: "Yamaha Music Europe" },
       { role: "Head of Brand", name: "Sebastian Krenmayr" },
@@ -358,6 +368,7 @@ export const projects: Project[] = [
     ],
     summary: "Tender nostalgia and the quiet weight of the passage of time.",
     body: "With a haunted past, a man returns to a place of dear memories. A narrative music video written and directed by Dan Braga Ulvestad, exploring tender nostalgia and the quiet weight of the passage of time.",
+    vimeoId: "726640056",
     credits: [
       { role: "Cast", name: "Julius Schäuffelen, Jonas Minthe, Sarah Beck" },
       { role: "Writer & Director", name: "Dan Braga Ulvestad" },

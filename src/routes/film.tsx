@@ -24,7 +24,7 @@ function Film() {
         <div className="text-eyebrow mb-8">Film / Photography</div>
         <h1 className="text-display text-5xl md:text-[8vw] leading-[0.9]">
           On set. On location.<br />
-          <span className="italic">In frame.</span>
+          <span className="">In frame.</span>
         </h1>
         <p className="mt-8 max-w-2xl text-muted-foreground">
           We direct and produce live-action film and photography — from cost-effective

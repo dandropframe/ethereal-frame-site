@@ -14,21 +14,21 @@ const disciplines = [
     tag: "01 — 3D",
     to: "/3d",
     title: "Art Direction & 3D",
-    body: "High-end, art-directed 3D visuals across commercial campaigns, projection mapping, concert visuals, and narrative storytelling.",
+    body: "We create high-end, art directed 3D visuals across commercial campaigns, projection mapping, concert visuals, and narrative storytelling. Traditional 3D software forms the foundation of this work, providing stability, control, and precision.",
     image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/aa0b0125-f978-4a51-9e07-742782493413/AD_Snippet_01_GIF.gif",
   },
   {
     tag: "02 — Film",
     to: "/film",
     title: "Film & Photography",
-    body: "We direct and style in-camera film, photography, and brand storytelling for fashion and cosmetics — from concept through final delivery.",
+    body: "We direct and style in-camera film, photography, and brand storytelling for fashion and cosmetics brands. Short-form social content, editorial stills, product imagery, and narrative campaign work — all produced in-house, from concept through final delivery.",
     image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/a2f67cbd-1729-4acf-aa4e-10ad4f6c1cfa/Film_Snippet_GIF_02.gif",
   },
   {
     tag: "03 — AI",
     to: "/ai",
     title: "Synthography & AI",
-    body: "Synthetic fashion imagery and video designed as a direct alternative to traditional studio or location-based production.",
+    body: "Synthetic fashion imagery and video designed as a direct alternative to traditional studio or location-based production. Campaign, e-commerce, and social visuals created without physical sets, locations, models on set, or a shoot day.",
     image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/10fa90df-22d6-4df4-91df-1e73eb836ff3/Synthography_Snippet_01_GIF.gif",
   },
 ];
@@ -63,7 +63,7 @@ function Info() {
         >
           <div className="absolute inset-0 h-full w-full">
             <iframe
-              src="https://player.vimeo.com/video/757436831?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&portrait=0&transparent=0"
+              src="https://player.vimeo.com/video/580437144?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&portrait=0&transparent=0"
               title="Dropframe reel"
               allow="autoplay; fullscreen"
               className="absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2 border-0"
@@ -74,15 +74,20 @@ function Info() {
         </div>
 
         <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
-          <div className="text-eyebrow mb-6">Creative Production Studio — Est. 2021</div>
+          <div className="text-eyebrow mb-6">Creative Production Studio</div>
           <h1 className="text-display text-[13vw] md:text-[9vw] leading-[0.9]">
             The right<br />
-            <span className="italic font-normal">production</span> for<br />
+            <span className="">production</span> for<br />
             the brief.
           </h1>
           <div className="mt-10 max-w-xl text-muted-foreground">
-            A multidisciplinary studio producing 3D motion, in-camera film, and synthetic
-            imagery — driven by a single creative direction.
+            We are a multidisciplinary production studio for global brands in the fashion,
+            cosmetics, technology industries and beyond. High-end 3D motion, in-camera film
+            and photography, and synthetic imagery — all driven by the same creative
+            direction.
+
+            Every project starts with defining the visual language and narrative intent,
+            then we build out the production method that best serves it.
           </div>
         </div>
 
@@ -125,7 +130,7 @@ function MarqueeManifesto() {
         <div className="col-span-12 md:col-span-3 text-eyebrow">Approach</div>
         <div className={`col-span-12 md:col-span-9 text-display text-3xl md:text-5xl transition-all duration-1000 ${v ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           We don't prescribe a production method. We start with your brief, your brand
-          language, and your content needs — <span className="text-muted-foreground italic">then choose the approach that best serves them.</span>
+          language, and your content needs — <span className="text-muted-foreground">then choose the approach that best serves them.</span>
         </div>
       </div>
     </section>
@@ -160,19 +165,18 @@ function SelectedWork() {
   return (
     <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-24 md:py-40">
       <div className="grid grid-cols-12 gap-6 mb-16">
-        <div className="col-span-12 md:col-span-3 text-eyebrow">Showreel</div>
+        <div className="col-span-12 md:col-span-3 text-eyebrow">3D Showreel</div>
         <h2 className="col-span-12 md:col-span-9 text-display text-4xl md:text-6xl">
           A minute of<br />
-          <span className="italic">recent work.</span>
+          <span className="">recent 3D work.</span>
         </h2>
       </div>
       <div className="grid grid-cols-12 gap-6 items-end">
         <div className="col-span-12 md:col-span-6 text-muted-foreground max-w-xl">
-          A short cross-section of commercial, campaign, and narrative work from the last
-          twelve months — press play for the full reel.
+          A short cross-section of commercial and personal CGI work
         </div>
         <div className="col-span-12 md:col-span-6 md:flex md:justify-end">
-          <ShowreelDropdown label="Play Showreel" vimeoId="757436831" />
+          <ShowreelDropdown label="Play 3D Showreel" vimeoId="580437144" />
         </div>
       </div>
     </section>

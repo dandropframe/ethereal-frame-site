@@ -15,10 +15,10 @@ export const Route = createFileRoute("/ai")({
 });
 
 const steps = [
-  { n: "01", t: "Share product photos", d: "Send flats, hero shots, or existing e-commerce assets. We work from what you already have." },
-  { n: "02", t: "Pick your models", d: "Choose from our curated synthetic roster — or brief a custom talent build." },
-  { n: "03", t: "Define the vision", d: "Location, styling, mood, framing. We art-direct with the same rigor as physical production." },
-  { n: "04", t: "We handle the rest", d: "Iteration, variation, and long-term extensibility — delivered on your schedule." },
+  { n: "01", t: "Share your product photos", d: "Send flats, hero shots, or existing e-commerce assets. We work from what you already have." },
+  { n: "02", t: "Pick your models", d: "Choose from our curated roster of synthetic models — or brief a custom talent build." },
+  { n: "03", t: "Define your vision", d: "Location, styling, mood, framing. Or let us help you define the vision." },
+  { n: "04", t: "We handle everything else", d: "Iteration, variation, and long-term extensibility — delivered on your schedule." },
 ];
 
 function AI() {
@@ -29,12 +29,15 @@ function AI() {
         <div className="text-eyebrow mb-8">AI / Synthography</div>
         <h1 className="text-display text-5xl md:text-[8vw] leading-[0.9]">
           Fashion imagery<br />
-          <span className="italic">without the shoot.</span>
+          <span className="">without the shoot.</span>
         </h1>
         <p className="mt-8 max-w-2xl text-muted-foreground">
           Synthography replaces or supplements traditional productions when speed,
-          flexibility, consistency, or scalability are required — without compromising
+          flexibility, consistency, or scalability are required, without compromising
           visual quality or brand integrity.
+
+          Images are art-directed with the same rigor as physical production, while
+          allowing for controlled iteration, variation, and long-term extensibility.
         </p>
       </section>
 
