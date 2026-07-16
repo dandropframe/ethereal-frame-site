@@ -75,19 +75,14 @@ function Info() {
 
         <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
           <div className="text-eyebrow mb-6">Creative Production Studio</div>
-          <h1 className="text-display text-[13vw] md:text-[9vw] leading-[0.9]">
+          <h1 className="text-display text-[13vw] md:text-[9vw] leading-[0.9] opacity-90">
             The right<br />
             <span className="">production</span> for<br />
             the brief.
           </h1>
           <div className="mt-10 max-w-xl text-muted-foreground">
-            We are a multidisciplinary production studio for global brands in the fashion,
-            cosmetics, technology industries and beyond. High-end 3D motion, in-camera film
-            and photography, and synthetic imagery — all driven by the same creative
-            direction.
-
-            Every project starts with defining the visual language and narrative intent,
-            then we build out the production method that best serves it.
+            A multidisciplinary studio producing 3D motion, in-camera film, and synthetic
+            imagery — driven by a single creative direction.
           </div>
         </div>
 

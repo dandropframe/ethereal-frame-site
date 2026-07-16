@@ -64,7 +64,7 @@ function WorkPage() {
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-8">
             <div className="text-eyebrow mb-4">{project.client}</div>
-            <h1 className="text-display text-5xl md:text-[7vw] leading-[0.9]">
+            <h1 className="text-display font-light text-5xl md:text-[7vw] leading-[0.9]">
               {project.title}
             </h1>
           </div>
@@ -74,20 +74,9 @@ function WorkPage() {
         </div>
       </header>
 
-      {/* Hero image */}
-      <div className="mx-auto max-w-[1800px] px-6 md:px-10">
-        <div className="relative aspect-[16/9] overflow-hidden bg-muted">
-          <img
-            src={project.hero}
-            alt={`${project.client} — ${project.title}`}
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-        </div>
-      </div>
-
-      {/* Vimeo embed */}
-      {project.vimeoId && (
-        <section className="mx-auto max-w-[1800px] px-6 md:px-10 py-12 md:py-20">
+      {/* Video / Hero */}
+      {project.vimeoId ? (
+        <div className="mx-auto max-w-[1800px] px-6 md:px-10">
           <div className="relative aspect-video overflow-hidden bg-black">
             <iframe
               src={`https://player.vimeo.com/video/${project.vimeoId}?title=0&byline=0&portrait=0`}
@@ -97,7 +86,17 @@ function WorkPage() {
               className="absolute inset-0 h-full w-full border-0"
             />
           </div>
-        </section>
+        </div>
+      ) : (
+        <div className="mx-auto max-w-[1800px] px-6 md:px-10">
+          <div className="relative aspect-[16/9] overflow-hidden bg-muted">
+            <img
+              src={project.hero}
+              alt={`${project.client} — ${project.title}`}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
+        </div>
       )}
 
       {/* Body + metadata */}
