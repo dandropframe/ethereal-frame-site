@@ -29,7 +29,7 @@ export function SiteNav() {
           <img
             src="https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/5bbf3758-dece-4958-8bdb-21ce1c329390/Artboard+42%408x.png"
             alt="Dropframe"
-            className="h-6 md:h-7 w-auto object-contain [filter:invert(1)_brightness(2)]"
+            className="h-[14px] md:h-[17px] w-auto object-contain [filter:invert(1)_brightness(2)]"
           />
         </Link>
 
