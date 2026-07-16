@@ -121,12 +121,14 @@ function WorkPage() {
 
       {/* Gallery */}
       {project.gallery.length > 1 && (
-        <section className="mx-auto max-w-[1800px] px-6 md:px-10 pb-20 md:pb-32 space-y-6 md:space-y-10">
-          {project.gallery.slice(1).map((src: string, i: number) => (
-            <div key={i} className="relative aspect-[16/10] overflow-hidden bg-muted">
-              <img src={src} alt="" className="absolute inset-0 h-full w-full object-cover" />
-            </div>
-          ))}
+        <section className="mx-auto max-w-[1800px] px-6 md:px-10 pb-20 md:pb-32">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            {project.gallery.slice(1).map((src: string, i: number) => (
+              <div key={i} className="relative aspect-[4/5] overflow-hidden bg-muted">
+                <img src={src} alt="" className="absolute inset-0 h-full w-full object-cover" />
+              </div>
+            ))}
+          </div>
         </section>
       )}
 
