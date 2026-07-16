@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
+import { ShowreelDropdown } from "@/components/ShowreelDropdown";
 
 export const Route = createFileRoute("/")({
   component: Info,
