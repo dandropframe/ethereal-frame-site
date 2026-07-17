@@ -9,7 +9,7 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-border: var(--border);
-  --font-display: "Instrument Serif", serif;
+  --font-display: "Newsreader", serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-sans: "Inter Tight", system-ui, sans-serif;
 }
