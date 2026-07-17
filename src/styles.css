@@ -9,7 +9,7 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-border: var(--border);
-  --font-display: "Newsreader", serif;
+  --font-display: "Forum", serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-sans: "Inter Tight", system-ui, sans-serif;
 }
@@ -40,6 +40,7 @@
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.0;
+  font-size: 0.8em;
 }
 
 @utility text-eyebrow {
