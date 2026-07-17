@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getProject, getRelated } from "@/data/projects";
+import { useState, useEffect, useCallback } from "react";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -42,11 +43,95 @@ export const Route = createFileRoute("/work/$slug")({
   ),
 });
 
+function Lightbox({
+  images,
+  index,
+  onClose,
+  onNavigate,
+}: {
+  images: string[];
+  index: number;
+  onClose: () => void;
+  onNavigate: (dir: number) => void;
+}) {
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") onNavigate(-1);
+      if (e.key === "ArrowRight") onNavigate(1);
+    };
+    window.addEventListener("keydown", handler);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", handler);
+      document.body.style.overflow = "";
+    };
+  }, [onClose, onNavigate]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <button
+        className="absolute top-6 right-6 text-foreground/60 hover:text-foreground transition-colors text-2xl"
+        onClick={(e) => {
+          e.stopPropagation();
+          onClose();
+        }}
+      >
+        ✕
+      </button>
+      <button
+        className="absolute left-4 md:left-8 text-foreground/60 hover:text-foreground transition-colors text-3xl"
+        onClick={(e) => {
+          e.stopPropagation();
+          onNavigate(-1);
+        }}
+      >
+        ‹
+      </button>
+      <img
+        src={images[index]}
+        alt=""
+        className="max-h-[85vh] max-w-[90vw] object-contain"
+        onClick={(e) => e.stopPropagation()}
+      />
+      <button
+        className="absolute right-4 md:right-8 text-foreground/60 hover:text-foreground transition-colors text-3xl"
+        onClick={(e) => {
+          e.stopPropagation();
+          onNavigate(1);
+        }}
+      >
+        ›
+      </button>
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-eyebrow">
+        {index + 1} / {images.length}
+      </div>
+    </div>
+  );
+}
+
 function WorkPage() {
   const { project } = Route.useLoaderData();
   const related = getRelated(project.slug, project.discipline);
   const disciplineHref =
     project.discipline === "3D" ? "/3d" : project.discipline === "Film" ? "/film" : "/ai";
+
+  const galleryImages = project.gallery.length > 1 ? project.gallery.slice(1) : [];
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+  const navigateLightbox = useCallback(
+    (dir: number) => {
+      setLightboxIndex((prev) => {
+        if (prev === null) return prev;
+        return (prev + dir + galleryImages.length) % galleryImages.length;
+      });
+    },
+    [galleryImages.length],
+  );
 
   return (
     <article className="pt-32">
@@ -64,7 +149,7 @@ function WorkPage() {
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-8">
             <div className="text-eyebrow mb-4">{project.client}</div>
-            <h1 className="text-display font-light text-5xl md:text-[7vw] leading-[0.9]">
+            <h1 className="text-display text-5xl md:text-[7vw] leading-[0.9]">
               {project.title}
             </h1>
           </div>
@@ -120,13 +205,21 @@ function WorkPage() {
       </section>
 
       {/* Gallery */}
-      {project.gallery.length > 1 && (
+      {galleryImages.length > 0 && (
         <section className="mx-auto max-w-[1800px] px-6 md:px-10 pb-20 md:pb-32">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            {project.gallery.slice(1).map((src: string, i: number) => (
-              <div key={i} className="relative aspect-[4/5] overflow-hidden bg-muted">
-                <img src={src} alt="" className="absolute inset-0 h-full w-full object-cover" />
-              </div>
+            {galleryImages.map((src: string, i: number) => (
+              <button
+                key={i}
+                className="relative aspect-[16/9] overflow-hidden bg-muted cursor-pointer group"
+                onClick={() => setLightboxIndex(i)}
+              >
+                <img
+                  src={src}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                />
+              </button>
             ))}
           </div>
         </section>
@@ -179,6 +272,16 @@ function WorkPage() {
             ))}
           </div>
         </section>
+      )}
+
+      {/* Lightbox */}
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={galleryImages}
+          index={lightboxIndex}
+          onClose={closeLightbox}
+          onNavigate={navigateLightbox}
+        />
       )}
     </article>
   );

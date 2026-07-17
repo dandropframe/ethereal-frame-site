@@ -9,7 +9,7 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-border: var(--border);
-  --font-display: "Space Grotesk", sans-serif;
+  --font-display: "Instrument Serif", serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-sans: "Inter Tight", system-ui, sans-serif;
 }
@@ -37,7 +37,7 @@
 
 @utility text-display {
   font-family: var(--font-display);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.0;
 }
