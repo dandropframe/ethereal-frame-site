@@ -75,7 +75,7 @@ function Info() {
 
         <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
           <div className="text-eyebrow mb-6">Creative Production Studio</div>
-          <h1 className="text-display text-[13vw] md:text-[9vw] leading-[0.9] opacity-90">
+          <h1 className="text-display text-[9.75vw] md:text-[6.75vw] leading-[0.9] opacity-90">
             The right<br />
             <span className="">production</span> for<br />
             the brief.
@@ -98,7 +98,7 @@ function Info() {
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-24 md:py-40">
         <div className="grid grid-cols-12 gap-6 mb-16">
           <div className="col-span-12 md:col-span-3 text-eyebrow">Disciplines</div>
-          <h2 className="col-span-12 md:col-span-9 text-display text-4xl md:text-6xl">
+          <h2 className="col-span-12 md:col-span-9 text-display text-[1.8rem] md:text-[3rem]">
             Three methods.<br />
             One creative direction.
           </h2>
@@ -123,7 +123,7 @@ function MarqueeManifesto() {
     <section ref={ref} className="border-y border-border overflow-hidden">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10 py-24 md:py-40 grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-3 text-eyebrow">Approach</div>
-        <div className={`col-span-12 md:col-span-9 text-display text-3xl md:text-5xl transition-all duration-1000 ${v ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+        <div className={`col-span-12 md:col-span-9 text-display text-[1.5rem] md:text-[2.4rem] transition-all duration-1000 ${v ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           We don't prescribe a production method. We start with your brief, your brand
           language, and your content needs — <span className="text-muted-foreground">then choose the approach that best serves them.</span>
         </div>
