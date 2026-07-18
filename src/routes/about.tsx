@@ -60,13 +60,15 @@ function About() {
             experience across technology, funding, and commercial production, translating
             creative ambition into financial clarity and guiding projects from brief to
             delivery.
-
+          </p>
+          <p className="text-muted-foreground">
             We are small by design, and intentionally so — we take on projects where
             creative direction makes a difference. When a project demands it, we draw on a
             wide network of trusted collaborators: 3D artists, cinematographers,
             photographers, stylists, and production specialists. The core stays consistent.
             The capacity scales with the brief.
-
+          </p>
+          <p className="text-muted-foreground">
             We are a creative partner for the next era of visual storytelling.
           </p>
         </div>
