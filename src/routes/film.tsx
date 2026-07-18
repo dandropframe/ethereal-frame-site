@@ -22,7 +22,7 @@ function Film() {
     <div className="pt-32">
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 pb-16 md:pb-24">
         <div className="text-eyebrow mb-8">Film / Photography</div>
-        <h1 className="text-display text-5xl md:text-[8vw] leading-[0.9]">
+        <h1 className="text-display text-[9.75vw] md:text-[6.75vw] leading-[0.9] opacity-80">
           On set. On location.<br />
           <span className="">In frame.</span>
         </h1>
