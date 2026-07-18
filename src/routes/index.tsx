@@ -75,7 +75,7 @@ function Info() {
 
         <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
           <div className="text-eyebrow mb-6">Creative Production Studio</div>
-          <h1 className="text-display text-[9.75vw] md:text-[6.75vw] leading-[0.9] opacity-90">
+          <h1 className="text-display text-[9.75vw] md:text-[6.75vw] leading-[0.9] opacity-80">
             The right<br />
             <span className="">production</span> for<br />
             the brief.
