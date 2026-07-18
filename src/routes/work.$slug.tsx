@@ -148,7 +148,6 @@ function WorkPage() {
         </div>
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-8">
-            <div className="text-eyebrow mb-4">{project.client}</div>
             <h1 className="text-display text-5xl md:text-[7vw] leading-[0.9]">
               {project.title}
             </h1>
