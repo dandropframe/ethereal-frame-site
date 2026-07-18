@@ -62,7 +62,7 @@ function AI() {
               <ProjectTile
                 slug={p.slug}
                 image={p.hero}
-                title={`${p.client} — ${p.title}`}
+                title={p.title}
                 meta={p.category}
                 aspect="aspect-[3/4]"
               />
