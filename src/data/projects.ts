@@ -120,6 +120,7 @@ export const projects: Project[] = [
     category: "Previz",
     year: "2026",
     role: ["Previz", "Art Direction"],
+    vimeoId: "1211017183",
     hero: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/3a0c93fe-207c-4f97-b002-b63353f52a0c/Untitled+Project_15s_laMerCny_16X9_NIGHT_WIP032_2026-05-13_13.26.27.jpg",
     gallery: [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/3a0c93fe-207c-4f97-b002-b63353f52a0c/Untitled+Project_15s_laMerCny_16X9_NIGHT_WIP032_2026-05-13_13.26.27.jpg",
