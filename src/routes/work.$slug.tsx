@@ -148,7 +148,7 @@ function WorkPage() {
         </div>
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-8">
-            <h1 className="text-display text-5xl md:text-[7vw] leading-[0.9]">
+            <h1 className="text-display text-[1.8rem] md:text-[3rem] leading-[1.05]">
               {project.title}
             </h1>
           </div>
