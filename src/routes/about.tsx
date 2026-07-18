@@ -73,19 +73,17 @@ function About() {
       </section>
 
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-24 md:py-32">
-        <div className="text-eyebrow mb-16">Team</div>
-        <div className="space-y-24 md:space-y-40">
-          {team.map((t, i) => (
-            <div key={t.name} className={`grid grid-cols-12 gap-6 md:gap-10 items-start ${i % 2 ? "md:direction-rtl" : ""}`}>
-              <div className={`col-span-12 md:col-span-5 ${i % 2 ? "md:order-2" : ""}`}>
-                <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-                  <img src={t.image} alt={t.name} className="absolute inset-0 h-full w-full object-cover" />
-                </div>
+        <div className="text-eyebrow mb-12">Team</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+          {team.map((t) => (
+            <div key={t.name} className="flex flex-col">
+              <div className="relative aspect-[4/5] overflow-hidden bg-muted">
+                <img src={t.image} alt={t.name} className="absolute inset-0 h-full w-full object-cover" />
               </div>
-              <div className={`col-span-12 md:col-span-6 md:col-start-${i % 2 ? "1" : "7"} pt-4`}>
+              <div className="pt-5">
                 <div className="text-eyebrow">{t.role}</div>
-                <div className="text-display text-3xl md:text-5xl mt-4">{t.name}</div>
-                <p className="text-muted-foreground mt-6 leading-relaxed">{t.bio}</p>
+                <div className="text-display text-2xl md:text-3xl mt-2">{t.name}</div>
+                <p className="text-muted-foreground mt-3 text-sm leading-relaxed">{t.bio}</p>
               </div>
             </div>
           ))}
