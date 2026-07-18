@@ -164,7 +164,7 @@ function WorkPage() {
         <div className="mx-auto max-w-[1800px] px-6 md:px-10">
           <div className="relative aspect-video overflow-hidden bg-black">
             <iframe
-              src={`https://player.vimeo.com/video/${project.vimeoId}?title=0&byline=0&portrait=0`}
+              src={`https://player.vimeo.com/video/${project.vimeoId}${project.vimeoHash ? `/${project.vimeoHash}` : ""}?title=0&byline=0&portrait=0`}
               title={`${project.client} — ${project.title}`}
               allow="autoplay; fullscreen; picture-in-picture"
               allowFullScreen
