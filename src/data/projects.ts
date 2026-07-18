@@ -277,7 +277,6 @@ export const projects: Project[] = [
     summary: "Different settings, different moods — one cohesive brand world.",
     body: "A series of social media capsules shot across a range of locations and aesthetics, reflecting the breadth of Etuui's phone case collection. Different settings, different moods — one cohesive brand world.",
     vimeoId: "1211015367",
-    vimeoHash: "420fb49395",
   },
   {
     slug: "mustang",
