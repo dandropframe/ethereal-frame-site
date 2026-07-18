@@ -48,7 +48,7 @@ function Section({ title, items }: { title: string; items: Project[] }) {
             <ProjectTile
               slug={p.slug}
               image={p.hero}
-              title={`${p.client} — ${p.title}`}
+              title={p.title}
               meta={p.category}
               aspect="aspect-[4/5]"
             />
