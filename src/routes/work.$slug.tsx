@@ -200,7 +200,7 @@ function WorkPage() {
         </div>
         <div className="col-span-12 md:col-span-8">
           <div className="text-eyebrow border-t border-border pt-6 mb-8">On this project</div>
-          <p className="text-display text-2xl md:text-3xl leading-[1.2]">{project.body}</p>
+          <p className="text-xl md:text-2xl leading-[1.4] text-foreground/90">{project.body}</p>
         </div>
       </section>
 
