@@ -36,7 +36,7 @@ export const projects: Project[] = [
     ],
     summary: "Festive without being decorative, premium without being cold.",
     body: "We were approached by Heckler to assist in bringing the SK-II Festive campaign to life. The brief called for imagery that carried the weight of the occasion — festive without being decorative, premium without being cold. Our role was to bring that balance into the 3D work.",
-    vimeoId: "1070010113",
+    vimeoId: "1211193882",
     credits: [
       { role: "Directed by", name: "Paola Kudacki" },
       { role: "Production Company", name: "Great Guns Asia" },
