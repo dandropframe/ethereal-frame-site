@@ -58,7 +58,7 @@ export const projects: Project[] = [
     title: "Microsoft AI",
     client: "Microsoft",
     discipline: "3D",
-    category: "Product Launch",
+    category: "R&D",
     year: "2024",
     role: ["Creative Direction", "Animation"],
     hero: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/f4c170f5-0543-4895-9bc2-e70229701fd5/MS_AI_14_WORLD_PANELS_04_2025-03-26_17.09.59.png",
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     ],
     summary: "A conceptual and visual pitch pushing AI into the workflow.",
     body: "Late last year, Microsoft reached out for a visual R&D project related to an AI module. The task was to create a conceptual and visual pitch over the course of a month — various styleframe explorations, and ultimately a hero video with logo resolve. It was a chance to push creative boundaries and experiment with AI in our workflow.",
-    vimeoId: "962267772",
+    vimeoId: "1070010113",
     credits: [
       { role: "Client", name: "Microsoft" },
       { role: "Creative Direction & Animation", name: "Dan Braga Ulvestad" },
