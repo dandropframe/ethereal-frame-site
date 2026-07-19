@@ -143,8 +143,6 @@ function WorkPage() {
           </Link>
           <span>/</span>
           <span>{project.category}</span>
-          <span>/</span>
-          <span>{project.year}</span>
         </div>
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-8">
