@@ -79,7 +79,7 @@ export const projects: Project[] = [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/0ab412e5-d26c-456d-a6f6-af0da066f1a8/MS_AI_14_WORLD_PANELS_04_2025-03-26_17.09.12.png",
     ],
     summary: "A conceptual and visual pitch pushing AI into the workflow.",
-    body: "Late last year, Microsoft reached out for a visual R&D project related to an AI module. The task was to create a conceptual and visual pitch over the course of a month — various styleframe explorations, and ultimately a hero video with logo resolve. It was a chance to push creative boundaries and experiment with AI in our workflow.",
+    body: "Microsoft reached out for a visual R&D project related to an AI module. The task was to create a conceptual and visual pitch over the course of a month — various styleframe explorations, and ultimately a hero video with logo resolve. It was a chance to push creative boundaries and experiment with AI in our workflow.",
     vimeoId: "1070010113",
     credits: [
       { role: "Client", name: "Microsoft" },
