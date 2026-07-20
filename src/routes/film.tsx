@@ -32,8 +32,8 @@ function Film() {
         </p>
       </section>
 
-      <Section title="Fashion" items={fashion} />
       <Section title="Narrative" items={narrative} />
+      <Section title="Fashion" items={fashion} />
     </div>
   );
 }
