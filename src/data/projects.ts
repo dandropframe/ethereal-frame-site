@@ -97,7 +97,7 @@ export const projects: Project[] = [
     year: "2023",
     role: ["3D", "Motion Design"],
     vimeoId: "868671851",
-    hero: "https://vumbnail.com/868671851.jpg",
+    hero: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/f0b524e9-2b06-48f5-9392-f90c68c6cfd2/Airforce_01_SKII_Kokeshi_Cheeky_All_ProRes__2023-05-04_16.45.16.jpg",
     gallery: [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/f0b524e9-2b06-48f5-9392-f90c68c6cfd2/Airforce_01_SKII_Kokeshi_Cheeky_All_ProRes__2023-05-04_16.45.16.jpg",
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/fb6f1553-5cf8-4686-95ba-5ae74d93db23/Airforce_01_SKII_Kokeshi_Cheeky_All_ProRes__2023-05-04_16.47.40.jpg",
