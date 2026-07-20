@@ -39,8 +39,9 @@ function About() {
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 pb-24 md:pb-40">
         <div className="text-eyebrow mb-8">About</div>
         <h1 className="text-display text-[1.8rem] md:text-[3rem] leading-[1.05]">
-          We believe the best visual work is made by people who understand both the
-          craft and the technology — <span className="text-muted-foreground">and who know which one leads.</span>
+          We believe the best visual work<br />
+          is made by people who understand both the craft and the technology —<br />
+          <span className="text-muted-foreground">and who know which one leads.</span>
         </h1>
       </section>
 
