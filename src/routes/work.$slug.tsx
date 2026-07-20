@@ -192,8 +192,6 @@ function WorkPage() {
               <li key={r}>{r}</li>
             ))}
           </ul>
-          <div className="text-eyebrow border-t border-border pt-6">Year</div>
-          <div className="mt-2">{project.year}</div>
         </div>
         <div className="col-span-12 md:col-span-8">
           <div className="text-eyebrow border-t border-border pt-6 mb-8">On this project</div>
