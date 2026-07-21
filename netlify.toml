@@ -1,0 +1,10 @@
+# TanStack Start builds with the Nitro "netlify" preset, which emits:
+#   - server functions -> .netlify/functions-internal   (output.dir)
+#   - static client assets -> dist                       (output.publicDir)
+#
+# The publish directory must therefore be `dist`. Pinning it here (a
+# netlify.toml value overrides the Site UI setting) corrects the previous
+# UI override of `dist/client`, a directory this preset never produces.
+[build]
+  command = "bun run build"
+  publish = "dist"
