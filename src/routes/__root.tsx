@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Dropframe — Creative Production Studio" },
+      { title: "DROPFRAME — Creative Production Studio" },
       { name: "description", content: "A multidisciplinary production studio for global brands. High-end 3D motion, in-camera film and photography, and synthetic imagery — all driven by the same creative direction." },
       { property: "og:title", content: "Dropframe — Creative Production Studio" },
       { property: "og:description", content: "A multidisciplinary production studio for global brands. High-end 3D motion, in-camera film and photography, and synthetic imagery — all driven by the same creative direction." },
