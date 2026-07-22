@@ -13,7 +13,7 @@ export const Route = createFileRoute("/work/$slug")({
       return { meta: [{ title: "Not found — Dropframe" }, { name: "robots", content: "noindex" }] };
     }
     const p = loaderData.project;
-    const title = `${p.client} — ${p.title} — Dropframe`;
+    const title = `${p.title} — DROPFRAME`;
     return {
       meta: [
         { title },
