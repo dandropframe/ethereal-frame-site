@@ -216,6 +216,7 @@ export const projects: Project[] = [
     ],
     summary: "Styleframes and animation tests developed for a pitch concept.",
     body: "Art directed styleframes and animation tests developed as part of a pitch concept for ESPN. Created to establish visual direction, tone, and language for the proposed brief.",
+    vimeoId: "1211726014",
   },
   {
     slug: "alemais",
@@ -536,7 +537,8 @@ export const projects: Project[] = [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/21c450c9-e69c-46cc-a933-75cafb91a339/Rich_03.png",
     ],
     summary: "AI-crafted fashion and travel capsule built around authentic and down to earth leisure.",
-    body: "Capsule synthography set within a custom-built digital location designed around a central theme. Instead of using physical sets, we generate bespoke environments, crafted architecture, landscapes, lighting, and atmosphere, tailored specifically to the concept of the month. Studio-based e-commerce visuals replace the need for physical studios, set builds, and repeated product shoots — we design custom digital studio environments tailored to each product, controlling lighting, backgrounds, materials, and camera angles with precision and consistency.",
+    body: "A compilation of monthly travel-themed, AI-generated fashion content for JUVIA lounge wear.",
+    vimeoId: "1211722488",
   },
 ];
 
