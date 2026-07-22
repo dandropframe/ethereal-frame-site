@@ -14,21 +14,21 @@ const disciplines = [
     tag: "01 — 3D",
     to: "/3d",
     title: "Art Direction & 3D",
-    body: "We create high-end, art directed 3D visuals across commercial campaigns, projection mapping, concert visuals, and narrative storytelling. Traditional 3D software forms the foundation of this work, providing stability, control, and precision.",
+    body: "We create high-end, art directed styleframes and animation across commercial campaigns, projection mapping, concert visuals, and narrative storytelling.",
     image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/aa0b0125-f978-4a51-9e07-742782493413/AD_Snippet_01_GIF.gif",
   },
   {
     tag: "02 — Film",
     to: "/film",
     title: "Film & Photography",
-    body: "We direct and style in-camera film, photography, and brand storytelling for fashion and cosmetics brands. Short-form social content, editorial stills, product imagery, and narrative campaign work — all produced in-house, from concept through final delivery.",
+    body: "We direct and produce film, photography, and brand storytelling for fashion and cosmetics brands. Narrative music videos, short-form social content, and commercial story.",
     image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/a2f67cbd-1729-4acf-aa4e-10ad4f6c1cfa/Film_Snippet_GIF_02.gif",
   },
   {
     tag: "03 — AI",
     to: "/ai",
     title: "Synthography & AI",
-    body: "Synthetic fashion imagery and video designed as a direct alternative to traditional studio or location-based production. Campaign, e-commerce, and social visuals created without physical sets, locations, models on set, or a shoot day.",
+    body: "Synthetic fashion imagery and video designed as a direct alternative to traditional studio or location-based production.",
     image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/10fa90df-22d6-4df4-91df-1e73eb836ff3/Synthography_Snippet_01_GIF.gif",
   },
 ];
@@ -64,7 +64,7 @@ function Info() {
           <div className="absolute inset-0 h-full w-full">
             <iframe
               src="https://player.vimeo.com/video/757436831?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&portrait=0&transparent=0"
-              title="Dropframe reel"
+              title="DROPFRAME reel"
               allow="autoplay; fullscreen"
               className="absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2 border-0"
             />
