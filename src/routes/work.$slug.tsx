@@ -181,6 +181,26 @@ function WorkPage() {
         </div>
       )}
 
+
+      {/* Horizontal autoplay video row */}
+      {project.videoRow && project.videoRow.length > 0 && (
+        <section className="mx-auto max-w-[1800px] px-6 md:px-10 pt-4 md:pt-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            {project.videoRow.map((id: string) => (
+              <div key={id} className="relative aspect-video overflow-hidden bg-black">
+                <iframe
+                  src={`https://player.vimeo.com/video/${id}?autoplay=1&loop=1&muted=1&background=1&autopause=0&title=0&byline=0&portrait=0`}
+                  title={`${project.title} — ${id}`}
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full border-0"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Body + metadata */}
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-20 md:py-32 grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-4">
