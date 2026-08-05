@@ -186,7 +186,7 @@ function WorkPage() {
       {/* Horizontal autoplay video row */}
       {videoRow.length > 0 && (
         <section className="mx-auto max-w-[1800px] px-6 md:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <div className={`grid grid-cols-1 gap-4 md:gap-6 ${videoRow.length > 1 ? "md:grid-cols-3" : ""}`}>
             {videoRow.map((id: string) => (
               <div key={id} className="relative aspect-video overflow-hidden bg-black group">
                 <iframe
