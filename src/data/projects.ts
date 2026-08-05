@@ -1,3 +1,5 @@
+import juviaMenCover from "@/assets/juvia-men.webp.asset.json";
+
 export type Credit = { role: string; name: string };
 
 export type Project = {
@@ -541,6 +543,21 @@ export const projects: Project[] = [
     ],
     summary: "AI-crafted fashion and travel capsule built around authentic and down to earth leisure.",
     body: "Capsule synthography set within a custom-built digital location designed around a central theme. Instead of using physical sets, we generate bespoke environments, crafted architecture, landscapes, lighting, and atmosphere, tailored specifically to the concept of the month. Studio-based e-commerce visuals replace the need for physical studios, set builds, and repeated product shoots — we design custom digital studio environments tailored to each product, controlling lighting, backgrounds, materials, and camera angles with precision and consistency.",
+  },
+  {
+    slug: "juvia-men",
+    title: "Juvia Men",
+    client: "Juvia",
+    discipline: "AI",
+    category: "Fashion",
+    year: "2026",
+    role: ["Synthography"],
+    hero: juviaMenCover.url,
+    gallery: [juviaMenCover.url],
+    vimeoId: "1215772011",
+    summary:
+      "A journey through the spirit of the JUVIA Men Summer 2026 collection.",
+    body: "A journey through the spirit of the JUVIA Men Summer 2026 collection. This compilation brings together a series of AI-crafted destinations that capture the season's mood—premium yet relaxed, refined yet effortlessly down to earth.",
   },
 ];
 
