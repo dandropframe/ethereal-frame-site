@@ -203,27 +203,6 @@ function WorkPage() {
         </section>
       )}
 
-      {/* Main gallery — full images, no cropping */}
-      {galleryImages.length > 0 && (
-        <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-12 md:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            {galleryImages.map((src: string, i: number) => (
-              <button
-                key={i}
-                className="relative overflow-hidden bg-muted cursor-pointer group"
-                onClick={() => setLightboxIndex(i)}
-              >
-                <img
-                  src={src}
-                  alt=""
-                  className="w-full h-auto block transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
-                />
-              </button>
-            ))}
-          </div>
-        </section>
-      )}
-
       {/* Body + metadata */}
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-20 md:py-32 grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-4">
@@ -254,6 +233,27 @@ function WorkPage() {
               </div>
             ))}
           </dl>
+        </section>
+      )}
+
+      {/* Main gallery — full images, no cropping */}
+      {galleryImages.length > 0 && (
+        <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-12 md:py-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            {galleryImages.map((src: string, i: number) => (
+              <button
+                key={i}
+                className="relative overflow-hidden bg-muted cursor-pointer group"
+                onClick={() => setLightboxIndex(i)}
+              >
+                <img
+                  src={src}
+                  alt=""
+                  className="w-full h-auto block transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
+                />
+              </button>
+            ))}
+          </div>
         </section>
       )}
 
