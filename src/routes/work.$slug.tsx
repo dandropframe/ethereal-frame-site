@@ -120,7 +120,6 @@ function WorkPage() {
     project.discipline === "3D" ? "/3d" : project.discipline === "Film" ? "/film" : "/ai";
 
   const galleryImages = project.gallery.length > 1 ? project.gallery.slice(1) : [];
-  const heroGallery = project.heroGallery ?? [];
   const videoRow = project.videoRow ?? [];
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [videoId, setVideoId] = useState<string | null>(null);
@@ -130,11 +129,10 @@ function WorkPage() {
     (dir: number) => {
       setLightboxIndex((prev) => {
         if (prev === null) return prev;
-        const total = galleryImages.length + heroGallery.length;
-        return (prev + dir + total) % total;
+        return (prev + dir + galleryImages.length) % galleryImages.length;
       });
     },
-    [galleryImages.length, heroGallery.length],
+    [galleryImages.length],
   );
 
   return (
@@ -214,15 +212,15 @@ function WorkPage() {
         </section>
       )}
 
-      {/* Hero gallery — full images, no cropping */}
-      {heroGallery.length > 0 && (
+      {/* Main gallery — full images, no cropping */}
+      {galleryImages.length > 0 && (
         <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-12 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            {heroGallery.map((src: string, i: number) => (
+            {galleryImages.map((src: string, i: number) => (
               <button
                 key={i}
                 className="relative overflow-hidden bg-muted cursor-pointer group"
-                onClick={() => setLightboxIndex(galleryImages.length + i)}
+                onClick={() => setLightboxIndex(i)}
               >
                 <img
                   src={src}
@@ -252,27 +250,6 @@ function WorkPage() {
           <p className="leading-relaxed">{project.body}</p>
         </div>
       </section>
-
-      {/* Gallery */}
-      {(galleryImages.length > 0 || heroGallery.length > 0) && (
-        <section className="mx-auto max-w-[1800px] px-6 md:px-10 pb-20 md:pb-32">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            {galleryImages.map((src: string, i: number) => (
-              <button
-                key={i}
-                className="relative aspect-[16/9] overflow-hidden bg-muted cursor-pointer group"
-                onClick={() => setLightboxIndex(i)}
-              >
-                <img
-                  src={src}
-                  alt=""
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-                />
-              </button>
-            ))}
-          </div>
-        </section>
-      )}
 
       {/* Credits */}
       {project.credits && project.credits.length > 0 && (
@@ -326,7 +303,7 @@ function WorkPage() {
       {/* Lightbox */}
       {lightboxIndex !== null && (
         <Lightbox
-          images={[...galleryImages, ...heroGallery]}
+          images={galleryImages}
           index={lightboxIndex}
           onClose={closeLightbox}
           onNavigate={navigateLightbox}

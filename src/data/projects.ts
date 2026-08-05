@@ -538,11 +538,6 @@ export const projects: Project[] = [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/03a30ae7-13fa-4bf8-a632-c764fe527028/815+24+290+-+295+%2B+830+22+317+-+295.png",
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/38fcdb46-549a-46fa-acd2-7d197a84d73c/860+19+321+-+826+%2B+830+24+134+-+826_02.png",
     ],
-    heroGallery: [
-      "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/09e86c12-aa7a-405b-b5d2-4d38debd0e6d/hf_20260301_144756_211fb60f-b161-4f2f-b37f-998a1304f35e.jpg",
-      "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/a175d546-cff3-47e2-841d-e58ddf9a6a90/Rich_02.jpg",
-      "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/21c450c9-e69c-46cc-a933-75cafb91a339/Rich_03.png",
-    ],
     summary: "AI-crafted fashion and travel capsule built around authentic and down to earth leisure.",
     body: "Capsule synthography set within a custom-built digital location designed around a central theme. Instead of using physical sets, we generate bespoke environments, crafted architecture, landscapes, lighting, and atmosphere, tailored specifically to the concept of the month. Studio-based e-commerce visuals replace the need for physical studios, set builds, and repeated product shoots — we design custom digital studio environments tailored to each product, controlling lighting, backgrounds, materials, and camera angles with precision and consistency.",
   },
