@@ -1,3 +1,5 @@
+import juviaMenCover from "@/assets/juvia-men.webp.asset.json";
+
 export type Credit = { role: string; name: string };
 
 export type Project = {
