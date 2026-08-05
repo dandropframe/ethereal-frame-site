@@ -120,7 +120,9 @@ function WorkPage() {
     project.discipline === "3D" ? "/3d" : project.discipline === "Film" ? "/film" : "/ai";
 
   const galleryImages = project.gallery.length > 1 ? project.gallery.slice(1) : [];
+  const videoRow = project.videoRow ?? [];
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [videoId, setVideoId] = useState<string | null>(null);
 
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
   const navigateLightbox = useCallback(
@@ -169,7 +171,7 @@ function WorkPage() {
             />
           </div>
         </div>
-      ) : (
+      ) : videoRow.length > 0 ? null : (
         <div className="mx-auto max-w-[1800px] px-6 md:px-10">
           <div className="relative aspect-[16/9] overflow-hidden bg-muted">
             <img
@@ -181,20 +183,29 @@ function WorkPage() {
         </div>
       )}
 
-
       {/* Horizontal autoplay video row */}
-      {project.videoRow && project.videoRow.length > 0 && (
-        <section className="mx-auto max-w-[1800px] px-6 md:px-10 pt-4 md:pt-6">
+      {videoRow.length > 0 && (
+        <section className="mx-auto max-w-[1800px] px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            {project.videoRow.map((id: string) => (
-              <div key={id} className="relative aspect-video overflow-hidden bg-black">
+            {videoRow.map((id: string) => (
+              <div key={id} className="relative aspect-video overflow-hidden bg-black group">
                 <iframe
                   src={`https://player.vimeo.com/video/${id}?autoplay=1&loop=1&muted=1&background=1&autopause=0&title=0&byline=0&portrait=0`}
                   title={`${project.title} — ${id}`}
                   allow="autoplay; fullscreen; picture-in-picture"
                   allowFullScreen
-                  className="absolute inset-0 h-full w-full border-0"
+                  className="absolute inset-0 h-full w-full border-0 pointer-events-none"
                 />
+                <button
+                  type="button"
+                  aria-label="Enlarge video"
+                  onClick={() => setVideoId(id)}
+                  className="absolute inset-0 flex items-end justify-end p-3 cursor-pointer bg-background/0 transition-colors hover:bg-background/10"
+                >
+                  <span className="text-eyebrow opacity-0 group-hover:opacity-100 transition-opacity">
+                    Enlarge ↗
+                  </span>
+                </button>
               </div>
             ))}
           </div>
@@ -297,6 +308,38 @@ function WorkPage() {
           onClose={closeLightbox}
           onNavigate={navigateLightbox}
         />
+      )}
+
+      {/* Video lightbox */}
+      {videoId && (
+        <div
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 backdrop-blur-sm"
+          onClick={() => setVideoId(null)}
+        >
+          <button
+            type="button"
+            aria-label="Close"
+            onClick={(e) => {
+              e.stopPropagation();
+              setVideoId(null);
+            }}
+            className="absolute top-6 right-6 text-foreground/60 hover:text-foreground transition-colors text-2xl"
+          >
+            ✕
+          </button>
+          <div
+            className="relative w-[92vw] max-w-[1400px] aspect-video bg-black"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <iframe
+              src={`https://player.vimeo.com/video/${videoId}?autoplay=1&loop=1&title=0&byline=0&portrait=0`}
+              title={`${project.title} — ${videoId}`}
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 h-full w-full border-0"
+            />
+          </div>
+        </div>
       )}
     </article>
   );
