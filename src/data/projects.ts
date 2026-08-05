@@ -198,6 +198,7 @@ export const projects: Project[] = [
     ],
     summary: "Three distinct visual directions for Nike sneakers and soccer shoes.",
     body: "Various stylistic explorations for Nike sneakers and soccer shoes. Three distinct visual directions, developed to show how similar products can hold a different world depending on the creative frame around it.",
+    videoRow: ["1211952907", "1211954131", "1211949731"],
   },
   {
     slug: "espn",
