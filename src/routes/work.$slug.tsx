@@ -119,7 +119,8 @@ function WorkPage() {
   const disciplineHref =
     project.discipline === "3D" ? "/3d" : project.discipline === "Film" ? "/film" : "/ai";
 
-  const galleryImages = project.gallery.length > 1 ? project.gallery.slice(1) : [];
+  const galleryImages =
+    project.gallery.length > 1 ? project.gallery.slice(1) : project.gallery;
   const videoRow = project.videoRow ?? [];
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [videoId, setVideoId] = useState<string | null>(null);
