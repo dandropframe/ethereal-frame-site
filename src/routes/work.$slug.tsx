@@ -309,6 +309,38 @@ function WorkPage() {
           onNavigate={navigateLightbox}
         />
       )}
+
+      {/* Video lightbox */}
+      {videoId && (
+        <div
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 backdrop-blur-sm"
+          onClick={() => setVideoId(null)}
+        >
+          <button
+            type="button"
+            aria-label="Close"
+            onClick={(e) => {
+              e.stopPropagation();
+              setVideoId(null);
+            }}
+            className="absolute top-6 right-6 text-foreground/60 hover:text-foreground transition-colors text-2xl"
+          >
+            ✕
+          </button>
+          <div
+            className="relative w-[92vw] max-w-[1400px] aspect-video bg-black"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <iframe
+              src={`https://player.vimeo.com/video/${videoId}?autoplay=1&loop=1&title=0&byline=0&portrait=0`}
+              title={`${project.title} — ${videoId}`}
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 h-full w-full border-0"
+            />
+          </div>
+        </div>
+      )}
     </article>
   );
 }
