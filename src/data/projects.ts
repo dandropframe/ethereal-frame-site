@@ -219,6 +219,7 @@ export const projects: Project[] = [
     ],
     summary: "Styleframes and animation tests developed for a pitch concept.",
     body: "Art directed styleframes and animation tests developed as part of a pitch concept for ESPN. Created to establish visual direction, tone, and language for the proposed brief.",
+    videoRow: ["1211726014"],
   },
   {
     slug: "alemais",
