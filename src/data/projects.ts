@@ -15,6 +15,8 @@ export type Project = {
   credits?: Credit[];
   vimeoId?: string;
   vimeoHash?: string;
+  /** Additional Vimeo IDs shown as a horizontal row of autoplaying, looping videos */
+  videoRow?: string[];
 };
 
 export const projects: Project[] = [
