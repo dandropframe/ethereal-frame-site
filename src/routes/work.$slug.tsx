@@ -171,17 +171,7 @@ function WorkPage() {
             />
           </div>
         </div>
-      ) : videoRow.length > 0 ? null : (
-        <div className="mx-auto max-w-[1800px] px-6 md:px-10">
-          <div className="relative aspect-[16/9] overflow-hidden bg-muted">
-            <img
-              src={project.hero}
-              alt={`${project.client} — ${project.title}`}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </div>
-        </div>
-      )}
+      ) : null}
 
       {/* Horizontal autoplay video row */}
       {videoRow.length > 0 && (
