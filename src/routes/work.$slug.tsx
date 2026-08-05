@@ -169,7 +169,7 @@ function WorkPage() {
             />
           </div>
         </div>
-      ) : (
+      ) : videoRow.length > 0 ? null : (
         <div className="mx-auto max-w-[1800px] px-6 md:px-10">
           <div className="relative aspect-[16/9] overflow-hidden bg-muted">
             <img
@@ -181,20 +181,29 @@ function WorkPage() {
         </div>
       )}
 
-
       {/* Horizontal autoplay video row */}
-      {project.videoRow && project.videoRow.length > 0 && (
-        <section className="mx-auto max-w-[1800px] px-6 md:px-10 pt-4 md:pt-6">
+      {videoRow.length > 0 && (
+        <section className="mx-auto max-w-[1800px] px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            {project.videoRow.map((id: string) => (
-              <div key={id} className="relative aspect-video overflow-hidden bg-black">
+            {videoRow.map((id: string) => (
+              <div key={id} className="relative aspect-video overflow-hidden bg-black group">
                 <iframe
                   src={`https://player.vimeo.com/video/${id}?autoplay=1&loop=1&muted=1&background=1&autopause=0&title=0&byline=0&portrait=0`}
                   title={`${project.title} — ${id}`}
                   allow="autoplay; fullscreen; picture-in-picture"
                   allowFullScreen
-                  className="absolute inset-0 h-full w-full border-0"
+                  className="absolute inset-0 h-full w-full border-0 pointer-events-none"
                 />
+                <button
+                  type="button"
+                  aria-label="Enlarge video"
+                  onClick={() => setVideoId(id)}
+                  className="absolute inset-0 flex items-end justify-end p-3 cursor-pointer bg-background/0 transition-colors hover:bg-background/10"
+                >
+                  <span className="text-eyebrow opacity-0 group-hover:opacity-100 transition-opacity">
+                    Enlarge ↗
+                  </span>
+                </button>
               </div>
             ))}
           </div>
