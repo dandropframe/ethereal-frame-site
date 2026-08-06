@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+const SITE_URL = "https://ethereal-frame-site.lovable.app";
+
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
@@ -7,6 +9,32 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "A creative production studio for fashion, cosmetics, and technology brands. Small by design." },
       { property: "og:title", content: "About — Dropframe" },
       { property: "og:description", content: "Craft leads. Method follows the brief." },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          url: `${SITE_URL}/about`,
+          name: "About — Dropframe",
+          about: { "@id": `${SITE_URL}/#organization` },
+          mainEntity: {
+            "@type": "Organization",
+            "@id": `${SITE_URL}/#organization`,
+            name: "DROPFRAME",
+            url: SITE_URL,
+            employee: team.map((m) => ({
+              "@type": "Person",
+              name: m.name,
+              jobTitle: m.role,
+              image: m.image,
+              description: m.bio,
+              worksFor: { "@id": `${SITE_URL}/#organization` },
+            })),
+          },
+        }),
+      },
     ],
   }),
   component: About,
