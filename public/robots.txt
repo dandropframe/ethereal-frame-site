@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ethereal-frame-site.lovable.app/sitemap.xml
