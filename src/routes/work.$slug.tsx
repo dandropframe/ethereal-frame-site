@@ -14,6 +14,7 @@ export const Route = createFileRoute("/work/$slug")({
     }
     const p = loaderData.project;
     const title = `${p.title} — DROPFRAME`;
+    const SITE_URL = "https://ethereal-frame-site.lovable.app";
     return {
       meta: [
         { title },
@@ -23,6 +24,22 @@ export const Route = createFileRoute("/work/$slug")({
         { property: "og:image", content: p.hero },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:image", content: p.hero },
+      ],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            name: p.title,
+            headline: p.title,
+            description: p.summary,
+            url: `${SITE_URL}/work/${p.slug}`,
+            image: p.hero,
+            genre: p.discipline,
+            creator: { "@type": "Organization", name: "DROPFRAME", url: SITE_URL },
+          }),
+        },
       ],
     };
   },
