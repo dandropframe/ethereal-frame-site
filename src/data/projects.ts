@@ -1,4 +1,3 @@
-import juviaMenCover from "@/assets/juvia-men.webp.asset.json";
 
 export type Credit = { role: string; name: string };
 
@@ -549,8 +548,8 @@ export const projects: Project[] = [
     category: "Fashion",
     year: "2026",
     role: ["Synthography"],
-    hero: juviaMenCover.url,
-    gallery: [juviaMenCover.url],
+    hero: "/hf_20260715_113005_a3b3555c-302b-40d8-9ecd-46eab2c063a6 copy.jpg",
+    gallery: ["/hf_20260715_113005_a3b3555c-302b-40d8-9ecd-46eab2c063a6 copy.jpg"],
     vimeoId: "1215772011",
     summary:
       "A journey through the spirit of the JUVIA Men Summer 2026 collection.",
