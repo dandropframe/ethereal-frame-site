@@ -80,7 +80,7 @@ function Info() {
             <span className="">production</span> for<br />
             the brief.
           </h1>
-          <div className="mt-10 max-w-xl text-muted-foreground">
+          <div className="mt-10 max-w-xl text-muted-foreground text-[0.8rem] md:text-base">
             A multidisciplinary studio producing 3D motion, in-camera film, and synthetic
             imagery — driven by a single creative direction.
           </div>
