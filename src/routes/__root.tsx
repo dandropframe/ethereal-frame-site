@@ -15,6 +15,10 @@ import { SmoothScroll } from "../components/SmoothScroll";
 import { SiteNav } from "../components/SiteNav";
 import { SiteFooter } from "../components/SiteFooter";
 
+const SITE_URL = "https://ethereal-frame-site.lovable.app";
+const SITE_DESCRIPTION =
+  "A multidisciplinary production studio for global brands. High-end 3D motion, in-camera film and photography, and synthetic imagery — all driven by the same creative direction.";
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
