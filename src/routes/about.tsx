@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import clientsLogoRow from "@/assets/clients-logo-row.png.asset.json";
 
 const SITE_URL = "https://ethereal-frame-site.lovable.app";
 
