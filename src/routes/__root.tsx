@@ -98,6 +98,40 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&family=Inter+Tight:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": `${SITE_URL}/#organization`,
+              name: "DROPFRAME",
+              url: SITE_URL,
+              description: SITE_DESCRIPTION,
+              slogan: "A creative partner for the next era of visual storytelling.",
+              knowsAbout: [
+                "3D motion design",
+                "Film production",
+                "Photography",
+                "AI-generated imagery",
+                "Art direction",
+              ],
+            },
+            {
+              "@type": "WebSite",
+              "@id": `${SITE_URL}/#website`,
+              url: SITE_URL,
+              name: "DROPFRAME",
+              description: SITE_DESCRIPTION,
+              publisher: { "@id": `${SITE_URL}/#organization` },
+              inLanguage: "en",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
