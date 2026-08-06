@@ -103,6 +103,20 @@ function About() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-[1600px] px-6 md:px-10 grid grid-cols-12 gap-6 py-16 border-b border-border">
+        <div className="col-span-12 md:col-span-4 text-eyebrow">Clients</div>
+        <div className="col-span-12 md:col-span-8 flex items-center">
+          <img
+            src={clientsLogoRow.url}
+            alt="Client logos: La Mer, Nike, Adobe, ESPN, Juvia, Microsoft, SK-II, Colgate, Lenor"
+            loading="lazy"
+            className="w-full h-auto opacity-70"
+          />
+        </div>
+      </section>
+
+
+
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-24 md:py-32">
         <div className="text-eyebrow mb-12">Team</div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
