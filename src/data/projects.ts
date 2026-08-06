@@ -16,6 +16,7 @@ export type Project = {
   credits?: Credit[];
   vimeoId?: string;
   vimeoHash?: string;
+  vimeoAutoplay?: boolean;
   /** Additional Vimeo IDs shown as a horizontal row of autoplaying, looping videos */
   videoRow?: string[];
 };
@@ -487,7 +488,7 @@ export const projects: Project[] = [
     title: "Levi's",
     client: "Levi's",
     discipline: "AI",
-    category: "Synthography",
+    category: "Fashion",
     year: "2026",
     role: ["Synthography", "Art Direction"],
     hero: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/11ce9119-5bc5-46de-bd01-86731820f45a/Levis_01.jpg",
@@ -496,27 +497,14 @@ export const projects: Project[] = [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/7d58091b-6683-438c-b88d-0e8210bd37ca/Levis_01_hf_20260224_153259_97c72c71-0cd_2026-02-25_08.40.06.jpg",
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/496e278a-990a-4d9b-8f23-407bf8f3e8d0/Levis_01.jpg",
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/fbae8e24-321d-4af2-86ee-aa573775e2d7/Levis_01_hf_20260224_153259_97c72c71-0cd_2026-02-25_08.39.59.jpg",
+      "/images/gallery/Levis_02.jpg",
     ],
     summary: "Speculative campaign for Levi's.",
     body: "Speculative campaign for Levi's.",
+    vimeoId: "1216061217",
+    vimeoAutoplay: true,
   },
-  {
-    slug: "annemarie",
-    title: "EyePas",
-    client: "Anne Marie Boerlind",
-    discipline: "AI",
-    category: "Beauty",
-    year: "2026",
-    role: ["Synthography"],
-    hero: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/81bd57ad-fb1d-4a8b-aa1f-d00390cc2851/Annamarie_EyePas_02.png",
-    gallery: [
-      "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/e1ed8757-03c2-4422-a890-ac00816e0b78/Annamarie_EyePas_02.png",
-      "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/2f86b733-d150-43b7-b3dd-55945d74f484/Annamarie_EyePas_01.png",
-      "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/302e68e0-c6ff-4e01-8f75-c31bf0d641ce/Annamarie_EyePas_03B.png",
-    ],
-    summary: "Generative product imagery made for Anne Marie Boerlind.",
-    body: "Generative product imagery made for Anne Marie Boerlind.",
-  },
+
   {
     slug: "juvia",
     title: "Juvia",
