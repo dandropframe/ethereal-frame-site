@@ -29,7 +29,7 @@ export function SiteNav() {
           <img
             src="https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/5bbf3758-dece-4958-8bdb-21ce1c329390/Artboard+42%408x.png"
             alt="Dropframe"
-            className="h-[17.7px] md:h-[21.5px] w-auto object-contain [filter:invert(1)_brightness(2)]"
+            className="h-[26.55px] md:h-[21.5px] w-auto object-contain [filter:invert(1)_brightness(2)]"
           />
         </Link>
 
@@ -39,7 +39,7 @@ export function SiteNav() {
               key={it.to}
               to={it.to}
               activeOptions={{ exact: true }}
-              className="group relative px-3 py-2 font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground transition-colors hover:text-foreground"
+              className="group relative px-3 py-2 font-mono text-[8.25px] md:text-[11px] tracking-[0.2em] uppercase text-muted-foreground transition-colors hover:text-foreground"
               activeProps={{ className: "text-foreground" }}
             >
               {it.label}
