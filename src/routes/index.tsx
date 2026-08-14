@@ -81,8 +81,8 @@ function Info() {
             the brief.
           </h1>
           <div className="mt-10 max-w-xl text-muted-foreground text-[0.8rem] md:text-base">
-            A multidisciplinary studio producing 3D motion, in-camera film, and synthetic
-            imagery — driven by a single creative direction.
+            A multidisciplinary studio producing 3D motion, in-camera film, and synthography
+            — driven by a single creative direction.
           </div>
         </div>
 
