@@ -39,7 +39,7 @@ export function ProjectTile({ slug, image, title, meta, aspect = "aspect-[4/3]" 
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
       </div>
       <div className="mt-3 flex items-baseline justify-between gap-4">
-        <div className="font-mono text-sm">{title}</div>
+        <div className="text-eyebrow text-foreground">{title}</div>
         {meta ? <div className="text-eyebrow">{meta}</div> : null}
       </div>
     </Link>
