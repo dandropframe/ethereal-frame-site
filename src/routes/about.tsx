@@ -1,6 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import clientsLogoRow from "@/assets/clients-logo-row-final.png.asset.json";
-
 const SITE_URL = "https://ethereal-frame-site.lovable.app";
 
 export const Route = createFileRoute("/about")({
@@ -108,7 +106,7 @@ function About() {
         <div className="col-span-12 md:col-span-4 text-eyebrow">Clients</div>
         <div className="col-span-12 md:col-span-8 flex items-center">
           <img
-            src={clientsLogoRow.url}
+            src="/images/LOGO_ROW_02.png"
             alt="Client logos: La Mer, Nike, Adobe, ESPN, Juvia, Microsoft, SK-II, Colgate, Lenor"
             width={1600}
             height={120}
