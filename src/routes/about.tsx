@@ -102,7 +102,7 @@ function About() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1600px] px-6 md:px-10 grid grid-cols-12 gap-6 py-16 border-b border-border">
+      <section className="mx-auto max-w-[1600px] px-6 md:px-10 grid grid-cols-12 gap-6 py-16 border-b border-border items-center">
         <div className="col-span-12 md:col-span-4 text-eyebrow">Clients</div>
         <div className="col-span-12 md:col-span-8 flex items-center">
           <img
