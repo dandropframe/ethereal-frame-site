@@ -43,7 +43,7 @@ const team = [
   {
     name: "Dan Braga Ulvestad",
     role: "Creative Director",
-    image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/9030a5d5-e399-4d0c-8cc9-fa948ef6b4f1/Mexico+City+Feb+2026__DSF8729.jpg",
+    image: "/images/Mexico_City_Feb_2026__DSF8729-22.jpg",
     bio: "With over a decade of experience across 3D animation, film, photography, and art direction, Dan brings a meticulous and concept-driven approach to visual storytelling. His foundation in film informs a deep understanding of composition, pacing, light, and narrative structure, allowing him to shape ideas with both cinematic clarity and technical precision from concept through final execution. This multidisciplinary background enables him to move seamlessly between story development and complex virtual art direction.",
   },
   {
