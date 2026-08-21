@@ -110,7 +110,9 @@ function About() {
           <img
             src={clientsLogoRow.url}
             alt="Client logos: La Mer, Nike, Adobe, ESPN, Juvia, Microsoft, SK-II, Colgate, Lenor"
-            loading="lazy"
+            width={1600}
+            height={120}
+            decoding="async"
             className="w-full h-auto opacity-70"
           />
         </div>
