@@ -544,6 +544,7 @@ export const projects: Project[] = [
       "/images/gallery/hf_20260716_083136_92a2b17c-a552-4b17-81ae-5cad43eaa8a5.jpg",
       "/images/gallery/hf_20260716_130319_2a88eb67-0e1a-4900-ac4a-21218ad6f3d9.jpg",
       "/images/gallery/hf_20260723_111120_ef05463e-5f4e-4fdf-bcc0-90452e8f3d59_min.jpg",
+      "/hf_20260715_113005_a3b3555c-302b-40d8-9ecd-46eab2c063a6 copy 2.jpg",
     ],
     vimeoId: "1215772011",
     summary:
