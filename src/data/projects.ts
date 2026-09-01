@@ -537,7 +537,14 @@ export const projects: Project[] = [
     year: "2026",
     role: ["Synthography"],
     hero: "/hf_20260715_113005_a3b3555c-302b-40d8-9ecd-46eab2c063a6 copy.jpg",
-    gallery: ["/hf_20260715_113005_a3b3555c-302b-40d8-9ecd-46eab2c063a6 copy.jpg"],
+    gallery: [
+      "/hf_20260715_113005_a3b3555c-302b-40d8-9ecd-46eab2c063a6 copy.jpg",
+      "/images/gallery/hf_20260715_113005_12d968db-b731-4c6c-b6a2-bf2737e6435c.jpg",
+      "/images/gallery/hf_20260715_182137_83060d87-eac1-4233-a844-56adbfad4aef.jpg",
+      "/images/gallery/hf_20260716_083136_92a2b17c-a552-4b17-81ae-5cad43eaa8a5.jpg",
+      "/images/gallery/hf_20260716_130319_2a88eb67-0e1a-4900-ac4a-21218ad6f3d9.jpg",
+      "/images/gallery/hf_20260723_111120_ef05463e-5f4e-4fdf-bcc0-90452e8f3d59_min.jpg",
+    ],
     vimeoId: "1215772011",
     summary:
       "A journey through the spirit of the JUVIA Men Summer 2026 collection.",
