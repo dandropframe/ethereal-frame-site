@@ -19,6 +19,8 @@ export type Project = {
   vimeoAutoplay?: boolean;
   /** Additional Vimeo IDs shown as a horizontal row of autoplaying, looping videos */
   videoRow?: string[];
+  /** Show the gallery above the description segment instead of below credits */
+  galleryFirst?: boolean;
 };
 
 export const projects: Project[] = [
@@ -513,6 +515,7 @@ export const projects: Project[] = [
     category: "Fashion",
     year: "2026",
     role: ["Synthography"],
+    galleryFirst: true,
     hero: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/c097e017-495e-4dc9-ac3d-667cdf22205a/815+24+290+-+295+%2B+830+22+317+-+295_02.jpg",
     gallery: [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/de97a506-8af2-483d-955c-1e2c2e16cafd/820+00+037+-+230+%2B+830+25+459+-+230.jpg",

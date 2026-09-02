@@ -221,6 +221,7 @@ function WorkPage() {
       )}
 
       {/* Body + metadata */}
+      {!project.galleryFirst && (
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-20 md:py-32 grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-4">
           <div className="text-eyebrow border-t border-border pt-6">Discipline</div>
@@ -237,6 +238,7 @@ function WorkPage() {
           <p className="leading-relaxed">{project.body}</p>
         </div>
       </section>
+      )}
 
       {/* Credits */}
       {project.credits && project.credits.length > 0 && (
@@ -272,6 +274,26 @@ function WorkPage() {
             ))}
           </div>
         </section>
+      )}
+
+      {/* Body + metadata (after gallery for galleryFirst projects) */}
+      {project.galleryFirst && (
+      <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-20 md:py-32 grid grid-cols-12 gap-6">
+        <div className="col-span-12 md:col-span-4">
+          <div className="text-eyebrow border-t border-border pt-6">Discipline</div>
+          <div className="mt-2 mb-6">{project.discipline}</div>
+          <div className="text-eyebrow border-t border-border pt-6">Role</div>
+          <ul className="mt-2 mb-6 space-y-1">
+            {project.role.map((r: string) => (
+              <li key={r}>{r}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="col-span-12 md:col-span-8">
+          <div className="text-eyebrow border-t border-border pt-6 mb-8">On this project</div>
+          <p className="leading-relaxed">{project.body}</p>
+        </div>
+      </section>
       )}
 
       {/* Related */}
