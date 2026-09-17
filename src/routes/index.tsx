@@ -75,14 +75,11 @@ function Info() {
 
         <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
           <div className="text-eyebrow mb-6">Creative Production Studio</div>
-          <h1 className="text-display text-[9.75vw] md:text-[6.75vw] leading-[0.9] opacity-80">
-            The right<br />
-            <span className="">production</span> for<br />
-            the brief.
+          <h1 className="text-display text-[5.5vw] md:text-[3.8vw] leading-[0.95] opacity-80">
+            We direct, design, and build ideas — from concept to final frame.
           </h1>
-          <div className="mt-10 max-w-xl text-muted-foreground text-[0.8rem] md:text-base">
-            A multidisciplinary studio producing 3D motion, in-camera film, and synthography
-            — driven by a single creative direction.
+          <div className="mt-10 max-w-2xl text-muted-foreground text-[0.8rem] md:text-base">
+            Our work lives where technology, culture, and human experience meet: visual worlds that are cinematic, immersive, and emotionally resonant.
           </div>
         </div>
 
