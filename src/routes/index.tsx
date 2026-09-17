@@ -76,9 +76,10 @@ function Info() {
         <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
           <div className="text-eyebrow mb-6">Creative Production Studio</div>
           <h1 className="text-display text-[5.5vw] md:text-[3.8vw] leading-[0.95] opacity-80">
-            We direct, design, and build ideas — from concept to final frame.
+            We direct, design, and build ideas —<br />
+            from concept to final frame.
           </h1>
-          <div className="mt-10 max-w-2xl text-muted-foreground text-[0.8rem] md:text-base">
+          <div className="mt-10 max-w-[60vw] md:max-w-[55vw] text-muted-foreground text-[0.8rem] md:text-base">
             Our work lives where technology, culture, and human experience meet: visual worlds that are cinematic, immersive, and emotionally resonant.
           </div>
         </div>
