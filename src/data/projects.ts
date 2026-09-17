@@ -289,25 +289,6 @@ export const projects: Project[] = [
     vimeoId: "1211015367",
   },
   {
-    slug: "mustang",
-    title: "Mustang Jeans",
-    client: "Mustang",
-    discipline: "Film",
-    category: "Fashion",
-    year: "2026",
-    role: ["Direction", "Production"],
-    hero: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/750fe7b7-0796-4ff7-96ba-283002cf810c/Boutique_April_02_image00002_2026-04-3.jpg",
-    gallery: [
-      "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/750fe7b7-0796-4ff7-96ba-283002cf810c/Boutique_April_02_image00002_2026-04-3.jpg",
-    ],
-    summary: "Warmth meeting wearability, texture against texture.",
-    body: "A social media capsule for Mustang Jeans, shot on location in a tropical setting. Lush surroundings and natural light frame the collection in its element — warmth meeting wearability, texture against texture.",
-    credits: [
-      { role: "Videographer", name: "Jacqueline Zelwis" },
-      { role: "Model & Styling", name: "Alice Pirmahboub" },
-    ],
-  },
-  {
     slug: "samira",
     title: "SAMIRA",
     client: "Samira",
