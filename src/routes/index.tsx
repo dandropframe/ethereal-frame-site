@@ -141,11 +141,16 @@ function Services() {
 
 function SelectedWork() {
   return (
-    <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-12 md:py-16">
-      <div className="grid grid-cols-12 gap-6 mb-8">
-        <div className="col-span-12 md:col-span-3 text-eyebrow">Showreel</div>
-        <div className="col-span-12 md:col-span-9">
-          <ShowreelDropdown label="Play Showreel" vimeoId="580437144" />
+    <section className="border-b border-border">
+      <div className="mx-auto max-w-[1600px] px-6 md:px-10 py-12 md:py-16">
+        <div className="grid grid-cols-12 gap-6 mb-8">
+          <div className="col-span-12 md:col-span-3 text-eyebrow">Showreel</div>
+          <div className="col-span-12 md:col-span-9">
+            <ShowreelDropdown label="Play Showreel" vimeoId="580437144" />
+            <div className="mt-6 text-muted-foreground max-w-xl text-sm">
+              A cross-section of commercial and personal work.
+            </div>
+          </div>
         </div>
       </div>
     </section>
