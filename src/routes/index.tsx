@@ -88,6 +88,8 @@ function Info() {
 
       <Services />
 
+      <SelectedWork />
+
       <section
         id="work"
         className="mx-auto max-w-[1600px] px-6 md:px-10 pt-24 md:pt-40 pb-12 md:pb-16 scroll-mt-24"
@@ -109,9 +111,6 @@ function Info() {
           ))}
         </div>
       </section>
-
-      {/* Selected Work */}
-      <SelectedWork />
     </div>
   );
 }
@@ -138,19 +137,9 @@ function SelectedWork() {
   return (
     <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-12 md:py-16">
       <div className="grid grid-cols-12 gap-6 mb-8">
-        <div className="col-span-12 md:col-span-3 text-eyebrow">3D Showreel</div>
-        <h2 className="col-span-12 md:col-span-9 text-display text-4xl md:text-6xl">
-          A minute of
-          <br />
-          <span className="">recent 3D work.</span>
-        </h2>
-      </div>
-      <div className="grid grid-cols-12 gap-6 items-end">
-        <div className="col-span-12 md:col-span-6 md:col-start-4 text-muted-foreground max-w-xl">
-          A short cross-section of commercial and personal CGI work
-        </div>
-        <div className="col-span-12 md:col-span-3 md:flex md:justify-end">
-          <ShowreelDropdown label="Play 3D Showreel" vimeoId="580437144" />
+        <div className="col-span-12 md:col-span-3 text-eyebrow">Showreel</div>
+        <div className="col-span-12 md:col-span-9">
+          <ShowreelDropdown label="Play Showreel" vimeoId="580437144" />
         </div>
       </div>
     </section>
