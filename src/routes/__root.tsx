@@ -4,17 +4,19 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SmoothScroll } from "../components/SmoothScroll";
 import { SiteNav } from "../components/SiteNav";
 import { SiteFooter } from "../components/SiteFooter";
+import { PageTransition, TIMING } from "../components/PageTransition";
 
 const SITE_URL = "https://ethereal-frame-site.lovable.app";
 const SITE_DESCRIPTION =
@@ -186,13 +188,62 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const [navVisible, setNavVisible] = useState(true);
+  const transitioningRef = useRef(false);
+  const prevPathRef = useRef(pathname);
+  const prefersReducedMotion = useRef(
+    typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
+
+  useEffect(() => {
+    if (pathname === prevPathRef.current) return;
+    if (transitioningRef.current) return;
+    transitioningRef.current = true;
+    prevPathRef.current = pathname;
+
+    if (prefersReducedMotion.current) {
+      setNavVisible(false);
+      const t = window.setTimeout(() => {
+        setNavVisible(true);
+        transitioningRef.current = false;
+      }, TIMING.reducedMotion);
+      return () => window.clearTimeout(t);
+    }
+
+    // Nav fades out instantly
+    setNavVisible(false);
+    const t1 = window.setTimeout(() => {
+      // Nav fades back in after push + blank beat
+      const t2 = window.setTimeout(
+        () => {
+          setNavVisible(true);
+          transitioningRef.current = false;
+        },
+        TIMING.push + TIMING.blankBeat,
+      );
+      return () => window.clearTimeout(t2);
+    }, TIMING.navFadeOut);
+    return () => window.clearTimeout(t1);
+  }, [pathname]);
 
   return (
     <QueryClientProvider client={queryClient}>
       <SmoothScroll />
-      <SiteNav />
+      <div
+        style={{
+          opacity: navVisible ? 1 : 0,
+          transition: `opacity ${navVisible ? TIMING.navFadeIn : TIMING.navFadeOut}ms ease`,
+          pointerEvents: navVisible ? "auto" : "none",
+        }}
+      >
+        <SiteNav />
+      </div>
       <main className="grain-overlay">
-        <Outlet />
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
       </main>
       <SiteFooter />
     </QueryClientProvider>
