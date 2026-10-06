@@ -6,19 +6,42 @@ export const Route = createFileRoute("/ai")({
   head: () => ({
     meta: [
       { title: "AI — DROPFRAME" },
-      { name: "description", content: "Synthography: fashion imagery and video created without physical sets, locations, or a shoot day." },
+      {
+        name: "description",
+        content:
+          "Synthography: fashion imagery and video created without physical sets, locations, or a shoot day.",
+      },
       { property: "og:title", content: "AI — Dropframe" },
-      { property: "og:description", content: "Synthetic imagery as a direct alternative to traditional production." },
+      {
+        property: "og:description",
+        content: "Synthetic imagery as a direct alternative to traditional production.",
+      },
     ],
   }),
   component: AI,
 });
 
 const steps = [
-  { n: "01", t: "Share your product photos", d: "Send flats, hero shots, or existing e-commerce assets. We work from what you already have." },
-  { n: "02", t: "Pick your models", d: "Choose from our curated roster of synthetic models — or brief a custom talent build." },
-  { n: "03", t: "Define your vision", d: "Location, styling, mood, framing. Or let us help you define the vision." },
-  { n: "04", t: "We handle everything else", d: "Iteration, variation, and long-term extensibility — delivered on your schedule." },
+  {
+    n: "01",
+    t: "Share your product photos",
+    d: "Send flats, hero shots, or existing e-commerce assets. I work from what you already have.",
+  },
+  {
+    n: "02",
+    t: "Pick your models",
+    d: "Choose from my curated roster of synthetic models — or brief a custom talent build.",
+  },
+  {
+    n: "03",
+    t: "Define your vision",
+    d: "Location, styling, mood, framing. Or let me help you define the vision.",
+  },
+  {
+    n: "04",
+    t: "I handle everything else",
+    d: "Iteration, variation, and long-term extensibility — delivered on your schedule.",
+  },
 ];
 
 function AI() {
@@ -28,15 +51,14 @@ function AI() {
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 pb-16 md:pb-24">
         <div className="text-eyebrow mb-8">AI / Synthography</div>
         <h1 className="text-display text-[9.75vw] md:text-[6.75vw] leading-[0.9] opacity-80">
-          Fashion imagery<br />
+          Fashion imagery
+          <br />
           <span className="">without the shoot.</span>
         </h1>
         <p className="mt-8 max-w-2xl text-muted-foreground">
-          Synthography replaces or supplements traditional productions when speed,
-          flexibility, consistency, or scalability are required, without compromising
-          visual quality or brand integrity.
-
-          Images are art-directed with the same rigor as physical production, while
+          Synthography replaces or supplements traditional productions when speed, flexibility,
+          consistency, or scalability are required, without compromising visual quality or brand
+          integrity. Images are art-directed with the same rigor as physical production, while
           allowing for controlled iteration, variation, and long-term extensibility.
         </p>
       </section>
@@ -59,13 +81,7 @@ function AI() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
           {items.map((p, i) => (
             <div key={p.slug} className={i === 1 ? "md:mt-16" : ""}>
-              <ProjectTile
-                slug={p.slug}
-                image={p.hero}
-                title={p.title}
-                meta={p.category}
-                aspect="aspect-[3/4]"
-              />
+              <ProjectTile image={p.hero} title={p.title} meta={p.category} aspect="aspect-[3/4]" />
             </div>
           ))}
         </div>

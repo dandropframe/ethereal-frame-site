@@ -17,8 +17,10 @@ export function SmoothScroll() {
     }
     rafId = requestAnimationFrame(raf);
 
-    const unsub = router.subscribe("onResolved", () => {
-      lenis.scrollTo(0, { immediate: true });
+    const unsub = router.subscribe("onResolved", ({ toLocation }) => {
+      if (!toLocation.hash) {
+        lenis.scrollTo(0, { immediate: true });
+      }
     });
 
     return () => {

@@ -1,4 +1,3 @@
-
 export type Credit = { role: string; name: string };
 
 export type Project = {
@@ -41,7 +40,7 @@ export const projects: Project[] = [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/86b61510-bc9d-4c41-ac45-60e947e04825/sk2_007.png",
     ],
     summary: "Festive without being decorative, premium without being cold.",
-    body: "We were approached by Heckler to assist in bringing the SK-II Festive campaign to life. The brief called for imagery that carried the weight of the occasion — festive without being decorative, premium without being cold. Our role was to bring that balance into the 3D work.",
+    body: "I was approached by Heckler to assist in bringing the SK-II Festive campaign to life. The brief called for imagery that carried the weight of the occasion — festive without being decorative, premium without being cold. My role was to bring that balance into the 3D work.",
     vimeoId: "1211193882",
     credits: [
       { role: "Directed by", name: "Paola Kudacki" },
@@ -85,13 +84,16 @@ export const projects: Project[] = [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/0ab412e5-d26c-456d-a6f6-af0da066f1a8/MS_AI_14_WORLD_PANELS_04_2025-03-26_17.09.12.png",
     ],
     summary: "A conceptual and visual pitch pushing AI into the workflow.",
-    body: "Microsoft reached out for a visual R&D project related to an AI module. The task was to create a conceptual and visual pitch over the course of a month — various styleframe explorations, and ultimately a hero video with logo resolve. It was a chance to push creative boundaries and experiment with AI in our workflow.",
+    body: "Microsoft reached out for a visual R&D project related to an AI module. The task was to create a conceptual and visual pitch over the course of a month — various styleframe explorations, and ultimately a hero video with logo resolve. It was a chance to push creative boundaries and experiment with AI in my workflow.",
     vimeoId: "1070010113",
     credits: [
       { role: "Client", name: "Microsoft" },
       { role: "Creative Direction & Animation", name: "Dan Braga Ulvestad" },
       { role: "Sound", name: "H1 Sound / Harvey Fisher" },
-      { role: "Special Thanks", name: "Arthur de Liz Sperb for helping us get set up with Comfy UI" },
+      {
+        role: "Special Thanks",
+        name: "Arthur de Liz Sperb for helping me get set up with Comfy UI",
+      },
     ],
   },
   {
@@ -110,7 +112,7 @@ export const projects: Project[] = [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/080b6507-9fb2-4a3c-ac07-b390f3c8b80e/BanDee_Logo_01_CommercialReel_2022.00_00_00_23_2022-10-18_16.31.51.jpg",
     ],
     summary: "Four Kokeshi doll characters — brief to delivery in four weeks.",
-    body: "Heckler approached us to assemble and lead a team for SK-II's Kokeshi campaign. Four deliverables — each exploring the redressing of their iconic FTE bottle into a distinct Kokeshi doll character. Four weeks from brief to delivery, made possible by a competent team.",
+    body: "Heckler approached me to assemble and lead a team for SK-II's Kokeshi campaign. Four deliverables — each exploring the redressing of their iconic FTE bottle into a distinct Kokeshi doll character. Four weeks from brief to delivery, made possible by a competent team.",
     credits: [
       { role: "Agency", name: "Huge" },
       { role: "Production Company", name: "Heckler Singapore" },
@@ -133,7 +135,7 @@ export const projects: Project[] = [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/3a0c93fe-207c-4f97-b002-b63353f52a0c/Untitled+Project_15s_laMerCny_16X9_NIGHT_WIP032_2026-05-13_13.26.27.jpg",
     ],
     summary: "A seamless, continuous journey through fantastical sceneries.",
-    body: "Heckler approached us to create the previz for La Mer's Year of the Horse campaign, working closely with the director and creative director to design a seamless, continuous journey through various fantastical sceneries.",
+    body: "Heckler approached me to create the previz for La Mer's Year of the Horse campaign, working closely with the director and creative director to design a seamless, continuous journey through various fantastical sceneries.",
     credits: [
       { role: "Director", name: "Joshua Vii" },
       { role: "Production", name: "Animal Factory" },
@@ -392,7 +394,7 @@ export const projects: Project[] = [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/f2da1ee0-757d-49d7-9719-ceb727191bc7/Yamaha_03.jpg",
     ],
     summary: "A portrait of emerging musical talent.",
-    body: "Yamaha Music approached us to concept and direct a volume of their Way Up series — a portrait of emerging musical talent. Featuring Rubin Henkel.",
+    body: "Yamaha Music approached me to concept and direct a volume of their Way Up series — a portrait of emerging musical talent. Featuring Rubin Henkel.",
     vimeoId: "515027244",
     credits: [
       { role: "Client", name: "Yamaha Music Europe" },
@@ -509,8 +511,9 @@ export const projects: Project[] = [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/03a30ae7-13fa-4bf8-a632-c764fe527028/815+24+290+-+295+%2B+830+22+317+-+295.png",
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/38fcdb46-549a-46fa-acd2-7d197a84d73c/860+19+321+-+826+%2B+830+24+134+-+826_02.png",
     ],
-    summary: "AI-crafted fashion and travel capsule built around authentic and down to earth leisure.",
-    body: "Capsule synthography set within a custom-built digital location designed around a central theme. Instead of using physical sets, we generate bespoke environments, crafted architecture, landscapes, lighting, and atmosphere, tailored specifically to the concept of the month. Studio-based e-commerce visuals replace the need for physical studios, set builds, and repeated product shoots — we design custom digital studio environments tailored to each product, controlling lighting, backgrounds, materials, and camera angles with precision and consistency.",
+    summary:
+      "AI-crafted fashion and travel capsule built around authentic and down to earth leisure.",
+    body: "Capsule synthography set within a custom-built digital location designed around a central theme. Instead of using physical sets, I generate bespoke environments, crafted architecture, landscapes, lighting, and atmosphere, tailored specifically to the concept of the month. Studio-based e-commerce visuals replace the need for physical studios, set builds, and repeated product shoots — I design custom digital studio environments tailored to each product, controlling lighting, backgrounds, materials, and camera angles with precision and consistency.",
   },
   {
     slug: "juvia-men",
@@ -531,8 +534,7 @@ export const projects: Project[] = [
       "/hf_20260715_113005_a3b3555c-302b-40d8-9ecd-46eab2c063a6 copy 2.jpg",
     ],
     vimeoId: "1215772011",
-    summary:
-      "A journey through the spirit of the JUVIA Men Summer 2026 collection.",
+    summary: "A journey through the spirit of the JUVIA Men Summer 2026 collection.",
     body: "A journey through the spirit of the JUVIA Men Summer 2026 collection. This compilation brings together a series of AI-crafted destinations that capture the season's mood—premium yet relaxed, refined yet effortlessly down to earth.",
   },
 ];
