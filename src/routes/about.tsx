@@ -51,7 +51,7 @@ function About() {
   return (
     <div className="pt-32">
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 pb-24 md:pb-40">
-        <div className="text-eyebrow mb-8">About</div>
+        <div className="text-eyebrow mb-8">Philosophy</div>
         <h1 className="text-display text-[1.8rem] md:text-[3rem] leading-[1.05]">
           Craft leads.
           <br />
@@ -88,7 +88,7 @@ function About() {
       </section>
 
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 grid grid-cols-12 gap-6 py-16 border-b border-border items-center">
-        <div className="col-span-12 md:col-span-4 text-eyebrow">Clients</div>
+        <div className="col-span-12 md:col-span-4 text-eyebrow">Selected Clients</div>
         <div className="col-span-12 md:col-span-8 flex items-center">
           <img
             src="/images/LOGO_ROW_02.png"
