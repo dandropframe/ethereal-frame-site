@@ -93,7 +93,7 @@ function Info() {
         className="mx-auto max-w-[1600px] px-6 md:px-10 pt-24 md:pt-40 pb-12 md:pb-16 scroll-mt-24"
       >
         <div className="grid grid-cols-12 gap-6 mb-16">
-          <div className="col-span-12 md:col-span-3 text-eyebrow">Selected 3D Projects</div>
+          <div className="col-span-12 md:col-span-3 text-eyebrow">Selected Work</div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
