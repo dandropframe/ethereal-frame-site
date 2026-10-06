@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ProjectTile } from "@/components/ProjectTile";
 import { projects } from "@/data/projects";
 import { ShowreelDropdown } from "@/components/ShowreelDropdown";
@@ -45,7 +45,18 @@ function ThreeD() {
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
         {items.map((p, i) => (
           <div key={p.slug} className={i % 3 === 1 ? "md:mt-16" : ""}>
-            <ProjectTile image={p.hero} title={p.title} meta={p.category} aspect="aspect-[16/10]" />
+            <Link
+              to="/3d/$slug"
+              params={{ slug: p.slug }}
+              className="block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+            >
+              <ProjectTile
+                image={p.hero}
+                title={p.title}
+                meta={p.category}
+                aspect="aspect-[16/10]"
+              />
+            </Link>
           </div>
         ))}
       </section>
