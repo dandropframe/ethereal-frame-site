@@ -8,7 +8,6 @@ services:
       - /app/node_modules
       - /app/.output
       - /app/.nitro
-      - /app/.tanstack
     ports:
       - "3000:3000"
     environment:

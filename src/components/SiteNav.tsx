@@ -5,6 +5,7 @@ const items = [
   { to: "/", hash: "", label: "Info" },
   { to: "/", hash: "work", label: "Work" },
   { to: "/about", hash: "", label: "About" },
+  { to: "/playground", hash: "", label: "Playground" },
 ] as const;
 
 export function SiteNav() {
