@@ -9,9 +9,9 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-border: var(--border);
-  --font-display: "Inter Tight", sans-serif;
+  --font-display: "Instrument Sans", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --font-sans: "Inter Tight", system-ui, sans-serif;
+  --font-sans: "Instrument Sans", system-ui, sans-serif;
 }
 
 :root {

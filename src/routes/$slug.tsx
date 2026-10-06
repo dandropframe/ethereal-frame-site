@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ProjectTile } from "@/components/ProjectTile";
 import { getProject, getRelated, type Project } from "@/data/projects";
 
-export const Route = createFileRoute("/3d_/$slug")({
+export const Route = createFileRoute("/$slug")({
   loader: ({ params }): Project => {
     const project = getProject(params.slug);
     if (!project || project.discipline !== "3D") throw notFound();
@@ -35,8 +35,8 @@ function ThreeDProject() {
         <Link to="/" hash="work" className="text-eyebrow hover:text-foreground transition-colors">
           ← All projects
         </Link>
-        <div className="text-eyebrow mt-10 mb-6">3D / {project.category}</div>
-        <h1 className="text-display text-[6vw] md:text-[3.375vw] leading-[0.9] opacity-80">
+        <div className="text-eyebrow mt-10 mb-6">{project.category}</div>
+        <h1 className="text-display text-[4.8vw] md:text-[2.7vw] leading-[0.9] opacity-80">
           {project.title}
         </h1>
         <p className="mt-8 max-w-2xl text-muted-foreground">{project.summary}</p>
@@ -121,7 +121,7 @@ function ThreeDProject() {
           {related.map((item) => (
             <Link
               key={item.slug}
-              to="/3d/$slug"
+              to="/$slug"
               params={{ slug: item.slug }}
               className="block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
             >
