@@ -36,7 +36,7 @@ function ThreeDProject() {
           ← All projects
         </Link>
         <div className="text-eyebrow mt-10 mb-6">3D / {project.category}</div>
-        <h1 className="text-display text-[12vw] md:text-[6.75vw] leading-[0.9] opacity-80">
+        <h1 className="text-display text-[6vw] md:text-[3.375vw] leading-[0.9] opacity-80">
           {project.title}
         </h1>
         <p className="mt-8 max-w-2xl text-muted-foreground">{project.summary}</p>

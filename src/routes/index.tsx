@@ -128,7 +128,7 @@ function Services() {
       <div className="mx-auto max-w-[1600px] px-6 md:px-10 py-24 md:py-40 grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-3 text-eyebrow">Services</div>
         <ul
-          className={`col-span-12 md:col-span-9 grid grid-cols-2 gap-x-6 gap-y-4 list-none m-0 p-0 text-display text-[1.25rem] md:text-[2.4rem] transition-all duration-1000 ${v ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          className={`col-span-12 md:col-span-9 grid grid-cols-2 gap-x-6 gap-y-4 list-none m-0 p-0 text-display text-[0.9375rem] md:text-[1.8rem] transition-all duration-1000 ${v ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
         >
           {services.map((service) => (
             <li key={service}>{service}</li>
