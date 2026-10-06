@@ -14,10 +14,12 @@ const HERO =
 const services = [
   "Creative Direction",
   "Product Visualisation",
-  "Motion Graphics",
+  "Motion Design",
   "Previz",
   "GenAI",
   "Environment Design",
+  "Styleframes",
+  "Compositing",
 ];
 
 const threeDProjects = projects.filter((project) => project.discipline === "3D");

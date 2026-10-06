@@ -53,10 +53,9 @@ function About() {
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 pb-24 md:pb-40">
         <div className="text-eyebrow mb-8">About</div>
         <h1 className="text-display text-[1.8rem] md:text-[3rem] leading-[1.05]">
-          I believe the best 3D and motion work
+          Craft leads.
           <br />
-          is made by people who understand both the craft and the technology —<br />
-          <span className="text-muted-foreground">and who know which one leads.</span>
+          <span className="text-muted-foreground">Technology follows.</span>
         </h1>
       </section>
 
@@ -99,24 +98,6 @@ function About() {
             decoding="async"
             className="w-full h-auto opacity-70"
           />
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-24 md:py-32">
-        <div className="text-eyebrow mb-12">About Me</div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-center">
-          <div className="relative aspect-[4/5] overflow-hidden bg-muted md:col-span-4">
-            <img
-              src={profile.image}
-              alt={profile.name}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </div>
-          <div className="md:col-span-7 md:col-start-6">
-            <div className="text-eyebrow">{profile.role}</div>
-            <div className="text-display text-2xl md:text-3xl mt-2">{profile.name}</div>
-            <p className="text-muted-foreground mt-3 text-sm leading-relaxed">{profile.bio}</p>
-          </div>
         </div>
       </section>
     </div>
