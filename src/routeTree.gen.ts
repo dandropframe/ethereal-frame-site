@@ -15,6 +15,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AiRouteImport } from './routes/ai'
 import { Route as FilmRouteImport } from './routes/film'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as R3dSlugRouteImport } from './routes/3d_.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const R3dSlugRoute = R3dSlugRouteImport.update({
+  id: '/3d_/$slug',
+  path: '/3d/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/ai': typeof AiRoute
   '/film': typeof FilmRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/3d/$slug': typeof R3dSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/ai': typeof AiRoute
   '/film': typeof FilmRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/3d/$slug': typeof R3dSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,13 +79,23 @@ export interface FileRoutesById {
   '/ai': typeof AiRoute
   '/film': typeof FilmRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/3d_/$slug': typeof R3dSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/3d' | '/about' | '/ai' | '/film' | '/sitemap.xml'
+  fullPaths:
+    '/' | '/3d' | '/about' | '/ai' | '/film' | '/sitemap.xml' | '/3d/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/3d' | '/about' | '/ai' | '/film' | '/sitemap.xml'
-  id: '__root__' | '/' | '/3d' | '/about' | '/ai' | '/film' | '/sitemap.xml'
+  to: '/' | '/3d' | '/about' | '/ai' | '/film' | '/sitemap.xml' | '/3d/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/3d'
+    | '/about'
+    | '/ai'
+    | '/film'
+    | '/sitemap.xml'
+    | '/3d_/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -87,6 +105,7 @@ export interface RootRouteChildren {
   AiRoute: typeof AiRoute
   FilmRoute: typeof FilmRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  R3dSlugRoute: typeof R3dSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -133,6 +152,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/3d_/$slug': {
+      id: '/3d_/$slug'
+      path: '/3d/$slug'
+      fullPath: '/3d/$slug'
+      preLoaderRoute: typeof R3dSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -143,6 +169,7 @@ const rootRouteChildren: RootRouteChildren = {
   AiRoute: AiRoute,
   FilmRoute: FilmRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  R3dSlugRoute: R3dSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

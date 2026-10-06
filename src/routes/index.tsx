@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ShowreelDropdown } from "@/components/ShowreelDropdown";
 import { ProjectTile } from "@/components/ProjectTile";
@@ -101,12 +101,18 @@ function Info() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
           {threeDProjects.map((project, index) => (
             <div key={project.slug} className={index % 3 === 1 ? "md:mt-16" : ""}>
-              <ProjectTile
-                image={project.hero}
-                title={project.title}
-                meta={project.category}
-                aspect="aspect-[16/10]"
-              />
+              <Link
+                to="/3d/$slug"
+                params={{ slug: project.slug }}
+                className="block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+              >
+                <ProjectTile
+                  image={project.hero}
+                  title={project.title}
+                  meta={project.category}
+                  aspect="aspect-[16/10]"
+                />
+              </Link>
             </div>
           ))}
         </div>
