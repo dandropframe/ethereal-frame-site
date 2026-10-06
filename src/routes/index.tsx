@@ -72,11 +72,11 @@ function Info() {
 
         <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
           <div className="text-eyebrow mb-6">Design Director</div>
-          <h1 className="text-display text-[5.5vw] md:text-[3.8vw] leading-[0.95] opacity-80">
+          <h1 className="text-display text-[4.4vw] md:text-[3.04vw] leading-[0.95] opacity-80">
             I direct, design, and build ideas —<br />
             from concept to final frame.
           </h1>
-          <div className="mt-10 max-w-[60vw] md:max-w-[55vw] text-muted-foreground text-[0.8rem] md:text-base">
+          <div className="mt-6 max-w-[60vw] md:max-w-[55vw] text-muted-foreground text-[0.8rem] md:text-base">
             Where technology, products, culture, and human experience become immersive worlds.
           </div>
         </div>
