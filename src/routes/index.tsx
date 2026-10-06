@@ -102,7 +102,7 @@ function Info() {
           {threeDProjects.map((project, index) => (
             <div key={project.slug} className={index % 3 === 1 ? "md:mt-16" : ""}>
               <Link
-                to="/3d/$slug"
+                to="/$slug"
                 params={{ slug: project.slug }}
                 className="block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
               >
