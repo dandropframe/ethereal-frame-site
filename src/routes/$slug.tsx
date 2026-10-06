@@ -36,7 +36,7 @@ function ThreeDProject() {
           ← All projects
         </Link>
         <div className="text-eyebrow mt-10 mb-6">{project.category}</div>
-        <h1 className="text-display text-[4.8vw] md:text-[2.7vw] leading-[0.9] opacity-80">
+        <h1 className="text-display text-[3.84vw] md:text-[2.16vw] leading-[0.9] opacity-80">
           {project.title}
         </h1>
         <p className="mt-8 max-w-2xl text-muted-foreground">{project.summary}</p>
@@ -116,7 +116,7 @@ function ThreeDProject() {
       ) : null}
 
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 mt-16 md:mt-24">
-        <h2 className="text-eyebrow border-t border-border pt-6 mb-10">More 3D projects</h2>
+        <h2 className="text-eyebrow border-t border-border pt-6 mb-10">More projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
           {related.map((item) => (
             <Link
