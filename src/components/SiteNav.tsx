@@ -2,11 +2,9 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
 const items = [
-  { to: "/", label: "Info" },
-  { to: "/3d", label: "3D" },
-  { to: "/film", label: "Film" },
-  { to: "/ai", label: "AI" },
-  { to: "/about", label: "About" },
+  { to: "/", hash: "", label: "Info" },
+  { to: "/", hash: "work", label: "Work" },
+  { to: "/about", hash: "", label: "About" },
 ] as const;
 
 export function SiteNav() {
@@ -36,9 +34,12 @@ export function SiteNav() {
         <nav className="flex items-center gap-0.5 md:gap-2 -mr-3 md:mr-0">
           {items.map((it) => (
             <Link
-              key={it.to}
+              key={`${it.to}#${it.hash}`}
               to={it.to}
-              activeOptions={{ exact: true }}
+              hash={it.hash || undefined}
+              resetScroll={it.hash ? false : undefined}
+              hashScrollIntoView={{ behavior: "smooth", block: "start" }}
+              activeOptions={{ exact: true, includeHash: true }}
               className="group relative px-2 md:px-3 py-2 font-mono text-[8.25px] md:text-[11px] tracking-[0.2em] uppercase text-muted-foreground transition-colors hover:text-foreground"
               activeProps={{ className: "text-foreground" }}
             >

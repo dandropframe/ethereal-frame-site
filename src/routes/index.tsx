@@ -1,44 +1,35 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ShowreelDropdown } from "@/components/ShowreelDropdown";
+import { ProjectTile } from "@/components/ProjectTile";
+import { projects } from "@/data/projects";
 
 export const Route = createFileRoute("/")({
   component: Info,
 });
 
-const HERO = "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/f83e3a56-f986-47e7-8cb0-efa63a0c9c3d/Cover_02.png";
+const HERO =
+  "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/f83e3a56-f986-47e7-8cb0-efa63a0c9c3d/Cover_02.png";
 
-const disciplines = [
-  {
-    tag: "01 — 3D",
-    to: "/3d",
-    title: "Art Direction & 3D",
-    body: "We create high-end, art directed styleframes and animation across commercial campaigns, projection mapping, concert visuals, and narrative storytelling.",
-    image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/aa0b0125-f978-4a51-9e07-742782493413/AD_Snippet_01_GIF.gif",
-  },
-  {
-    tag: "02 — Film",
-    to: "/film",
-    title: "Film & Photography",
-    body: "We direct and produce film, photography, and brand storytelling for fashion and cosmetics brands. Narrative music videos, short-form social content, and commercial story.",
-    image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/a2f67cbd-1729-4acf-aa4e-10ad4f6c1cfa/Film_Snippet_GIF_02.gif",
-  },
-  {
-    tag: "03 — AI",
-    to: "/ai",
-    title: "Synthography & AI",
-    body: "Synthetic fashion imagery and video designed as a direct alternative to traditional studio or location-based production.",
-    image: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/10fa90df-22d6-4df4-91df-1e73eb836ff3/Synthography_Snippet_01_GIF.gif",
-  },
+const services = [
+  "Creative Direction",
+  "Product Visualisation",
+  "Motion Graphics",
+  "Previz",
+  "GenAI",
+  "Environment Design",
 ];
+
+const threeDProjects = projects.filter((project) => project.discipline === "3D");
 
 function useReveal<T extends HTMLElement>() {
   const ref = useRef<T | null>(null);
   const [v, setV] = useState(false);
   useEffect(() => {
     if (!ref.current) return;
-    const io = new IntersectionObserver(([e]) => e.isIntersecting && setV(true), { threshold: 0.2 });
+    const io = new IntersectionObserver(([e]) => e.isIntersecting && setV(true), {
+      threshold: 0.2,
+    });
     io.observe(ref.current);
     return () => io.disconnect();
   }, []);
@@ -69,18 +60,22 @@ function Info() {
               className="absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2 border-0"
             />
           </div>
-          <img src={HERO} alt="" className="absolute inset-0 h-full w-full object-cover opacity-0" />
+          <img
+            src={HERO}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover opacity-0"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background" />
         </div>
 
         <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
-          <div className="text-eyebrow mb-6">Creative Production Studio</div>
+          <div className="text-eyebrow mb-6">Design Director</div>
           <h1 className="text-display text-[5.5vw] md:text-[3.8vw] leading-[0.95] opacity-80">
-            We direct, design, and build ideas —<br />
+            I direct, design, and build ideas —<br />
             from concept to final frame.
           </h1>
           <div className="mt-10 max-w-[60vw] md:max-w-[55vw] text-muted-foreground text-[0.8rem] md:text-base">
-            Our work lives where technology, culture, and human experience meet: visual worlds that are cinematic, immersive, and emotionally resonant.
+            Where technology, products, culture, and human experience become immersive worlds.
           </div>
         </div>
 
@@ -89,22 +84,26 @@ function Info() {
         </div>
       </section>
 
-      {/* Manifesto */}
-      <MarqueeManifesto />
+      <Services />
 
-      {/* Disciplines */}
-      <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-24 md:py-40">
+      <section
+        id="work"
+        className="mx-auto max-w-[1600px] px-6 md:px-10 pt-24 md:pt-40 pb-12 md:pb-16 scroll-mt-24"
+      >
         <div className="grid grid-cols-12 gap-6 mb-16">
-          <div className="col-span-12 md:col-span-3 text-eyebrow">Disciplines</div>
-          <h2 className="col-span-12 md:col-span-9 text-display text-[1.8rem] md:text-[3rem]">
-            Three methods.<br />
-            One creative direction.
-          </h2>
+          <div className="col-span-12 md:col-span-3 text-eyebrow">Selected 3D Projects</div>
         </div>
 
-        <div className="space-y-4 md:space-y-6">
-          {disciplines.map((d, i) => (
-            <DisciplineRow key={d.to} {...d} index={i} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+          {threeDProjects.map((project, index) => (
+            <div key={project.slug} className={index % 3 === 1 ? "md:mt-16" : ""}>
+              <ProjectTile
+                image={project.hero}
+                title={project.title}
+                meta={project.category}
+                aspect="aspect-[16/10]"
+              />
+            </div>
           ))}
         </div>
       </section>
@@ -115,64 +114,43 @@ function Info() {
   );
 }
 
-function MarqueeManifesto() {
+function Services() {
   const { ref, v } = useReveal<HTMLDivElement>();
   return (
     <section ref={ref} className="border-y border-border overflow-hidden">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10 py-24 md:py-40 grid grid-cols-12 gap-6">
-        <div className="col-span-12 md:col-span-3 text-eyebrow">Approach</div>
-        <div className={`col-span-12 md:col-span-9 text-display text-[1.5rem] md:text-[2.4rem] transition-all duration-1000 ${v ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          We don't prescribe a production method. We start with your brief, your brand
-          language, and your content needs — <span className="text-muted-foreground">then choose the approach that best serves them.</span>
-        </div>
+        <div className="col-span-12 md:col-span-3 text-eyebrow">Services</div>
+        <ul
+          className={`col-span-12 md:col-span-9 grid grid-cols-2 gap-x-6 gap-y-4 list-none m-0 p-0 text-display text-[1.25rem] md:text-[2.4rem] transition-all duration-1000 ${v ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+        >
+          {services.map((service) => (
+            <li key={service}>{service}</li>
+          ))}
+        </ul>
       </div>
     </section>
   );
 }
 
-function DisciplineRow({ tag, to, title, body, image, index }: typeof disciplines[number] & { index: number }) {
-  const { ref, v } = useReveal<HTMLAnchorElement>();
-  return (
-    <Link
-      ref={ref}
-      to={to}
-      className={`group relative grid grid-cols-12 gap-6 items-center border-t border-border py-8 md:py-10 transition-all duration-700 ${
-        v ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
-      style={{ transitionDelay: `${index * 80}ms` }}
-    >
-      <div className="col-span-2 md:col-span-1 text-eyebrow">{tag}</div>
-      <div className="col-span-10 md:col-span-4 text-display text-2xl md:text-4xl">
-        {title}
-      </div>
-      <div className="col-span-12 md:col-span-4 text-sm text-muted-foreground">{body}</div>
-      <div className="col-span-12 md:col-span-3 relative aspect-[16/10] overflow-hidden bg-muted">
-        <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110" />
-      </div>
-      <span className="absolute right-0 top-8 md:top-10 font-mono text-xs text-muted-foreground transition-transform duration-500 group-hover:translate-x-1 group-hover:text-foreground">↗</span>
-    </Link>
-  );
-}
-
 function SelectedWork() {
   return (
-    <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-24 md:py-40">
-      <div className="grid grid-cols-12 gap-6 mb-16">
+    <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-12 md:py-16">
+      <div className="grid grid-cols-12 gap-6 mb-8">
         <div className="col-span-12 md:col-span-3 text-eyebrow">3D Showreel</div>
         <h2 className="col-span-12 md:col-span-9 text-display text-4xl md:text-6xl">
-          A minute of<br />
+          A minute of
+          <br />
           <span className="">recent 3D work.</span>
         </h2>
       </div>
       <div className="grid grid-cols-12 gap-6 items-end">
-        <div className="col-span-12 md:col-span-6 text-muted-foreground max-w-xl">
+        <div className="col-span-12 md:col-span-6 md:col-start-4 text-muted-foreground max-w-xl">
           A short cross-section of commercial and personal CGI work
         </div>
-        <div className="col-span-12 md:col-span-6 md:flex md:justify-end">
+        <div className="col-span-12 md:col-span-3 md:flex md:justify-end">
           <ShowreelDropdown label="Play 3D Showreel" vimeoId="580437144" />
         </div>
       </div>
     </section>
   );
 }
-

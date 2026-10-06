@@ -17,7 +17,7 @@ import { SiteFooter } from "../components/SiteFooter";
 
 const SITE_URL = "https://ethereal-frame-site.lovable.app";
 const SITE_DESCRIPTION =
-  "A multidisciplinary production studio for global brands. High-end 3D motion, in-camera film and photography, and synthetic imagery — all driven by the same creative direction.";
+  "Dan Braga Ulvestad — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.";
 
 function NotFoundComponent() {
   return (
@@ -55,7 +55,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           This page didn't load
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          Something went wrong on my end. You can try refreshing or head back home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -84,23 +84,46 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "DROPFRAME — Creative Production Studio" },
-      { name: "description", content: "A multidisciplinary production studio for global brands. High-end 3D motion, in-camera film and photography, and synthetic imagery — all driven by the same creative direction." },
-      { property: "og:title", content: "Dropframe — Creative Production Studio" },
-      { property: "og:description", content: "A multidisciplinary production studio for global brands. High-end 3D motion, in-camera film and photography, and synthetic imagery — all driven by the same creative direction." },
+      { title: "DROPFRAME — Design Director" },
+      {
+        name: "description",
+        content:
+          "Dan Braga Ulvestad — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
+      },
+      { property: "og:title", content: "Dropframe — Design Director" },
+      {
+        property: "og:description",
+        content:
+          "Dan Braga Ulvestad — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Dropframe — Creative Production Studio" },
-      { name: "twitter:description", content: "A multidisciplinary production studio for global brands. High-end 3D motion, in-camera film and photography, and synthetic imagery — all driven by the same creative direction." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e074bb63-2d4b-4ba6-b2bc-ddce9d71c88a/id-preview-b3472824--6c5c6617-bb8a-4d82-bff2-4a9812d776eb.lovable.app-1784136667727.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e074bb63-2d4b-4ba6-b2bc-ddce9d71c88a/id-preview-b3472824--6c5c6617-bb8a-4d82-bff2-4a9812d776eb.lovable.app-1784136667727.png" },
+      { name: "twitter:title", content: "Dropframe — Design Director" },
+      {
+        name: "twitter:description",
+        content:
+          "Dan Braga Ulvestad — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e074bb63-2d4b-4ba6-b2bc-ddce9d71c88a/id-preview-b3472824--6c5c6617-bb8a-4d82-bff2-4a9812d776eb.lovable.app-1784136667727.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e074bb63-2d4b-4ba6-b2bc-ddce9d71c88a/id-preview-b3472824--6c5c6617-bb8a-4d82-bff2-4a9812d776eb.lovable.app-1784136667727.png",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&family=Inter+Tight:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&family=Inter+Tight:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap",
+      },
     ],
     scripts: [
       {
@@ -109,18 +132,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@graph": [
             {
-              "@type": "Organization",
-              "@id": `${SITE_URL}/#organization`,
-              name: "DROPFRAME",
+              "@type": "Person",
+              "@id": `${SITE_URL}/#person`,
+              name: "Dan Braga Ulvestad",
+              alternateName: "DROPFRAME",
+              jobTitle: "Design Director",
+              email: "dan@dropframe.site",
               url: SITE_URL,
               description: SITE_DESCRIPTION,
-              slogan: "A creative partner for the next era of visual storytelling.",
               knowsAbout: [
-                "3D motion design",
-                "Film production",
-                "Photography",
-                "AI-generated imagery",
-                "Art direction",
+                "Creative Direction",
+                "Product Visualisation",
+                "Motion Graphics",
+                "Previz",
+                "GenAI",
+                "Environment Design",
               ],
             },
             {
@@ -129,7 +155,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               url: SITE_URL,
               name: "DROPFRAME",
               description: SITE_DESCRIPTION,
-              publisher: { "@id": `${SITE_URL}/#organization` },
+              publisher: { "@id": `${SITE_URL}/#person` },
               inLanguage: "en",
             },
           ],

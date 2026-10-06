@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { projects } from "@/data/projects";
 
 const BASE_URL = "https://ethereal-frame-site.lovable.app";
 
@@ -20,11 +19,6 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/film", changefreq: "weekly", priority: "0.8" },
           { path: "/ai", changefreq: "weekly", priority: "0.8" },
           { path: "/about", changefreq: "monthly", priority: "0.6" },
-          ...projects.map((p) => ({
-            path: `/work/${p.slug}`,
-            changefreq: "monthly" as const,
-            priority: "0.7",
-          })),
         ];
 
         const urls = entries.map((e) =>

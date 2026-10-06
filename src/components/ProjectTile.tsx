@@ -1,33 +1,28 @@
-import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 
 type Props = {
-  slug: string;
   image: string;
   title: string;
   meta?: string;
   aspect?: string;
 };
 
-export function ProjectTile({ slug, image, title, meta, aspect = "aspect-[4/3]" }: Props) {
-  const ref = useRef<HTMLAnchorElement | null>(null);
+export function ProjectTile({ image, title, meta, aspect = "aspect-[4/3]" }: Props) {
+  const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     if (!ref.current) return;
-    const io = new IntersectionObserver(
-      ([e]) => e.isIntersecting && setVisible(true),
-      { threshold: 0.15 }
-    );
+    const io = new IntersectionObserver(([e]) => e.isIntersecting && setVisible(true), {
+      threshold: 0.15,
+    });
     io.observe(ref.current);
     return () => io.disconnect();
   }, []);
 
   return (
-    <Link
+    <article
       ref={ref}
-      to="/work/$slug"
-      params={{ slug }}
-      className={`group block hover-lift transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      className={`group block transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
     >
       <div className={`relative overflow-hidden bg-muted ${aspect}`}>
         <img
@@ -42,6 +37,6 @@ export function ProjectTile({ slug, image, title, meta, aspect = "aspect-[4/3]" 
         <div className="text-eyebrow text-foreground">{title}</div>
         {meta ? <div className="text-eyebrow">{meta}</div> : null}
       </div>
-    </Link>
+    </article>
   );
 }
