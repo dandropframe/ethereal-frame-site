@@ -32,8 +32,8 @@ function ThreeDProject() {
   return (
     <div className="pt-32">
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 pb-12 md:pb-16">
-        <Link to="/3d" className="text-eyebrow hover:text-foreground transition-colors">
-          ← All 3D projects
+        <Link to="/" hash="work" className="text-eyebrow hover:text-foreground transition-colors">
+          ← All projects
         </Link>
         <div className="text-eyebrow mt-10 mb-6">3D / {project.category}</div>
         <h1 className="text-display text-[12vw] md:text-[6.75vw] leading-[0.9] opacity-80">
@@ -73,10 +73,6 @@ function ThreeDProject() {
           <div>
             <dt className="text-eyebrow mb-2">Client</dt>
             <dd>{project.client}</dd>
-          </div>
-          <div>
-            <dt className="text-eyebrow mb-2">Year</dt>
-            <dd>{project.year}</dd>
           </div>
           <div>
             <dt className="text-eyebrow mb-2">Role</dt>

@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as R3dRouteImport } from './routes/3d'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AiRouteImport } from './routes/ai'
 import { Route as FilmRouteImport } from './routes/film'
@@ -20,11 +19,6 @@ import { Route as R3dSlugRouteImport } from './routes/3d_.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const R3dRoute = R3dRouteImport.update({
-  id: '/3d',
-  path: '/3d',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -55,7 +49,6 @@ const R3dSlugRoute = R3dSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/3d': typeof R3dRoute
   '/about': typeof AboutRoute
   '/ai': typeof AiRoute
   '/film': typeof FilmRoute
@@ -64,7 +57,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/3d': typeof R3dRoute
   '/about': typeof AboutRoute
   '/ai': typeof AiRoute
   '/film': typeof FilmRoute
@@ -74,7 +66,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/3d': typeof R3dRoute
   '/about': typeof AboutRoute
   '/ai': typeof AiRoute
   '/film': typeof FilmRoute
@@ -83,14 +74,12 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    '/' | '/3d' | '/about' | '/ai' | '/film' | '/sitemap.xml' | '/3d/$slug'
+  fullPaths: '/' | '/about' | '/ai' | '/film' | '/sitemap.xml' | '/3d/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/3d' | '/about' | '/ai' | '/film' | '/sitemap.xml' | '/3d/$slug'
+  to: '/' | '/about' | '/ai' | '/film' | '/sitemap.xml' | '/3d/$slug'
   id:
     | '__root__'
     | '/'
-    | '/3d'
     | '/about'
     | '/ai'
     | '/film'
@@ -100,7 +89,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  R3dRoute: typeof R3dRoute
   AboutRoute: typeof AboutRoute
   AiRoute: typeof AiRoute
   FilmRoute: typeof FilmRoute
@@ -115,13 +103,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/3d': {
-      id: '/3d'
-      path: '/3d'
-      fullPath: '/3d'
-      preLoaderRoute: typeof R3dRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -164,7 +145,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  R3dRoute: R3dRoute,
   AboutRoute: AboutRoute,
   AiRoute: AiRoute,
   FilmRoute: FilmRoute,
