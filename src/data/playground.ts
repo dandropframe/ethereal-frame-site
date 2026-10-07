@@ -1,5 +1,3 @@
-import cottonAsset from "@/assets/playground-cotton.webp.asset.json";
-
 export type PlaygroundItem = {
   slug: string;
   title: string;
@@ -23,11 +21,11 @@ const video = (slug: string, title: string): PlaygroundItem => ({
 export const playground: PlaygroundItem[] = [
   // New additions belong at the beginning, preserving newest-first order.
   {
-    slug: "landor-cotton",
-    title: "Landor Cotton",
+    slug: "lenor-cotton",
+    title: "Lenor Cotton",
     meta: "Still",
     type: "image",
-    src: cottonAsset.url,
+    src: "/playground/Landor_Cotton_06_0022.png",
   },
   video("xp-cubepanel-b", "XP Cube Panel B"),
   video("xp-cubepanel-05", "XP Cube Panel 05"),
