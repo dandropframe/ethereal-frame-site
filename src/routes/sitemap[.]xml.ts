@@ -19,10 +19,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/film", changefreq: "weekly", priority: "0.8" },
           { path: "/ai", changefreq: "weekly", priority: "0.8" },
           { path: "/about", changefreq: "monthly", priority: "0.6" },
+          { path: "/playground", changefreq: "monthly", priority: "0.6" },
           ...projects
             .filter((project) => project.discipline === "3D")
             .map((project): SitemapEntry => ({
-              path: `/3d/${project.slug}`,
+              path: `/${project.slug}`,
               changefreq: "monthly",
               priority: "0.7",
             })),

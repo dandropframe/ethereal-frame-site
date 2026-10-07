@@ -5,6 +5,7 @@ const items = [
   { to: "/", hash: "", label: "Info" },
   { to: "/", hash: "work", label: "Work" },
   { to: "/about", hash: "", label: "About" },
+  { to: "/playground", hash: "", label: "Playground" },
 ] as const;
 
 export function SiteNav() {
@@ -40,7 +41,7 @@ export function SiteNav() {
               resetScroll={it.hash ? false : undefined}
               hashScrollIntoView={{ behavior: "smooth", block: "start" }}
               activeOptions={{ exact: true, includeHash: true }}
-              className="group relative px-2 md:px-3 py-2 font-mono text-[8.25px] md:text-[11px] tracking-[0.2em] uppercase text-muted-foreground transition-colors hover:text-foreground"
+              className="group relative px-2 md:px-3 py-2 font-mono text-[8.25px] md:text-[11px] tracking-[0.2em] uppercase text-foreground transition-colors hover:text-muted-foreground"
               activeProps={{ className: "text-foreground" }}
             >
               {it.label}
