@@ -52,7 +52,7 @@ function Playground() {
                   video={item.type === "video" ? item.src : undefined}
                   title={item.title}
                   meta={item.meta}
-                  aspect="aspect-square"
+                  aspect={item.slug === "lenor-cotton" ? "aspect-video" : "aspect-square"}
                 />
               </button>
             </div>
