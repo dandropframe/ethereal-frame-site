@@ -20,6 +20,13 @@ const video = (slug: string, title: string): PlaygroundItem => ({
 
 export const playground: PlaygroundItem[] = [
   // New additions belong at the beginning, preserving newest-first order.
+  {
+    slug: "lenor-cotton",
+    title: "Lenor Cotton",
+    meta: "Still",
+    type: "image",
+    src: "/playground/Landor_Cotton_06_0022.png",
+  },
   video("xp-cubepanel-b", "XP Cube Panel B"),
   video("xp-cubepanel-05", "XP Cube Panel 05"),
   {
@@ -33,11 +40,4 @@ export const playground: PlaygroundItem[] = [
   video("glitch-rgb", "Glitch RGB"),
   video("36days-02", "36 Days 02"),
   video("36days-01", "36 Days 01"),
-  {
-    slug: "lenor-cotton",
-    title: "Lenor Cotton",
-    meta: "Still",
-    type: "image",
-    src: "/playground/Landor_Cotton_06_0022.png",
-  },
 ];
