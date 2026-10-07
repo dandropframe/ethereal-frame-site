@@ -7,9 +7,17 @@ type Props = {
   title: string;
   meta?: string;
   aspect?: string;
+  imagePosition?: string;
 };
 
-export function ProjectTile({ image, video, title, meta, aspect = "aspect-[4/3]" }: Props) {
+export function ProjectTile({
+  image,
+  video,
+  title,
+  meta,
+  aspect = "aspect-[4/3]",
+  imagePosition = "center",
+}: Props) {
   const mediaClass =
     "absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105";
   const ref = useRef<HTMLElement | null>(null);
@@ -40,9 +48,16 @@ export function ProjectTile({ image, video, title, meta, aspect = "aspect-[4/3]"
             preload="auto"
             aria-label={title}
             className={mediaClass}
+            style={{ objectPosition: imagePosition }}
           />
         ) : (
-          <img src={image} alt={title} loading="lazy" className={mediaClass} />
+          <img
+            src={image}
+            alt={title}
+            loading="lazy"
+            className={mediaClass}
+            style={{ objectPosition: imagePosition }}
+          />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
       </div>

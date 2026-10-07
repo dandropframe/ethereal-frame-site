@@ -9,6 +9,7 @@ export type Project = {
   year: string;
   role: string[];
   hero: string;
+  imagePosition?: string;
   gallery: string[];
   summary: string;
   body: string;
@@ -23,6 +24,22 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "afterlife",
+    title: "Afterlife",
+    client: "Afterlife",
+    discipline: "3D",
+    category: "Concert Visuals",
+    year: "2026",
+    role: ["Creative Direction", "Motion Design"],
+    hero: "https://picture2.frame.io/image/s3://frameio-assets-production/image/24e5f444-c201-4479-bf2c-8190415af415/image_full_56.jpg?alg=HS256&sig=exwb2thp6ae_IbWtAHaGQX_zn7BDQrIFgnm7LV_F7oU&exp=1791417600",
+    imagePosition: "top",
+    gallery: [
+      "https://picture2.frame.io/image/s3://frameio-assets-production/image/24e5f444-c201-4479-bf2c-8190415af415/image_full_56.jpg?alg=HS256&sig=exwb2thp6ae_IbWtAHaGQX_zn7BDQrIFgnm7LV_F7oU&exp=1791417600",
+    ],
+    summary: "Concert visuals created for Afterlife.",
+    body: "Concert visuals created for Afterlife.",
+  },
   {
     slug: "sk2f",
     title: "SKII Festive",

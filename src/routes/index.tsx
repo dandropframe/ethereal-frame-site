@@ -111,6 +111,7 @@ function Info() {
                   title={project.title}
                   meta={project.category}
                   aspect="aspect-[16/10]"
+                  imagePosition={project.imagePosition}
                 />
               </Link>
             </div>
