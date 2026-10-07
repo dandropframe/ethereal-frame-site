@@ -17,3 +17,6 @@
 - **Vite host allowlist:** `__VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS` is passed through from the platform env so the preview origin is allowed; do not remove it.
 - **Don't mount a volume over `/app/.tanstack`:** the TanStack router generator writes to `.tanstack/tmp` and renames into `src/routeTree.gen.ts`; a separate volume makes that fail with `EXDEV`, so new routes never register (404). `.tanstack/` is git-ignored.
 - **No secrets:** this app has no external-service credentials. `.base44/environment.json` lists an empty `secrets` array.
+
+## Playground
+- Keep the Playground data array in display order and prepend new entries so the overview and lightbox share the same ordering.

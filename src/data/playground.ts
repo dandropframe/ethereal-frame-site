@@ -1,3 +1,5 @@
+import cottonAsset from "@/assets/playground-cotton.webp.asset.json";
+
 export type PlaygroundItem = {
   slug: string;
   title: string;
@@ -19,10 +21,16 @@ const video = (slug: string, title: string): PlaygroundItem => ({
 });
 
 export const playground: PlaygroundItem[] = [
-  video("36days-01", "36 Days 01"),
-  video("36days-02", "36 Days 02"),
-  video("glitch-rgb", "Glitch RGB"),
-  video("jiggle-wheel", "Jiggle Wheel"),
+  // New additions belong at the beginning, preserving newest-first order.
+  {
+    slug: "landor-cotton",
+    title: "Landor Cotton",
+    meta: "Still",
+    type: "image",
+    src: cottonAsset.url,
+  },
+  video("xp-cubepanel-b", "XP Cube Panel B"),
+  video("xp-cubepanel-05", "XP Cube Panel 05"),
   {
     slug: "whale-curl",
     title: "Whale Curl",
@@ -30,6 +38,8 @@ export const playground: PlaygroundItem[] = [
     type: "image",
     src: "/playground/whale-curl.webp",
   },
-  video("xp-cubepanel-05", "XP Cube Panel 05"),
-  video("xp-cubepanel-b", "XP Cube Panel B"),
+  video("jiggle-wheel", "Jiggle Wheel"),
+  video("glitch-rgb", "Glitch RGB"),
+  video("36days-02", "36 Days 02"),
+  video("36days-01", "36 Days 01"),
 ];
