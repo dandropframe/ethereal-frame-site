@@ -9,9 +9,9 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-border: var(--border);
-  --font-display: "Instrument Sans", sans-serif;
+  --font-display: "Blinker", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --font-sans: "Instrument Sans", system-ui, sans-serif;
+  --font-sans: "Blinker", system-ui, sans-serif;
 }
 
 :root {

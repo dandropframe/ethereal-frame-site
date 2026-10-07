@@ -28,9 +28,9 @@ function Playground() {
 
   return (
     <div className="pt-32">
-      <section className="mx-auto max-w-[1600px] px-6 md:px-10 pb-16 md:pb-24">
-        <div className="text-eyebrow mb-8">Experiments</div>
-        <h1 className="text-display text-[9.75vw] md:text-[6.75vw] leading-[0.9] opacity-80">
+      <section className="mx-auto max-w-[1600px] px-6 md:px-10 pb-12 md:pb-16">
+        <div className="text-eyebrow mt-10 mb-6">Experiments</div>
+        <h1 className="text-display text-[3.84vw] md:text-[2.16vw] leading-[0.9] opacity-80">
           Playground
         </h1>
       </section>
