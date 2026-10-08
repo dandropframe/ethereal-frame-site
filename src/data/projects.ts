@@ -10,6 +10,8 @@ export type Project = {
   role: string[];
   hero: string;
   imagePosition?: string;
+  /** Skip the hero still on the project page (its media comes from Vimeo instead) */
+  hideHero?: boolean;
   gallery: string[];
   summary: string;
   body: string;
@@ -36,9 +38,8 @@ export const projects: Project[] = [
     role: ["Creative Direction", "Motion Design"],
     hero: "/images/afterlife-thumbnail.webp",
     imagePosition: "50% 31%",
-    gallery: [
-      "/images/afterlife-thumbnail.webp",
-    ],
+    hideHero: true,
+    gallery: [],
     videoPair: ["1234115778", "1234124787"],
     summary: "Concert visuals created for Afterlife.",
     body: "Afterlife approached me to repurpose the original flower asset from Mt. Floret into a hypnotic, seamlessly looping visual for their Tale of Us show in Abu Dhabi, with Chris Harkin helping to transform and adapt the original asset for the new setting.",

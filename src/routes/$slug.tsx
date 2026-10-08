@@ -52,7 +52,7 @@ function ThreeDProject() {
             title={`${project.title} — film`}
             hash={project.vimeoHash}
           />
-        ) : (
+        ) : project.hideHero ? null : (
           <img src={project.hero} alt={project.title} className="w-full h-auto" />
         )}
         {project.videoPair?.length ? (
