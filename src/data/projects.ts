@@ -10,6 +10,8 @@ export type Project = {
   role: string[];
   hero: string;
   imagePosition?: string;
+  /** Skip the hero still on the project page (its media comes from Vimeo instead) */
+  hideHero?: boolean;
   gallery: string[];
   summary: string;
   body: string;
