@@ -63,11 +63,7 @@ function About() {
         <div className="col-span-12 md:col-span-4 text-eyebrow">My Practice</div>
         <div className="col-span-12 md:col-span-8 space-y-6 text-lg leading-relaxed">
           <p>
-            I’m Dan Ulv, a Design Director working as{" "}
-            <span className="font-mono text-xs tracking-widest uppercase text-accent">
-              DAN ULV
-            </span>{" "}
-            for fashion, cosmetics, technology brands and beyond. I design and build 3D imagery,
+            I’m Dan Ulv, a Design Director working across fashion, cosmetics, technology, and beyond. I design and build 3D imagery,
             animation, and motion graphics — all driven by the same creative direction.
           </p>
           <p className="text-muted-foreground">
