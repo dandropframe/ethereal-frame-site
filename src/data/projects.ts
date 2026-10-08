@@ -32,10 +32,10 @@ export const projects: Project[] = [
     category: "Concert Visuals",
     year: "2026",
     role: ["Creative Direction", "Motion Design"],
-    hero: "https://picture2.frame.io/image/s3://frameio-assets-production/image/24e5f444-c201-4479-bf2c-8190415af415/image_full_56.jpg?alg=HS256&sig=exwb2thp6ae_IbWtAHaGQX_zn7BDQrIFgnm7LV_F7oU&exp=1791417600",
+    hero: "/images/afterlife-thumbnail.webp",
     imagePosition: "top",
     gallery: [
-      "https://picture2.frame.io/image/s3://frameio-assets-production/image/24e5f444-c201-4479-bf2c-8190415af415/image_full_56.jpg?alg=HS256&sig=exwb2thp6ae_IbWtAHaGQX_zn7BDQrIFgnm7LV_F7oU&exp=1791417600",
+      "/images/afterlife-thumbnail.webp",
     ],
     summary: "Concert visuals created for Afterlife.",
     body: "Concert visuals created for Afterlife.",
