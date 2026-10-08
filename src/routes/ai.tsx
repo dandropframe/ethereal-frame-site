@@ -5,13 +5,13 @@ import { projects } from "@/data/projects";
 export const Route = createFileRoute("/ai")({
   head: () => ({
     meta: [
-      { title: "AI — DROPFRAME" },
+      { title: "AI — DAN ULV" },
       {
         name: "description",
         content:
           "Synthography: fashion imagery and video created without physical sets, locations, or a shoot day.",
       },
-      { property: "og:title", content: "AI — Dropframe" },
+      { property: "og:title", content: "AI — Dan Ulv" },
       {
         property: "og:description",
         content: "Synthetic imagery as a direct alternative to traditional production.",

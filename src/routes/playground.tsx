@@ -7,17 +7,17 @@ import { playground } from "@/data/playground";
 export const Route = createFileRoute("/playground")({
   head: () => ({
     meta: [
-      { title: "Playground — Dropframe" },
+      { title: "Playground — Dan Ulv" },
       {
         name: "description",
-        content: "Experiments, loops, and explorations from the Dropframe playground.",
+        content: "Experiments, loops, and explorations from the Dan Ulv playground.",
       },
-      { property: "og:title", content: "Playground — Dropframe" },
+      { property: "og:title", content: "Playground — Dan Ulv" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         property: "og:description",
-        content: "Experiments, loops, and explorations from the Dropframe playground.",
+        content: "Experiments, loops, and explorations from the Dan Ulv playground.",
       },
     ],
   }),

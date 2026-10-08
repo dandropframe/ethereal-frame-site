@@ -5,12 +5,12 @@ import { projects, type Project } from "@/data/projects";
 export const Route = createFileRoute("/film")({
   head: () => ({
     meta: [
-      { title: "Film — Dropframe" },
+      { title: "Film — Dan Ulv" },
       {
         name: "description",
         content: "In-camera film and photography for fashion, cosmetics, and brand storytelling.",
       },
-      { property: "og:title", content: "Film — Dropframe" },
+      { property: "og:title", content: "Film — Dan Ulv" },
       {
         property: "og:description",
         content: "Direction and production for live-action film and photography.",
