@@ -39,7 +39,6 @@ export const projects: Project[] = [
     gallery: [
       "/images/afterlife-thumbnail.webp",
     ],
-    videoPair: ["1234115778", "1234124787"],
     summary: "Concert visuals created for Afterlife.",
     body: "Afterlife approached me to repurpose the original flower asset from Mt. Floret into a hypnotic, seamlessly looping visual for their Tale of Us show in Abu Dhabi, with Chris Harkin helping to transform and adapt the original asset for the new setting.",
     credits: [
