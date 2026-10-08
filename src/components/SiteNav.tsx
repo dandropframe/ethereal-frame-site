@@ -28,7 +28,7 @@ export function SiteNav() {
           <img
             src="/images/Artboard_3.png"
             alt="Dan Ulv"
-            className="h-[17.7px] md:h-[21.5px] w-auto object-contain [filter:invert(1)_brightness(2)]"
+            className="h-[32px] md:h-[42px] w-auto object-contain"
           />
         </Link>
 
