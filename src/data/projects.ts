@@ -19,6 +19,8 @@ export type Project = {
   vimeoAutoplay?: boolean;
   /** Additional Vimeo IDs shown as a horizontal row of autoplaying, looping videos */
   videoRow?: string[];
+  /** Two Vimeo IDs rendered side by side as autoplaying, interface-free background videos */
+  videoPair?: string[];
   /** Show the gallery above the description segment instead of below credits */
   galleryFirst?: boolean;
 };
@@ -32,13 +34,18 @@ export const projects: Project[] = [
     category: "Concert Visuals",
     year: "2026",
     role: ["Creative Direction", "Motion Design"],
-    hero: "https://picture2.frame.io/image/s3://frameio-assets-production/image/24e5f444-c201-4479-bf2c-8190415af415/image_full_56.jpg?alg=HS256&sig=exwb2thp6ae_IbWtAHaGQX_zn7BDQrIFgnm7LV_F7oU&exp=1791417600",
-    imagePosition: "top",
+    hero: "/images/afterlife-thumbnail.webp",
+    imagePosition: "50% 31%",
     gallery: [
-      "https://picture2.frame.io/image/s3://frameio-assets-production/image/24e5f444-c201-4479-bf2c-8190415af415/image_full_56.jpg?alg=HS256&sig=exwb2thp6ae_IbWtAHaGQX_zn7BDQrIFgnm7LV_F7oU&exp=1791417600",
+      "/images/afterlife-thumbnail.webp",
     ],
+    videoPair: ["1234115778", "1234124787"],
     summary: "Concert visuals created for Afterlife.",
-    body: "Concert visuals created for Afterlife.",
+    body: "Afterlife approached me to repurpose the original flower asset from Mt. Floret into a hypnotic, seamlessly looping visual for their Tale of Us show in Abu Dhabi, with Chris Harkin helping to transform and adapt the original asset for the new setting.",
+    credits: [
+      { role: "Art Direction & 3D Artist", name: "Dan Ulv" },
+      { role: "FX Artist", name: "Chris Harkin" },
+    ],
   },
   {
     slug: "sk2f",

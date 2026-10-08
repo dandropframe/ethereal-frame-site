@@ -55,6 +55,19 @@ function ThreeDProject() {
         ) : (
           <img src={project.hero} alt={project.title} className="w-full h-auto" />
         )}
+        {project.videoPair?.length ? (
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {project.videoPair.map((vimeoId, index) => (
+              <ProjectVideo
+                key={vimeoId}
+                vimeoId={vimeoId}
+                title={`${project.title} — animation ${index + 1}`}
+                background
+                aspect="aspect-[3/4]"
+              />
+            ))}
+          </div>
+        ) : null}
         {project.videoRow?.length ? (
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
             {project.videoRow.map((vimeoId, index) => (
@@ -134,12 +147,30 @@ function ThreeDProject() {
   );
 }
 
-function ProjectVideo({ vimeoId, title, hash }: { vimeoId: string; title: string; hash?: string }) {
+function ProjectVideo({
+  vimeoId,
+  title,
+  hash,
+  background,
+  aspect = "aspect-video",
+}: {
+  vimeoId: string;
+  title: string;
+  hash?: string;
+  background?: boolean;
+  aspect?: string;
+}) {
   const query = new URLSearchParams({ title: "0", byline: "0", portrait: "0" });
   if (hash) query.set("h", hash);
+  if (background) {
+    query.set("background", "1");
+    query.set("autoplay", "1");
+    query.set("loop", "1");
+    query.set("muted", "1");
+  }
 
   return (
-    <div className="relative aspect-video bg-muted">
+    <div className={`relative bg-muted ${aspect}`}>
       <iframe
         src={`https://player.vimeo.com/video/${vimeoId}?${query}`}
         title={title}
