@@ -32,10 +32,10 @@ export const projects: Project[] = [
     category: "Concert Visuals",
     year: "2026",
     role: ["Creative Direction", "Motion Design"],
-    hero: "/images/afterlife-thumbnail.gif",
-    imagePosition: "top",
+    hero: "/images/afterlife-thumbnail.webp",
+    imagePosition: "50% 31%",
     gallery: [
-      "/images/afterlife-thumbnail.gif",
+      "/images/afterlife-thumbnail.webp",
     ],
     summary: "Concert visuals created for Afterlife.",
     body: "Concert visuals created for Afterlife.",
