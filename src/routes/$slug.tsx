@@ -52,7 +52,18 @@ function ThreeDProject() {
             title={`${project.title} — film`}
             hash={project.vimeoHash}
           />
-        ) : project.hideHero ? null : (
+        ) : project.video ? (
+          <video
+            src={project.video}
+            poster={project.hero}
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-label={project.title}
+            className="w-full h-auto"
+          />
+        ) : (
           <img src={project.hero} alt={project.title} className="w-full h-auto" />
         )}
         {project.videoPair?.length ? (
@@ -138,7 +149,12 @@ function ThreeDProject() {
               params={{ slug: item.slug }}
               className="block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
             >
-              <ProjectTile image={item.hero} title={item.title} meta={item.category} />
+              <ProjectTile
+                image={item.hero}
+                video={item.video}
+                title={item.title}
+                meta={item.category}
+              />
             </Link>
           ))}
         </div>

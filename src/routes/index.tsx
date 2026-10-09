@@ -108,6 +108,7 @@ function Info() {
               >
                 <ProjectTile
                   image={project.hero}
+                  video={project.video}
                   title={project.title}
                   meta={project.category}
                   aspect="aspect-[16/10]"
