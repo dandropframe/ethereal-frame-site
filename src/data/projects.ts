@@ -9,6 +9,8 @@ export type Project = {
   year: string;
   role: string[];
   hero: string;
+  /** Optional looping video for the hero and work tiles; `hero` is used as its poster. */
+  video?: string;
   imagePosition?: string;
   gallery: string[];
   summary: string;
@@ -34,10 +36,11 @@ export const projects: Project[] = [
     category: "Concert Visuals",
     year: "2026",
     role: ["Creative Direction", "Motion Design"],
-    hero: "/images/afterlife-thumbnail.webp",
+    hero: "/images/afterlife-poster.webp",
+    video: "/images/afterlife-loop.mp4",
     imagePosition: "50% 31%",
     gallery: [
-      "/images/afterlife-thumbnail.webp",
+      "/images/afterlife-poster.webp",
     ],
     videoPair: ["1234115778", "1234124787"],
     summary: "Concert visuals created for Afterlife.",
