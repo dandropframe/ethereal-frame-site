@@ -150,7 +150,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               name: "Dan Ulv",
               alternateName: "DAN ULV",
               jobTitle: "Design Director",
-              email: "dan@dropframe.site",
+              email: "info@danulv.com",
               url: SITE_URL,
               description: SITE_DESCRIPTION,
               knowsAbout: [

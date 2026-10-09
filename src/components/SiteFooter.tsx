@@ -9,7 +9,7 @@ export function SiteFooter() {
             something.
           </div>
           <a
-            href="mailto:dan@dropframe.site"
+            href="mailto:info@danulv.com"
             className="mt-6 inline-flex items-center gap-2 font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
           >
             <span>Get in touch</span>
@@ -20,10 +20,10 @@ export function SiteFooter() {
           <div className="text-eyebrow mb-4">Contact</div>
           <div className="space-y-1 text-sm">
             <a
-              href="mailto:dan@dropframe.site"
+              href="mailto:info@danulv.com"
               className="block hover:text-accent transition-colors"
             >
-              dan@dropframe.site
+              info@danulv.com
             </a>
           </div>
         </div>

@@ -30,7 +30,7 @@ export const Route = createFileRoute("/about")({
             jobTitle: profile.role,
             image: profile.image,
             description: profile.bio,
-            email: "dan@dropframe.site",
+            email: "info@danulv.com",
             url: SITE_URL,
           },
         }),
