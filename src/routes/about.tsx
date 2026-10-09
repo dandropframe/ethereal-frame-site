@@ -4,13 +4,13 @@ const SITE_URL = "https://ethereal-frame-site.lovable.app";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Dropframe" },
+      { title: "About — Dan Ulv" },
       {
         name: "description",
         content:
-          "Dan Braga Ulvestad — Design Director specialising in 3D and motion for fashion, cosmetics, and technology brands. From concept to final frame.",
+          "Dan Ulv — Design Director specialising in 3D and motion for fashion, cosmetics, and technology brands. From concept to final frame.",
       },
-      { property: "og:title", content: "About — Dropframe" },
+      { property: "og:title", content: "About — Dan Ulv" },
       { property: "og:description", content: "Concept-driven 3D and motion, grounded in craft." },
     ],
     scripts: [
@@ -20,13 +20,13 @@ export const Route = createFileRoute("/about")({
           "@context": "https://schema.org",
           "@type": "AboutPage",
           url: `${SITE_URL}/about`,
-          name: "About — Dropframe",
+          name: "About — Dan Ulv",
           about: { "@id": `${SITE_URL}/#person` },
           mainEntity: {
             "@type": "Person",
             "@id": `${SITE_URL}/#person`,
             name: profile.name,
-            alternateName: "DROPFRAME",
+            alternateName: "DAN ULV",
             jobTitle: profile.role,
             image: profile.image,
             description: profile.bio,
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/about")({
 });
 
 const profile = {
-  name: "Dan Braga Ulvestad",
+  name: "Dan Ulv",
   role: "Design Director",
   image: "/images/Mexico_City_Feb_2026__DSF8729-22.jpg",
   bio: "With over a decade of experience in 3D animation, motion design, and art direction, I bring a meticulous and concept-driven approach to visual storytelling. My practice is grounded in the craft of composition, lighting, materials, and movement. From shaping a visual language to refining the smallest detail, I combine design judgement with technical precision to build expressive 3D worlds and motion from concept through final execution.",
@@ -63,11 +63,7 @@ function About() {
         <div className="col-span-12 md:col-span-4 text-eyebrow">My Practice</div>
         <div className="col-span-12 md:col-span-8 space-y-6 text-lg leading-relaxed">
           <p>
-            I’m Dan Braga Ulvestad, a Design Director working as{" "}
-            <span className="font-mono text-xs tracking-widest uppercase text-accent">
-              DROPFRAME
-            </span>{" "}
-            for fashion, cosmetics, technology brands and beyond. I design and build 3D imagery,
+            I’m Dan Ulv, a Design Director working across fashion, cosmetics, technology, and beyond. I design and build 3D imagery,
             animation, and motion graphics — all driven by the same creative direction.
           </p>
           <p className="text-muted-foreground">

@@ -12,6 +12,8 @@ export type Project = {
   /** Optional looping video for the hero and work tiles; `hero` is used as its poster. */
   video?: string;
   imagePosition?: string;
+  /** Skip the hero still on the project page (its media comes from Vimeo instead) */
+  hideHero?: boolean;
   gallery: string[];
   summary: string;
   body: string;

@@ -11,16 +11,16 @@ export const Route = createFileRoute("/$slug")({
   head: ({ loaderData: project }) => ({
     meta: project
       ? [
-          { title: `${project.title} — Dropframe` },
+          { title: `${project.title} — Dan Ulv` },
           { name: "description", content: project.summary },
-          { property: "og:title", content: `${project.title} — Dropframe` },
+          { property: "og:title", content: `${project.title} — Dan Ulv` },
           { property: "og:description", content: project.summary },
           { property: "og:image", content: project.hero },
-          { name: "twitter:title", content: `${project.title} — Dropframe` },
+          { name: "twitter:title", content: `${project.title} — Dan Ulv` },
           { name: "twitter:description", content: project.summary },
           { name: "twitter:image", content: project.hero },
         ]
-      : [{ title: "Project not found — Dropframe" }],
+      : [{ title: "Project not found — Dan Ulv" }],
   }),
   component: ThreeDProject,
 });

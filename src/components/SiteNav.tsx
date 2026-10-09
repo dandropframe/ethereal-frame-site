@@ -26,9 +26,9 @@ export function SiteNav() {
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 md:px-10 md:py-6">
         <Link to="/" className="flex items-center gap-3 group">
           <img
-            src="https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/5bbf3758-dece-4958-8bdb-21ce1c329390/Artboard+42%408x.png"
-            alt="Dropframe"
-            className="h-[17.7px] md:h-[21.5px] w-auto object-contain [filter:invert(1)_brightness(2)]"
+            src="/images/Artboard_3.png"
+            alt="Dan Ulv"
+            className="h-[32px] md:h-[42px] w-auto object-contain"
           />
         </Link>
 

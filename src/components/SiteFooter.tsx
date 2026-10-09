@@ -50,7 +50,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-border">
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 py-6 flex items-center justify-between font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-          <span>© {new Date().getFullYear()} Dropframe</span>
+          <span>© {new Date().getFullYear()} Dan Ulv</span>
           <span>All rights reserved</span>
         </div>
       </div>

@@ -18,7 +18,7 @@ import { SiteFooter } from "../components/SiteFooter";
 
 const SITE_URL = "https://ethereal-frame-site.lovable.app";
 const SITE_DESCRIPTION =
-  "Dan Braga Ulvestad — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.";
+  "Dan Ulv — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.";
 
 function NotFoundComponent() {
   return (
@@ -85,25 +85,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "DROPFRAME — Design Director" },
+      { title: "DAN ULV — Design Director" },
       {
         name: "description",
         content:
-          "Dan Braga Ulvestad — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
+          "Dan Ulv — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
       },
-      { property: "og:title", content: "Dropframe — Design Director" },
+      { property: "og:title", content: "Dan Ulv — Design Director" },
       {
         property: "og:description",
         content:
-          "Dan Braga Ulvestad — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
+          "Dan Ulv — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Dropframe — Design Director" },
+      { name: "twitter:title", content: "Dan Ulv — Design Director" },
       {
         name: "twitter:description",
         content:
-          "Dan Braga Ulvestad — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
+          "Dan Ulv — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
       },
       {
         property: "og:image",
@@ -141,8 +141,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             {
               "@type": "Person",
               "@id": `${SITE_URL}/#person`,
-              name: "Dan Braga Ulvestad",
-              alternateName: "DROPFRAME",
+              name: "Dan Ulv",
+              alternateName: "DAN ULV",
               jobTitle: "Design Director",
               email: "dan@dropframe.site",
               url: SITE_URL,
@@ -160,7 +160,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               "@type": "WebSite",
               "@id": `${SITE_URL}/#website`,
               url: SITE_URL,
-              name: "DROPFRAME",
+              name: "DAN ULV",
               description: SITE_DESCRIPTION,
               publisher: { "@id": `${SITE_URL}/#person` },
               inLanguage: "en",
