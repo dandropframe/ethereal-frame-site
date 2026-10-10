@@ -218,7 +218,8 @@ export const projects: Project[] = [
     category: "Product",
     year: "2023",
     role: ["3D", "Art Direction"],
-    hero: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/167c782e-efd4-4b3c-8b64-09fd786bf70d/LaMer_04_NikeTiempoGraphic_01_MAIN_A+2_2_2026-05-14_19.17.37.jpg",
+    hero: "/images/nike-poster.webp",
+    video: "/images/nike-loop.mp4",
     gallery: [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/167c782e-efd4-4b3c-8b64-09fd786bf70d/LaMer_04_NikeTiempoGraphic_01_MAIN_A+2_2_2026-05-14_19.17.37.jpg",
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/2b87c377-e030-476b-a129-95c8f3ab7867/SoccerShoe_03_SHOE_05_2023-10-30_15.40.08.jpg",
