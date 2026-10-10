@@ -30,6 +30,20 @@ export const playground: PlaygroundItem[] = [
   video("xp-cubepanel-b", "XP Cube Panel B"),
   video("xp-cubepanel-05", "XP Cube Panel 05"),
   {
+    slug: "hard-surface-a",
+    title: "HARD SURFACE A",
+    meta: "Still",
+    type: "image",
+    src: "/playground/hard-surface-a.png",
+  },
+  {
+    slug: "hard-surface-b",
+    title: "HARD SURFACE B",
+    meta: "Still",
+    type: "image",
+    src: "/playground/hard-surface-b.png",
+  },
+  {
     slug: "whale-curl",
     title: "Whale Curl",
     meta: "Still",
