@@ -78,7 +78,7 @@ function About() {
             brief.
           </p>
           <p className="text-muted-foreground">
-            I am a creative partner for the next era of visual storytelling.
+            Your creative partner for the next era of visual storytelling.
           </p>
         </div>
       </section>
