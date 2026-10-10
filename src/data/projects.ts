@@ -60,7 +60,8 @@ export const projects: Project[] = [
     category: "Campaign",
     year: "2024",
     role: ["Art Direction", "3D", "Motion"],
-    hero: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/3ff8864f-c35d-4d03-930c-79f2e4c18574/sk2_001.png",
+    hero: "/images/sk2f-poster.webp",
+    video: "/images/sk2f-loop.mp4",
     gallery: [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/3ff8864f-c35d-4d03-930c-79f2e4c18574/sk2_001.png",
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/d6422dd6-daf9-4f65-b3f7-8d7ace68d02f/sk2_001.png",
@@ -95,7 +96,8 @@ export const projects: Project[] = [
     category: "R&D",
     year: "2024",
     role: ["Creative Direction", "Animation"],
-    hero: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/f4c170f5-0543-4895-9bc2-e70229701fd5/MS_AI_14_WORLD_PANELS_04_2025-03-26_17.09.59.png",
+    hero: "/images/microsoft-poster.webp",
+    video: "/images/microsoft-loop.mp4",
     gallery: [
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/f4c170f5-0543-4895-9bc2-e70229701fd5/MS_AI_14_WORLD_PANELS_04_2025-03-26_17.09.59.png",
       "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/19bc3714-cb32-4437-b97d-e4869004c603/MS_AI_02_FLOWER_02_2024-09-10_14.11.06.jpg",
