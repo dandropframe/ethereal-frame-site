@@ -25,14 +25,14 @@ const HERO =
   "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/f83e3a56-f986-47e7-8cb0-efa63a0c9c3d/Cover_02.png";
 
 const services = [
-  "Creative Direction",
+  "Art Direction",
+  "Concept & Narrative",
   "Product Visualisation",
   "Motion Design",
   "Previz",
   "GenAI",
   "Environment Design",
   "Styleframes",
-  "Compositing",
 ];
 
 const threeDProjects = projects.filter((project) => project.discipline === "3D");
