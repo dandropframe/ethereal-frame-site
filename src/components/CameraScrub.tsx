@@ -34,8 +34,14 @@ export default function CameraScrub({
     let direction = 1;
     let lastTime = 0;
     let raf = 0;
+    let loadedPercent = 0;
 
     const clamp = (value: number) => Math.max(0.02, Math.min(0.98, value));
+    const edgeSpeed = (progress: number) => {
+      const distanceToEdge = Math.min(progress - 0.02, 0.98 - progress);
+      const edgeBlend = Math.min(1, Math.max(0, distanceToEdge / 0.14));
+      return edgeBlend * edgeBlend * (3 - 2 * edgeBlend);
+    };
     const setProgress = (progress: number) => {
       if (Number.isFinite(vid.duration) && vid.duration > 0) {
         targetProgress = clamp(progress);
@@ -46,10 +52,8 @@ export default function CameraScrub({
       const elapsed = Math.min((now - (lastTime || now)) / 1000, 0.05);
       if (Number.isFinite(vid.duration) && vid.duration > 0) {
         if (!drag && !reduceMotion) {
-          // Track the source at normal playback speed, easing only near each end.
-          const edgeDistance = Math.min(targetProgress - 0.02, 0.98 - targetProgress);
-          const edgeEase = Math.min(1, Math.max(0.28, edgeDistance / 0.12));
-          const playbackRate = edgeEase / Math.max(vid.duration, 0.001);
+          // Keep the middle at normal speed and ease only at the turnarounds.
+          const playbackRate = Math.max(0.08, edgeSpeed(targetProgress)) / Math.max(vid.duration, 0.001);
           targetProgress += direction * playbackRate * elapsed;
           if (targetProgress >= 0.98 || targetProgress <= 0.02) {
             targetProgress = clamp(targetProgress);
@@ -68,10 +72,18 @@ export default function CameraScrub({
       raf = requestAnimationFrame(animate);
     };
 
+    const onProgress = () => {
+      if (!vid.buffered.length || !Number.isFinite(vid.duration) || vid.duration <= 0) return;
+      const bufferedEnd = vid.buffered.end(vid.buffered.length - 1);
+      loadedPercent = Math.min(100, Math.round((bufferedEnd / vid.duration) * 100));
+      h.textContent = `Loading ${loadedPercent}%`;
+    };
+
     const onLoaded = () => {
       targetProgress = clamp(start);
       vid.pause();
       h.textContent = "Drag";
+      h.style.opacity = "0.7";
       raf = requestAnimationFrame(animate);
     };
 
@@ -88,7 +100,6 @@ export default function CameraScrub({
     const onPointerMove = (event: PointerEvent) => {
       if (!drag || !Number.isFinite(vid.duration)) return;
       const delta = ((event.clientX - lastX) / st.clientWidth) * sensitivity;
-      const elapsed = Math.max((event.timeStamp - lastTime) / 1000, 0.008);
       setProgress(targetProgress + delta);
       direction = delta >= 0 ? 1 : -1;
       lastX = event.clientX;
@@ -102,6 +113,7 @@ export default function CameraScrub({
       vid.play().catch(() => undefined);
     };
 
+    vid.addEventListener("progress", onProgress);
     vid.addEventListener("loadedmetadata", onLoaded);
     st.addEventListener("pointerdown", onPointerDown);
     st.addEventListener("pointermove", onPointerMove);
@@ -113,6 +125,7 @@ export default function CameraScrub({
     return () => {
       cancelAnimationFrame(raf);
       vid.pause();
+      vid.removeEventListener("progress", onProgress);
       vid.removeEventListener("loadedmetadata", onLoaded);
       st.removeEventListener("pointerdown", onPointerDown);
       st.removeEventListener("pointermove", onPointerMove);
@@ -138,7 +151,7 @@ export default function CameraScrub({
       />
       <div
         ref={hint}
-        className="pointer-events-none absolute inset-x-0 bottom-7 text-center font-mono text-[10px] uppercase tracking-[.24em] text-[#f2f2f0] opacity-70 transition-opacity duration-700"
+        className="pointer-events-none absolute inset-0 flex items-center justify-center text-center font-mono text-[10px] uppercase tracking-[.24em] text-[#f2f2f0] opacity-70 transition-opacity duration-700"
       >
         Loading
       </div>
