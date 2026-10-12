@@ -74,7 +74,7 @@ function About() {
             precise execution — from the first styleframe to the final render.
           </p>
           <p className="text-muted-foreground">
-            I take on projects where creative direction makes a difference. When a project demands
+            I take on projects that need a point of view and the craft to carry it. When a project demands
             it, I draw on a network of trusted 3D artists, motion designers, and technical
             specialists. The creative direction stays consistent. The capacity scales with the
             brief.
