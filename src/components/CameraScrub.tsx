@@ -46,8 +46,11 @@ export default function CameraScrub({
       const elapsed = Math.min((now - (lastTime || now)) / 1000, 0.05);
       if (Number.isFinite(vid.duration) && vid.duration > 0) {
         if (!drag && !reduceMotion) {
-          const driftRate = 1 / Math.max(idleSeconds, 1);
-          targetProgress += direction * driftRate * elapsed;
+          // Track the source at normal playback speed, easing only near each end.
+          const edgeDistance = Math.min(targetProgress - 0.02, 0.98 - targetProgress);
+          const edgeEase = Math.min(1, Math.max(0.28, edgeDistance / 0.12));
+          const playbackRate = edgeEase / Math.max(vid.duration, 0.001);
+          targetProgress += direction * playbackRate * elapsed;
           if (targetProgress >= 0.98 || targetProgress <= 0.02) {
             targetProgress = clamp(targetProgress);
             direction *= -1;
@@ -55,9 +58,9 @@ export default function CameraScrub({
         }
 
         const currentProgress = vid.currentTime / vid.duration;
-        const smoothing = drag ? 0.42 : 0.12;
+        const smoothing = drag ? 0.7 : 0.3;
         const nextProgress = currentProgress + (targetProgress - currentProgress) * smoothing;
-        if (Math.abs(nextProgress - currentProgress) > 0.0001) {
+        if (Math.abs(nextProgress - currentProgress) > 0.00005) {
           vid.currentTime = nextProgress * vid.duration;
         }
       }
