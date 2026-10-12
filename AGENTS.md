@@ -20,3 +20,6 @@
 
 ## Playground
 - Keep the Playground data array in display order and prepend new entries so the overview and lightbox share the same ordering.
+
+## Services animation
+- Keep the reusable ServicesList animation scoped to its prop array and effect lifecycle, with cleaned-up listeners, timers, and animation frames; this avoids cross-page effects and preserves SSR-safe rendering.

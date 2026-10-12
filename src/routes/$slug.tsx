@@ -15,10 +15,14 @@ export const Route = createFileRoute("/$slug")({
           { name: "description", content: project.summary },
           { property: "og:title", content: `${project.title} — Dan Ulv` },
           { property: "og:description", content: project.summary },
-          { property: "og:image", content: project.hero },
+          { property: "og:type", content: "website" },
+          { name: "twitter:card", content: "summary_large_image" },
           { name: "twitter:title", content: `${project.title} — Dan Ulv` },
           { name: "twitter:description", content: project.summary },
-          { name: "twitter:image", content: project.hero },
+          ...(project.hero.startsWith("https://") ? [
+            { property: "og:image", content: project.hero },
+            { name: "twitter:image", content: project.hero },
+          ] : []),
         ]
       : [{ title: "Project not found — Dan Ulv" }],
   }),

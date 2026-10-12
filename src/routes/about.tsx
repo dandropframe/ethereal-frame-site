@@ -11,6 +11,8 @@ export const Route = createFileRoute("/about")({
           "Dan Ulv — Art Director specialising in 3D and motion for fashion, cosmetics, and technology brands. From concept to final frame.",
       },
       { property: "og:title", content: "About — Dan Ulv" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:description", content: "Concept-driven 3D and motion, grounded in craft." },
     ],
     scripts: [

@@ -11,6 +11,8 @@ export const Route = createFileRoute("/film")({
         content: "In-camera film and photography for fashion, cosmetics, and brand storytelling.",
       },
       { property: "og:title", content: "Film — Dan Ulv" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       {
         property: "og:description",
         content: "Direction and production for live-action film and photography.",
