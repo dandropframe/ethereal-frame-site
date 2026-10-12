@@ -53,7 +53,7 @@ function About() {
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 pb-24 md:pb-40">
         <div className="text-eyebrow mb-8">Philosophy</div>
         <h1 className="text-display text-[1.8rem] md:text-[3rem] leading-[1.05]">
-          Craft leads.
+          Craft and story leads.
           <br />
           <span className="text-muted-foreground">Technology follows.</span>
         </h1>
