@@ -62,8 +62,9 @@ export default function CameraScrub({
         }
 
         const currentProgress = vid.currentTime / vid.duration;
-        const smoothing = drag ? 0.7 : 0.3;
-        const nextProgress = currentProgress + (targetProgress - currentProgress) * smoothing;
+        const nextProgress = drag
+          ? targetProgress
+          : currentProgress + (targetProgress - currentProgress) * 0.3;
         if (Math.abs(nextProgress - currentProgress) > 0.00005) {
           vid.currentTime = nextProgress * vid.duration;
         }
