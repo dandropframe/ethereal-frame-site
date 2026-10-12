@@ -3,8 +3,21 @@ import { useEffect, useRef, useState } from "react";
 import { ShowreelDropdown } from "@/components/ShowreelDropdown";
 import { ProjectTile } from "@/components/ProjectTile";
 import { projects } from "@/data/projects";
+import { ServicesList } from "@/components/ServicesList";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Dan Ulv — Art Direction & 3D Motion" },
+      { name: "description", content: "Dan Ulv directs, designs, and builds ideas from concept to final frame — creative direction, 3D, motion design, and GenAI." },
+      { property: "og:title", content: "Dan Ulv — Art Direction & 3D Motion" },
+      { property: "og:description", content: "Creative direction, 3D, motion design, and GenAI — from concept to final frame." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: HERO },
+      { name: "twitter:image", content: HERO },
+    ],
+  }),
   component: Info,
 });
 
@@ -129,13 +142,10 @@ function Services() {
     <section ref={ref} className="border-y border-border overflow-hidden">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10 py-24 md:py-40 grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-3 text-eyebrow">Services</div>
-        <ul
+        <ServicesList
+          services={services}
           className={`col-span-12 md:col-span-9 grid grid-cols-2 gap-x-6 gap-y-4 list-none m-0 p-0 text-display text-[0.8125rem] md:text-[1.5rem] transition-all duration-1000 ${v ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-        >
-          {services.map((service) => (
-            <li key={service}>{service}</li>
-          ))}
-        </ul>
+        />
       </div>
     </section>
   );

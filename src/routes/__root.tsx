@@ -105,16 +105,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Dan Ulv — Art Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
       },
-      {
-        property: "og:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e074bb63-2d4b-4ba6-b2bc-ddce9d71c88a/id-preview-b3472824--6c5c6617-bb8a-4d82-bff2-4a9812d776eb.lovable.app-1784136667727.png",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e074bb63-2d4b-4ba6-b2bc-ddce9d71c88a/id-preview-b3472824--6c5c6617-bb8a-4d82-bff2-4a9812d776eb.lovable.app-1784136667727.png",
-      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

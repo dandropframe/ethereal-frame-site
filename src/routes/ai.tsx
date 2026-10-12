@@ -12,6 +12,8 @@ export const Route = createFileRoute("/ai")({
           "Synthography: fashion imagery and video created without physical sets, locations, or a shoot day.",
       },
       { property: "og:title", content: "AI — Dan Ulv" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       {
         property: "og:description",
         content: "Synthetic imagery as a direct alternative to traditional production.",
