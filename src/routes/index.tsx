@@ -71,7 +71,7 @@ function Info() {
         </div>
 
         <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
-          <div className="text-eyebrow mb-6">Design Director</div>
+          <div className="text-eyebrow mb-6">Art Director</div>
           <h1 className="text-display text-[4.4vw] md:text-[2.7rem] leading-[1.05] opacity-80">
             I direct, design, and build ideas —<br />
             from concept to final frame.

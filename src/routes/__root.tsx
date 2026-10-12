@@ -18,7 +18,7 @@ import { SiteFooter } from "../components/SiteFooter";
 
 const SITE_URL = "https://ethereal-frame-site.lovable.app";
 const SITE_DESCRIPTION =
-  "Dan Ulv — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.";
+  "Dan Ulv — Art Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.";
 
 function NotFoundComponent() {
   return (
@@ -85,25 +85,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "DAN ULV — Design Director" },
+      { title: "DAN ULV — Art Director" },
       {
         name: "description",
         content:
-          "Dan Ulv — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
+          "Dan Ulv — Art Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
       },
-      { property: "og:title", content: "Dan Ulv — Design Director" },
+      { property: "og:title", content: "Dan Ulv — Art Director" },
       {
         property: "og:description",
         content:
-          "Dan Ulv — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
+          "Dan Ulv — Art Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Dan Ulv — Design Director" },
+      { name: "twitter:title", content: "Dan Ulv — Art Director" },
       {
         name: "twitter:description",
         content:
-          "Dan Ulv — Design Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
+          "Dan Ulv — Art Director for global brands. Creative Direction, Product Visualisation, Motion Graphics, Previz, GenAI, and Environment Design.",
       },
       {
         property: "og:image",
@@ -149,7 +149,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               "@id": `${SITE_URL}/#person`,
               name: "Dan Ulv",
               alternateName: "DAN ULV",
-              jobTitle: "Design Director",
+              jobTitle: "Art Director",
               email: "info@danulv.com",
               url: SITE_URL,
               description: SITE_DESCRIPTION,
