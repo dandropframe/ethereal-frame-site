@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Dan Ulv — Design Director specialising in 3D and motion for fashion, cosmetics, and technology brands. From concept to final frame.",
+          "Dan Ulv — Art Director specialising in 3D and motion for fashion, cosmetics, and technology brands. From concept to final frame.",
       },
       { property: "og:title", content: "About — Dan Ulv" },
       { property: "og:description", content: "Concept-driven 3D and motion, grounded in craft." },
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/about")({
 
 const profile = {
   name: "Dan Ulv",
-  role: "Design Director",
+  role: "Art Director",
   image: "/images/Mexico_City_Feb_2026__DSF8729-22.jpg",
   bio: "With over a decade of experience in 3D animation, motion design, and art direction, I bring a meticulous and concept-driven approach to visual storytelling. My practice is grounded in the craft of composition, lighting, materials, and movement. From shaping a visual language to refining the smallest detail, I combine design judgement with technical precision to build expressive 3D worlds and motion from concept through final execution.",
 };
@@ -63,7 +63,7 @@ function About() {
         <div className="col-span-12 md:col-span-4 text-eyebrow">My Practice</div>
         <div className="col-span-12 md:col-span-8 space-y-6 text-lg leading-relaxed">
           <p>
-            I’m Dan Ulv, a Design Director working across fashion, cosmetics, technology, and beyond. I design and build 3D imagery,
+            I’m Dan Ulv, a Art Director working across fashion, cosmetics, technology, and beyond. I design and build 3D imagery,
             animation, and motion graphics — all driven by the same creative direction.
           </p>
           <p className="text-muted-foreground">
