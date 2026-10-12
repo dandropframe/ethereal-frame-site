@@ -61,7 +61,7 @@ function Info() {
         <CameraScrub src="/video/floret-scrub-2560.mp4" mobileSrc="/video/floret-scrub-1280.mp4" />
         <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-background/40 via-background/10 to-background" />
 
-        <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
+        <div className="pointer-events-none relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
           <div className="text-eyebrow mb-6">Art Director</div>
           <h1 className="text-display text-[4.4vw] md:text-[39.9px] leading-[1.18] opacity-80">
             I direct, design, and build ideas —<br />

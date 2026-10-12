@@ -30,31 +30,44 @@ export default function CameraScrub({
     const source = isSmall && mobileSrc ? mobileSrc : src;
     let drag = false;
     let lastX = 0;
+    let targetProgress = start;
+    let direction = 1;
     let lastTime = 0;
     let raf = 0;
 
-    const clamp = (value: number) => Math.max(0, Math.min(1, value));
+    const clamp = (value: number) => Math.max(0.02, Math.min(0.98, value));
     const setProgress = (progress: number) => {
       if (Number.isFinite(vid.duration) && vid.duration > 0) {
-        vid.currentTime = clamp(progress) * vid.duration;
+        targetProgress = clamp(progress);
       }
     };
 
     const animate = (now: number) => {
-      if (!drag && !reduceMotion && !vid.paused && Number.isFinite(vid.duration)) {
-        const driftRate = 1 / idleSeconds;
-        const next =
-          vid.currentTime / vid.duration +
-          driftRate * Math.min((now - (lastTime || now)) / 1000, 0.05);
-        if (next >= 1) vid.currentTime = 0;
+      const elapsed = Math.min((now - (lastTime || now)) / 1000, 0.05);
+      if (Number.isFinite(vid.duration) && vid.duration > 0) {
+        if (!drag && !reduceMotion) {
+          const driftRate = 1 / Math.max(idleSeconds, 1);
+          targetProgress += direction * driftRate * elapsed;
+          if (targetProgress >= 0.98 || targetProgress <= 0.02) {
+            targetProgress = clamp(targetProgress);
+            direction *= -1;
+          }
+        }
+
+        const currentProgress = vid.currentTime / vid.duration;
+        const smoothing = drag ? 0.42 : 0.12;
+        const nextProgress = currentProgress + (targetProgress - currentProgress) * smoothing;
+        if (Math.abs(nextProgress - currentProgress) > 0.0001) {
+          vid.currentTime = nextProgress * vid.duration;
+        }
       }
       lastTime = now;
       raf = requestAnimationFrame(animate);
     };
 
     const onLoaded = () => {
-      setProgress(start);
-      vid.play().catch(() => undefined);
+      targetProgress = clamp(start);
+      vid.pause();
       h.textContent = "Drag";
       raf = requestAnimationFrame(animate);
     };
@@ -73,8 +86,8 @@ export default function CameraScrub({
       if (!drag || !Number.isFinite(vid.duration)) return;
       const delta = ((event.clientX - lastX) / st.clientWidth) * sensitivity;
       const elapsed = Math.max((event.timeStamp - lastTime) / 1000, 0.008);
-      const progress = vid.currentTime / vid.duration;
-      setProgress(progress + delta);
+      setProgress(targetProgress + delta);
+      direction = delta >= 0 ? 1 : -1;
       lastX = event.clientX;
       lastTime = event.timeStamp;
     };
