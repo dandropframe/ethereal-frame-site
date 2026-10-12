@@ -65,8 +65,8 @@ function About() {
         <div className="col-span-12 md:col-span-4 text-eyebrow">My Practice</div>
         <div className="col-span-12 md:col-span-8 space-y-6 text-lg leading-relaxed">
           <p>
-            I’m Dan Ulv, an Art Director working across fashion, cosmetics, technology, and beyond. I design and build digital imagery,
-            motion graphics, and immersive worlds, all grounded in a filmmaker’s narrative foundation.
+            I’m Dan Ulv, an Art Director working across technology, cosmetics, sports, and beyond. I design and build 3D imagery,
+            animation, and motion graphics — all driven by the same creative direction.
           </p>
           <p className="text-muted-foreground">
             My foundation is in the craft of 3D and motion. I shape composition, lighting,
