@@ -9,7 +9,7 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-border: var(--border);
-  --font-display: "Outfit", sans-serif;
+  --font-display: "Archivo", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-sans: "Blinker", system-ui, sans-serif;
 }
