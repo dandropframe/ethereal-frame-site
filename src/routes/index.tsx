@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
+import CameraScrub from "@/components/CameraScrub";
 import { ShowreelDropdown } from "@/components/ShowreelDropdown";
 import { ProjectTile } from "@/components/ProjectTile";
 import { projects } from "@/data/projects";
@@ -67,18 +68,9 @@ function Info() {
           className="absolute inset-0 will-change-transform"
           style={{ transform: `translate3d(0, ${scrollY * 0.35}px, 0)` }}
         >
-          <div className="absolute inset-0 h-full w-full">
-            <iframe
-              src="https://player.vimeo.com/video/757436831?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&portrait=0&transparent=0"
-              title="DROPFRAME reel"
-              allow="autoplay; fullscreen"
-              className="absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2 border-0"
-            />
-          </div>
-          <img
-            src={HERO}
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover opacity-0"
+          <CameraScrub
+            src="/video/floret-slide-1920.bin"
+            mobileSrc="/video/floret-slide-1280.bin"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background" />
         </div>
