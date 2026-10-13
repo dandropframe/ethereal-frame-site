@@ -53,20 +53,63 @@ function useReveal<T extends HTMLElement>() {
 }
 
 function Info() {
-  const [scrollY, setScrollY] = useState(0);
+  const heroRef = useRef<HTMLElement>(null);
+  const backgroundRef = useRef<HTMLDivElement>(null);
+  const typeRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    const on = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", on, { passive: true });
-    return () => window.removeEventListener("scroll", on);
+    const hero = heroRef.current;
+    const background = backgroundRef.current;
+    const typography = typeRef.current;
+    if (!hero || !background || !typography) return;
+
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let frame: number | null = null;
+
+    const update = () => {
+      frame = null;
+      const bounds = hero.getBoundingClientRect();
+      const scroll = Math.min(Math.max(-bounds.top, 0), bounds.height);
+      const progress = Math.min(scroll / Math.max(bounds.height * 0.75, 1), 1);
+      const fade = progress * progress * (3 - 2 * progress);
+
+      background.style.transform = motion.matches
+        ? "none"
+        : `translate3d(0, ${scroll * 0.35}px, 0)`;
+      typography.style.transform = motion.matches
+        ? "none"
+        : `translate3d(0, ${scroll * 0.15}px, 0)`;
+      typography.style.opacity = `${1 - fade}`;
+    };
+
+    const scheduleUpdate = () => {
+      if (frame === null) frame = window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    motion.addEventListener("change", scheduleUpdate);
+
+    return () => {
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      motion.removeEventListener("change", scheduleUpdate);
+      if (frame !== null) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   return (
     <div>
       {/* Hero */}
-      <section data-camera-scrub className="relative h-[100svh] w-full overflow-hidden touch-pan-y">
+      <section
+        ref={heroRef}
+        data-camera-scrub
+        className="relative h-[100svh] w-full overflow-hidden touch-pan-y"
+      >
         <div
-          className="absolute inset-0 will-change-transform"
-          style={{ transform: `translate3d(0, ${scrollY * 0.35}px, 0)` }}
+          ref={backgroundRef}
+          className="absolute inset-0 will-change-transform motion-reduce:will-change-auto"
         >
           <CameraScrub
             src="/video/floret-slide-1920.bin"
@@ -75,7 +118,10 @@ function Info() {
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background/50" />
         </div>
 
-        <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
+        <div
+          ref={typeRef}
+          className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24 will-change-[transform,opacity] motion-reduce:will-change-auto"
+        >
           <div className="text-eyebrow mb-6">Art Director</div>
           <h1 className="text-display text-[4.4vw] md:text-[39.9px] leading-[1.18] opacity-80">
             I direct, design, and build ideas —<br />
@@ -86,9 +132,6 @@ function Info() {
           </div>
         </div>
 
-        <div className="absolute bottom-6 right-6 md:right-10 z-10 font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-          Scroll ↓
-        </div>
       </section>
 
       <Services />
