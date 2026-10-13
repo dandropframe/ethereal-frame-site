@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ProjectTile } from "@/components/ProjectTile";
+import { ProjectGallery } from "@/components/ProjectGallery";
 import { getProject, getRelated, type Project } from "@/data/projects";
 
 export const Route = createFileRoute("/$slug")({
@@ -55,8 +56,9 @@ function ThreeDProject() {
             vimeoId={project.vimeoId}
             title={`${project.title} — film`}
             hash={project.vimeoHash}
+            autoplay={project.vimeoAutoplay}
           />
-        ) : project.video ? (
+        ) : project.hideHero ? null : project.video ? (
           <video
             src={project.video}
             poster={project.hero}
@@ -90,6 +92,7 @@ function ThreeDProject() {
                 key={vimeoId}
                 vimeoId={vimeoId}
                 title={`${project.title} — animation ${index + 1}`}
+                autoplay
               />
             ))}
           </div>
@@ -127,20 +130,7 @@ function ThreeDProject() {
       </section>
 
       {project.gallery.length > 0 ? (
-        <section
-          aria-label={`${project.title} gallery`}
-          className="mx-auto max-w-[1600px] px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10"
-        >
-          {project.gallery.map((image, index) => (
-            <img
-              key={`${image}-${index}`}
-              src={image}
-              alt={`${project.title} — still ${index + 1}`}
-              loading="lazy"
-              className="w-full h-auto self-start"
-            />
-          ))}
-        </section>
+        <ProjectGallery key={project.slug} title={project.title} images={project.gallery} />
       ) : null}
 
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 mt-16 md:mt-24">
@@ -172,18 +162,20 @@ function ProjectVideo({
   title,
   hash,
   background,
+  autoplay,
   aspect = "aspect-video",
 }: {
   vimeoId: string;
   title: string;
   hash?: string;
   background?: boolean;
+  autoplay?: boolean;
   aspect?: string;
 }) {
   const query = new URLSearchParams({ title: "0", byline: "0", portrait: "0" });
   if (hash) query.set("h", hash);
-  if (background) {
-    query.set("background", "1");
+  if (background) query.set("background", "1");
+  if (autoplay || background) {
     query.set("autoplay", "1");
     query.set("loop", "1");
     query.set("muted", "1");
@@ -194,7 +186,7 @@ function ProjectVideo({
       <iframe
         src={`https://player.vimeo.com/video/${vimeoId}?${query}`}
         title={title}
-        loading="lazy"
+        loading={autoplay || background ? "eager" : "lazy"}
         allow="autoplay; fullscreen; picture-in-picture"
         allowFullScreen
         className="absolute inset-0 h-full w-full border-0"
