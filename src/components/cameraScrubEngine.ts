@@ -38,7 +38,10 @@ function el(tag: string, css: string, parent: HTMLElement) {
 export function mountCameraScrub(root: HTMLElement, getPack: (p: (x: number) => void, s: AbortSignal) => Promise<ArrayBuffer>, o: Options = {}): () => void {
   const sens = o.sensitivity ?? 1.15, idle = o.idleSeconds ?? 30, sign = o.sign ?? 1;
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  root.style.cssText += ";position:fixed;inset:0;overflow:hidden;background:#0b0b0b;touch-action:none;cursor:grab;user-select:none";
+  root.style.cssText += ";position:absolute;inset:0;overflow:hidden;background:#0b0b0b;touch-action:pan-y;cursor:grab;user-select:none";
+  const surface = root.closest<HTMLElement>("[data-camera-scrub]") ?? root;
+  const previousCursor = surface.style.cursor;
+  surface.style.cursor = "grab";
   const mono = "font:400 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.24em;color:#f2f2f0;";
   const cv = el("canvas", "position:absolute;inset:0;width:100%;height:100%;display:block", root) as HTMLCanvasElement;
   const ctx = cv.getContext("2d")!;
@@ -54,6 +57,7 @@ export function mountCameraScrub(root: HTMLElement, getPack: (p: (x: number) => 
   const cache = new Map<number, ImageBitmap>(), pending = new Map<number, Promise<void>>();
   let blobs: Blob[] = [], n = 0, fps = 24, dead = false, raf = 0;
   let pos = 0, tgt = 0, dir = 1, dragging = false, last = 0, lx = 0, pid = -1, moved = 0, suppress = false;
+  let suppressTimer: ReturnType<typeof setTimeout> | undefined;
   const BACK = 3, AHEAD = 12;
 
   const decode = (i: number): Promise<void> => {
@@ -97,30 +101,33 @@ export function mountCameraScrub(root: HTMLElement, getPack: (p: (x: number) => 
   };
 
   const down = (e: PointerEvent) => {
-    if (dragging || (e.pointerType === "mouse" && e.button !== 0)) return;
-    if ((e.target as Element | null)?.closest?.("input,textarea,select,[data-no-scrub]")) return;
-    dragging = true; pid = e.pointerId; lx = e.clientX; moved = 0; root.style.cursor = "grabbing"; hint.style.opacity = "0"; document.body.style.userSelect = "none";
+    if (!n || dragging || !e.isPrimary || e.button !== 0) return;
+    if ((e.target as Element | null)?.closest?.("a,button,input,textarea,select,[contenteditable],[data-no-scrub]")) return;
+    clearTimeout(suppressTimer); suppress = false;
+    dragging = true; pid = e.pointerId; lx = e.clientX; moved = 0; surface.style.cursor = "grabbing"; hint.style.opacity = "0";
+    surface.setPointerCapture(pid);
+    if (e.pointerType === "mouse") e.preventDefault();
   };
   const move = (e: PointerEvent) => {
     if (!dragging || e.pointerId !== pid) return;
     moved += Math.abs(e.clientX - lx);
-    const dx = ((e.clientX - lx) / innerWidth) * sens * sign * (n - 1); lx = e.clientX;
+    const dx = ((e.clientX - lx) / Math.max(1, surface.clientWidth)) * sens * sign * (n - 1); lx = e.clientX;
     if (dx) dir = dx > 0 ? 1 : -1;
     tgt = Math.max(0, Math.min(n - 1, tgt + dx));
   };
   const up = (e: PointerEvent) => {
     if (!dragging || e.pointerId !== pid) return;
-    dragging = false; root.style.cursor = "grab"; document.body.style.userSelect = "";
-    if (moved > 6) { suppress = true; setTimeout(() => { suppress = false; }, 80); }   // a drag that ends on a link must not also click it
+    dragging = false; surface.style.cursor = "grab";
+    if (surface.hasPointerCapture(pid)) surface.releasePointerCapture(pid);
+    if (moved > 6 && e.type === "pointerup") { suppress = true; suppressTimer = setTimeout(() => { suppress = false; }, 80); }
+    pid = -1;
   };
   const click = (e: MouseEvent) => { if (suppress) { e.preventDefault(); e.stopPropagation(); suppress = false; } };
   const dstart = (e: Event) => { if (dragging) e.preventDefault(); };                  // stop the browser's native link/image drag from cancelling ours
-  const html = document.documentElement, prevTouch = html.style.touchAction, prevOver = html.style.overscrollBehavior;
-  html.style.touchAction = "none"; html.style.overscrollBehavior = "none";             // stop the browser scrolling / pulling to refresh while you drag
-  // capture phase: we hear the pointer even if something above the camera (or a link covering the page) stops the event
-  window.addEventListener("pointerdown", down, true); window.addEventListener("pointermove", move, true);
-  window.addEventListener("pointerup", up, true); window.addEventListener("pointercancel", up, true);
-  window.addEventListener("click", click, true); window.addEventListener("dragstart", dstart, true);
+  surface.addEventListener("pointerdown", down, true); surface.addEventListener("pointermove", move, true);
+  surface.addEventListener("pointerup", up, true); surface.addEventListener("pointercancel", up, true);
+  surface.addEventListener("lostpointercapture", up, true);
+  surface.addEventListener("click", click, true); surface.addEventListener("dragstart", dstart, true);
 
   (async () => {
     try {
@@ -144,10 +151,13 @@ export function mountCameraScrub(root: HTMLElement, getPack: (p: (x: number) => 
 
   return () => {
     dead = true; ac.abort(); cancelAnimationFrame(raf);
-    window.removeEventListener("pointerdown", down, true); window.removeEventListener("pointermove", move, true);
-    window.removeEventListener("pointerup", up, true); window.removeEventListener("pointercancel", up, true);
-    window.removeEventListener("click", click, true); window.removeEventListener("dragstart", dstart, true);
-    html.style.touchAction = prevTouch; html.style.overscrollBehavior = prevOver; document.body.style.userSelect = "";
+    surface.removeEventListener("pointerdown", down, true); surface.removeEventListener("pointermove", move, true);
+    surface.removeEventListener("pointerup", up, true); surface.removeEventListener("pointercancel", up, true);
+    surface.removeEventListener("lostpointercapture", up, true);
+    surface.removeEventListener("click", click, true); surface.removeEventListener("dragstart", dstart, true);
+    clearTimeout(suppressTimer);
+    if (surface.hasPointerCapture(pid)) surface.releasePointerCapture(pid);
+    surface.style.cursor = previousCursor;
     cache.forEach((b) => b.close()); cache.clear(); root.replaceChildren();
   };
 }

@@ -63,7 +63,7 @@ function Info() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative h-[100svh] w-full overflow-hidden">
+      <section data-camera-scrub className="relative h-[100svh] w-full overflow-hidden touch-pan-y">
         <div
           className="absolute inset-0 will-change-transform"
           style={{ transform: `translate3d(0, ${scrollY * 0.35}px, 0)` }}
@@ -72,7 +72,7 @@ function Info() {
             src="/video/floret-slide-1920.bin"
             mobileSrc="/video/floret-slide-1280.bin"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background/50" />
         </div>
 
         <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
