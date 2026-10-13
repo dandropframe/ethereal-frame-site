@@ -15,6 +15,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AiRouteImport } from './routes/ai'
 import { Route as FilmRouteImport } from './routes/film'
 import { Route as PlaygroundRouteImport } from './routes/playground'
+import { Route as ShowreelRouteImport } from './routes/showreel'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
 const IndexRoute = IndexRouteImport.update({
@@ -47,6 +48,11 @@ const PlaygroundRoute = PlaygroundRouteImport.update({
   path: '/playground',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShowreelRoute = ShowreelRouteImport.update({
+  id: '/showreel',
+  path: '/showreel',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/ai': typeof AiRoute
   '/film': typeof FilmRoute
   '/playground': typeof PlaygroundRoute
+  '/showreel': typeof ShowreelRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/ai': typeof AiRoute
   '/film': typeof FilmRoute
   '/playground': typeof PlaygroundRoute
+  '/showreel': typeof ShowreelRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
@@ -79,15 +87,30 @@ export interface FileRoutesById {
   '/ai': typeof AiRoute
   '/film': typeof FilmRoute
   '/playground': typeof PlaygroundRoute
+  '/showreel': typeof ShowreelRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/$slug' | '/about' | '/ai' | '/film' | '/playground' | '/sitemap.xml'
+    | '/'
+    | '/$slug'
+    | '/about'
+    | '/ai'
+    | '/film'
+    | '/playground'
+    | '/showreel'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
   to:
-    '/' | '/$slug' | '/about' | '/ai' | '/film' | '/playground' | '/sitemap.xml'
+    | '/'
+    | '/$slug'
+    | '/about'
+    | '/ai'
+    | '/film'
+    | '/playground'
+    | '/showreel'
+    | '/sitemap.xml'
   id:
     | '__root__'
     | '/'
@@ -96,6 +119,7 @@ export interface FileRouteTypes {
     | '/ai'
     | '/film'
     | '/playground'
+    | '/showreel'
     | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
@@ -106,6 +130,7 @@ export interface RootRouteChildren {
   AiRoute: typeof AiRoute
   FilmRoute: typeof FilmRoute
   PlaygroundRoute: typeof PlaygroundRoute
+  ShowreelRoute: typeof ShowreelRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -153,6 +178,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlaygroundRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/showreel': {
+      id: '/showreel'
+      path: '/showreel'
+      fullPath: '/showreel'
+      preLoaderRoute: typeof ShowreelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -170,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   AiRoute: AiRoute,
   FilmRoute: FilmRoute,
   PlaygroundRoute: PlaygroundRoute,
+  ShowreelRoute: ShowreelRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport

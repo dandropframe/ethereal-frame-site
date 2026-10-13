@@ -7,9 +7,7 @@ export function ShowreelDropdown({
 }) {
   return (
     <a
-      href={`https://vimeo.com/${vimeoId}`}
-      target="_blank"
-      rel="noreferrer"
+      href="/showreel"
       className="group inline-flex items-center gap-3 border border-border px-5 py-3 font-mono text-[11px] tracking-[0.22em] uppercase text-foreground transition-colors hover:bg-foreground hover:text-background"
     >
       <span
