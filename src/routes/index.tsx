@@ -58,7 +58,7 @@ function Info() {
       <div className="relative z-10">
         {/* Hero */}
         <section className="relative h-[100svh] w-full overflow-hidden">
-        <CameraScrub src="/video/floret-scrub-2560.mp4" mobileSrc="/video/floret-scrub-1280.mp4" />
+        <CameraScrub src="/video/floret-slide-1920.bin" mobileSrc="/video/floret-slide-1280.bin" />
         <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-background/40 via-background/10 to-background" />
 
         <div className="pointer-events-none relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
