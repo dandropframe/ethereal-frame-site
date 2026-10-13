@@ -1,5 +1,5 @@
 // Framework-free engine: the camera drifts very slowly back and forth; drag to move it, let go and it carries on from there.
-export type Options = { sensitivity?: number; idleSeconds?: number; start?: number; sign?: number };
+export type Options = { sensitivity?: number; idleSeconds?: number; start?: number; sign?: number; absolute?: boolean };
 
 export async function fetchPack(url: string, onProgress: (p: number) => void, signal: AbortSignal): Promise<ArrayBuffer> {
   const res = await fetch(url, { signal });
@@ -36,7 +36,7 @@ function el(tag: string, css: string, parent: HTMLElement) {
 export function mountCameraScrub(root: HTMLElement, getPack: (p: (x: number) => void, s: AbortSignal) => Promise<ArrayBuffer>, o: Options = {}): () => void {
   const sens = o.sensitivity ?? 1.15, idle = o.idleSeconds ?? 30, sign = o.sign ?? 1;
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  root.style.cssText += ";position:fixed;inset:0;overflow:hidden;background:#0b0b0b;touch-action:none;cursor:grab;user-select:none";
+  root.style.cssText += `;position:${o.absolute ? "absolute" : "fixed"};inset:0;overflow:hidden;background:#0b0b0b;touch-action:pan-y;cursor:grab;user-select:none`;
   const mono = "font:400 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.24em;color:#f2f2f0;";
   const cv = el("canvas", "position:absolute;inset:0;width:100%;height:100%;display:block", root) as HTMLCanvasElement;
   const ctx = cv.getContext("2d")!;
