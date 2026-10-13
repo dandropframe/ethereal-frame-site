@@ -53,15 +53,53 @@ function useReveal<T extends HTMLElement>() {
 }
 
 function Info() {
+  const heroCanvasRef = useRef<HTMLDivElement>(null);
+  const heroCopyRef = useRef<HTMLDivElement>(null);
+  const heroCtaRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const y = window.scrollY;
+      const canvas = heroCanvasRef.current;
+      if (canvas) {
+        const section = canvas.parentElement;
+        const headroom = section ? Math.max(0, canvas.offsetHeight - section.offsetHeight) : 0;
+        canvas.style.transform = `translate3d(0, ${Math.min(y * 0.2, headroom).toFixed(1)}px, 0)`;
+      }
+      const copy = heroCopyRef.current;
+      if (copy) {
+        const vh = window.innerHeight;
+        copy.style.transform = `translate3d(0, ${Math.min(y * 0.25, vh * 0.25).toFixed(1)}px, 0)`;
+        copy.style.opacity = String(Math.max(0, 1 - y / (vh * 0.35)));
+      }
+      const cta = heroCtaRef.current;
+      if (cta) cta.style.opacity = String(Math.max(0, 1 - y / (window.innerHeight * 0.15)));
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
     <div>
       <div className="relative z-10">
         {/* Hero */}
         <section className="relative h-[100svh] w-full overflow-hidden">
-        <CameraScrub src="/video/floret-slide-1920.bin" mobileSrc="/video/floret-slide-1280.bin" />
+        <div ref={heroCanvasRef} className="absolute inset-x-0 bottom-0 h-[120%] will-change-transform">
+          <CameraScrub src="/video/floret-slide-1920.bin" mobileSrc="/video/floret-slide-1280.bin" />
+        </div>
         <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-background/40 via-background/10 to-background" />
 
-        <div className="pointer-events-none relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
+        <div ref={heroCopyRef} className="pointer-events-none relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 md:px-10 pb-16 md:pb-24 will-change-transform">
           <div className="text-eyebrow mb-6">Art Director</div>
           <h1 className="text-display text-[4.4vw] md:text-[39.9px] leading-[1.18] opacity-80">
             I direct, design, and build ideas —<br />
@@ -72,7 +110,7 @@ function Info() {
           </div>
         </div>
 
-        <div className="absolute bottom-6 right-6 md:right-10 z-10 font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
+        <div ref={heroCtaRef} className="absolute bottom-6 right-6 md:right-10 z-10 font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
           Scroll ↓
         </div>
       </section>
