@@ -16,5 +16,5 @@ export default function CameraScrub({ src, mobileSrc, sensitivity, idleSeconds, 
     const url = small && mobileSrc ? mobileSrc : src;
     return mountCameraScrub(ref.current!, (p, s) => fetchPack(url, p, s), { sensitivity, idleSeconds, start });
   }, [src, mobileSrc, sensitivity, idleSeconds, start]);
-  return <div ref={ref} style={{ position: "fixed", inset: 0 }} />;
+  return <div ref={ref} style={{ position: "absolute", inset: 0 }} />;
 }
