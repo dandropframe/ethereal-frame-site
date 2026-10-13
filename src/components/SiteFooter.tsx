@@ -31,17 +31,17 @@ export function SiteFooter() {
           <div className="text-eyebrow mb-4">Follow</div>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="https://www.instagram.com" className="hover:text-accent transition-colors">
+              <a href="https://www.instagram.com/dan.ulv/" className="hover:text-accent transition-colors">
                 Instagram ↗
               </a>
             </li>
             <li>
-              <a href="https://www.behance.net" className="hover:text-accent transition-colors">
+              <a href="https://www.behance.net/danulv" className="hover:text-accent transition-colors">
                 Behance ↗
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com" className="hover:text-accent transition-colors">
+              <a href="https://www.linkedin.com/in/danbragaulv/" className="hover:text-accent transition-colors">
                 LinkedIn ↗
               </a>
             </li>
