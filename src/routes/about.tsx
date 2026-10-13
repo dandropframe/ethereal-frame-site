@@ -61,26 +61,23 @@ function About() {
         </h1>
       </section>
 
-      <section className="mx-auto max-w-[1600px] px-6 md:px-10 grid grid-cols-12 gap-6 pb-24 md:pb-40 border-y border-border py-16">
+      <section className="mx-auto max-w-[1600px] px-6 md:px-10 grid grid-cols-12 gap-6 border-y border-border py-16">
         <div className="col-span-12 md:col-span-4 text-eyebrow">My Practice</div>
         <div className="col-span-12 md:col-span-8 space-y-6 text-lg leading-relaxed">
           <p>
-            I’m Dan Ulv, an Art Director working across technology, cosmetics, sports, and beyond. I design and build 3D imagery,
-            animation, and motion graphics — all driven by the same creative direction.
+            I’m Dan Ulv, an Art Director with 12+ years of experience working across technology,
+            cosmetics, sports, and beyond. I design and build digital imagery, motion graphics, and
+            immersive worlds for global brands — all driven by a strong narrative foundation.
           </p>
           <p className="text-muted-foreground">
-            My foundation is in the craft of 3D and motion. I shape composition, lighting,
-            materials, and movement with care, building visual worlds that balance a clear idea with
-            precise execution — from the first styleframe to the final render.
+            Rooted in the craft of 3D and motion, I shape composition, lighting, materials, and
+            movement with care, building visuals that communicate and evoke — from the first
+            styleframe to the final render.
           </p>
           <p className="text-muted-foreground">
-            I take on projects that need a point of view and the craft to carry it. When a project demands
-            it, I draw on a network of trusted 3D artists, motion designers, and technical
-            specialists. The creative direction stays consistent. The capacity scales with the
-            brief.
-          </p>
-          <p className="text-muted-foreground">
-            Your creative partner for the next era of visual storytelling.
+            I take on projects that need a point of view and the craft to carry it. When a project
+            demands it, I build and lead curated teams drawn from a network of trusted
+            collaborators.
           </p>
         </div>
       </section>
