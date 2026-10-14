@@ -160,6 +160,7 @@ export const projects: Project[] = [
     role: ["Previz", "Art Direction"],
     vimeoId: "1211017183",
     hero: "https://images.squarespace-cdn.com/content/v1/60719cfcf95b952de10a8f8b/3a0c93fe-207c-4f97-b002-b63353f52a0c/Untitled+Project_15s_laMerCny_16X9_NIGHT_WIP032_2026-05-13_13.26.27.jpg",
+    video: "/video/LaMer_Thumbnail_01.mp4",
     gallery: [],
     summary: "A seamless, continuous journey through fantastical sceneries.",
     body: "Heckler approached me to create the previz for La Mer's Year of the Horse campaign, working closely with the director and creative director to design a seamless, continuous journey through various fantastical sceneries.",

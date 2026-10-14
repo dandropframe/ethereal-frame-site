@@ -36,7 +36,13 @@ const services = [
   "Styleframes",
 ];
 
-const threeDProjects = projects.filter((project) => project.discipline === "3D");
+const threeDProjects = projects
+  .filter((project) => project.discipline === "3D")
+  .sort((a, b) => {
+    if (a.slug === "floret" && b.slug === "lamer") return -1;
+    if (a.slug === "lamer" && b.slug === "floret") return 1;
+    return 0;
+  });
 
 function useReveal<T extends HTMLElement>() {
   const ref = useRef<T | null>(null);
