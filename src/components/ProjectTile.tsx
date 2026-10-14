@@ -55,6 +55,8 @@ export function ProjectTile({
             src={image}
             alt={title}
             loading="lazy"
+            decoding="async"
+            fetchPriority="low"
             className={mediaClass}
             style={{ objectPosition: imagePosition }}
           />

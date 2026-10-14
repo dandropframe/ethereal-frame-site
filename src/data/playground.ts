@@ -21,6 +21,20 @@ const video = (slug: string, title: string): PlaygroundItem => ({
 export const playground: PlaygroundItem[] = [
   // New additions belong at the beginning, preserving newest-first order.
   {
+    slug: "particle-01",
+    title: "Particle 01",
+    meta: "Still",
+    type: "image",
+    src: "/playground/particle-01.png",
+  },
+  {
+    slug: "turanza",
+    title: "Turanza",
+    meta: "Still",
+    type: "image",
+    src: "/playground/turanza.png",
+  },
+  {
     slug: "lenor-cotton",
     title: "Lenor Cotton",
     meta: "Still",
