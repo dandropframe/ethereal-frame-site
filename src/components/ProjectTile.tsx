@@ -39,13 +39,13 @@ export function ProjectTile({
       <div className={`relative overflow-hidden bg-muted ${aspect}`}>
         {video ? (
           <video
-            src={video}
+            src={visible ? video : undefined}
             poster={image}
             autoPlay
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             aria-label={title}
             className={mediaClass}
             style={{ objectPosition: imagePosition }}
