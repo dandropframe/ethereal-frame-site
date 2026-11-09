@@ -30,7 +30,7 @@ const services = [
   "Concept & Narrative",
   "Product Visualisation",
   "Motion Design",
-  "Previz",
+  "Previz & Editing",
   "GenAI",
   "Environment Design",
   "Styleframes",
