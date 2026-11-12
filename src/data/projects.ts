@@ -151,6 +151,28 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "sk2-prints",
+    title: "SK-II Prints",
+    client: "SK-II",
+    discipline: "3D",
+    category: "Print",
+    year: "2026",
+    role: ["Creative Direction", "3D"],
+    hero: "/images/sk2-prints-kv-01.webp",
+    gallery: [
+      "/images/sk2-prints-kv-03.webp",
+      "/images/sk2-prints-kv-04.webp",
+      "/images/sk2-prints-kv-05.webp",
+      "/images/sk2-prints-kv-06.webp",
+    ],
+    summary: "Two print key visuals rendered at up to 24K for large-format output.",
+    body: "Two print key visuals for SK-II, made in Cinema 4D and Redshift and rendered at up to 24K for large-format output.",
+    credits: [
+      { role: "Production Company", name: "Heckler" },
+      { role: "Creative Director & 3D Lead", name: "Dan Ulv" },
+    ],
+  },
+  {
     slug: "lamer",
     title: "La Mer — Year of the Horse",
     client: "La Mer",
