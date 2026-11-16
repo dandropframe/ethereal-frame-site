@@ -46,7 +46,7 @@ export function mountCameraScrub(root: HTMLElement, getPack: (p: (x: number) => 
   const pct = el("div", mono + "text-transform:uppercase;font-variant-numeric:tabular-nums", loader); pct.textContent = "0%";
   const track = el("div", "width:160px;height:1px;background:rgba(242,242,240,.2)", loader);
   const fill = el("div", "height:100%;width:0;background:#f2f2f0", track);
-  const hint = el("div", mono + "position:absolute;left:0;right:0;bottom:calc(28px + env(safe-area-inset-bottom,0px));text-align:center;text-transform:uppercase;opacity:0;transition:opacity .8s;pointer-events:none", root);
+  const hint = el("div", mono + "position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;text-transform:uppercase;opacity:0;transition:opacity .8s;pointer-events:none", root);
   hint.textContent = "Drag";
   const setPct = (p: number) => { const v = Math.round(p * 100); pct.textContent = v + "%"; fill.style.width = v + "%"; };
 
